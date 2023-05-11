@@ -1,6 +1,6 @@
 .. This file should at least contain the root `toctree` directive.
 
-Welcome to SECAR documentation!
+Welcome to SECAR Documentation!
 ===============================
 
 This document will walk you through SECAR operation, data analysis, and maintenance.
