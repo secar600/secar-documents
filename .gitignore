@@ -1,2 +1,17 @@
-# Google App Engine generated folder
-appengine-generated/
+# Temporary files and log files
+*~
+*.log
+
+# Prevent mac users to commit .DS_Store files
+*.DS_Store
+.DS_Store
+._*
+
+# Prevent users to commit the README files created by RStudio
+*README.html
+*README_cache/
+
+# build directory
+build/
+temp/
+
