@@ -216,7 +216,7 @@ The right side of the :code:`Main.opi` page in CS-Studio (see :numref:`CSS_Scree
 .. figure:: Figures/Vent_mode.PNG
    :width: 50 %
    
-   The schematics of :code:`vent` mode of operation.
+   The schematics of :code:`vent` mode of operation. Image courtesy of Brandon Ewert.
 
 .. warning::   
         
@@ -252,7 +252,7 @@ The right side of the :code:`Main.opi` page in CS-Studio (see :numref:`CSS_Scree
 .. figure:: Figures/Pump_mode.PNG
    :width: 50 %
    
-   The schematics of :code:`pump` mode of operation.
+   The schematics of :code:`pump` mode of operation. Image courtesy of Brandon Ewert.
 
 5. :code:`Fill` mode of operation: this is used when filling the gas target with a gas before recirculation of the gas is applied. :numref:`Fill_mode` shows the schematics of this mode of operation. In this mode of operation, the control software closes :code:`V1` and opens :code:`V3` and :code:`V6` or :code:`V7`. Valves :code:`V2`, and :code:`V12` remain open, while :code:`V10` and :code:`V13` remain closed. All the high vacuum recirculating pumps should be fully running in this mode. The operator opens :code:`MF2` to regulate and charge the system with the supplied gas (:code:`V6` is open in case of a hydrogen fill, :code:`V7` is open in case of a fill with He or another type of a non-explosive gas). Once the desired pressure in the gas chamber is reached as read by G11 capacitance manometer (:code:`SCR_BTS34:CMG_D1465K`), the operator has to switch to the :code:`run` mode.
 
@@ -260,7 +260,7 @@ The right side of the :code:`Main.opi` page in CS-Studio (see :numref:`CSS_Scree
 .. figure:: Figures/Fill_mode.PNG
    :width: 50 %
    
-   The schematics of :code:`fill` mode of operation.
+   The schematics of :code:`fill` mode of operation. Image courtesy of Brandon Ewert.
 
 6. :code:`Run` mode of operation: in this mode of operation, the control software closes :code:`V3` and :code:`V6` or :code:`V7`, whichever was being used. All other valves have the same state as they had in the :code:`fill` mode. :code:`V2` and :code:`V12` valves remain open to establish flow (see :numref:`Run_mode`). :code:`MF4` should be adjusted to deliver the desired flow to the gas target and to keep the gas target pressure steady. Gas is recirculating through the system. Only in this mode of operation, the PIPS detectors inside the extended gas target can be biased only after the :code:`reset` button on the operation mode section of the control page is clicked and if the oxygen level is below :math:`0.4 \%`, and :code:`SCR_BTS34:CMG_D1465K` (G11) and :code:`SCR_BTS34:CMG_D1465M` (G13) capacitance manometer gauges are reading below 25 Torr and 10 mTorr, respectively. 
 
@@ -272,7 +272,7 @@ The right side of the :code:`Main.opi` page in CS-Studio (see :numref:`CSS_Scree
 .. figure:: Figures/Run_mode.PNG
    :width: 50 %
    
-   The schematics of :code:`run` mode of operation.
+   The schematics of :code:`run` mode of operation. Image courtesy of Brandon Ewert.
 
 7. :code:`Purge` mode of operation: This mode of operation (see :numref:`Purge_mode`) is triggered by software control if any of the interlocks are reached, or by the operator if he/she clicks on the emergency stop button on the control page (|emergencystop|). The latter action is accessible from any mode of operation. In :code:`purge` mode of operation, if hydrogen is the fill gas, :code:`MF7` supplies a constant flow of dry nitrogen (with a rate of 1000 sccm preset by a needle valve upstream :code:`MF7`, see :numref:`MF7_needle`) to dilute the exhaust in case of an overpressure condition during the fill. :code:`MF6` is opened to a safe (for high vacuum pumps that are running) flow rate of 1000 sccm preset by another needle valve upstream :code:`MF6` and :code:`V21` (see :numref:`MF6_needle`) to purge the system with dry nitrogen from the lab supply of dry nitrogen. If the flow of dry nitrogen through :code:`MF6` or :code:`MF7` drops below 700 sccm due to a failure of the laboratory dry nitrogen supply, :code:`V15` opens automatically by the control software, and a dry nitrogen backup bottle kicks in to supply :math:`N_{2}` and to continue purging the system with dry nitrogen. The JENSA scroll pump pumps the mixture of gas out, and hydrogen-nitrogen mixture is directed into the exhaust and is further diluted. In this mode of operation, the control system opens :code:`V13` and :code:`V1`. Valves :code:`V2` and :code:`V12` remain open, while valves :code:`V3`, :code:`V6`, :code:`V7`, and :code:`V10` remain closed. 
 
@@ -307,7 +307,7 @@ The right side of the :code:`Main.opi` page in CS-Studio (see :numref:`CSS_Scree
 .. figure:: Figures/Purge_mode.PNG
    :width: 50 %
    
-   The schematics of :code:`purge` mode of operation.
+   The schematics of :code:`purge` mode of operation. Image courtesy of Brandon Ewert. 
 
 8. |reset| button: Click on this button once when the system is in run mode of operation (especially after and if purge mode was triggered beforehand) to allow the in-vacuum PIPS detectors to be biased.
 
@@ -329,13 +329,13 @@ The modes of operation of the extended gas target can be switched as follows:
 .. figure:: Figures/Operation_diagram.png
    :width: 70 %
    
-   The schematics of SECAR's extended gas target's operation. The blue arrows show you which modes can be switched to one another. The red arrows indicate interlocks. The rectangles are operation modes, all of which have automatic control except the manual mode of operation. The PIPS detectors can only be biased in the :code:`run` mode of operation.
+   The schematics of SECAR's extended gas target's operation. The blue arrows show you which modes can be switched to one another. The red arrows indicate interlocks. The rectangles are operation modes, all of which have automatic control except the manual mode of operation. The PIPS detectors can only be biased in the :code:`run` mode of operation. Image courtesy of Brandon Ewert.
 
 .. _operation_state:
 .. figure:: Figures/Operation_state_defs.png
    :width: 70 %
    
-   This schematics displays all the automatically controlled devices of the SECAR's extended gas target's GHS.
+   This schematics displays all the automatically controlled devices of the SECAR's extended gas target's GHS. Image courtesy of Brandon Ewert.
 
 Supplemental Controls
 ~~~~~~~~~~~~~~~~~~~~~
