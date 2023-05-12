@@ -276,7 +276,7 @@ Each MCP detector has:
 - 4 position signals labelled on the top flange as "A", "B", "C" and "D", which are amplified by the preamplifier shown in :numref:`mcp_preamp`.
 - 1 timing signal labelled as "timing" on the top flange, which is amplified by the preamplifier shown in :numref:`mcp_timing`. Immediately on the input of the timing preamplifiers, there is an IT100 ORTEC inverter, which is attached to the top of the MCP flanges, where the timing input is located. 
 
-These 4 preamplifiers get their power from the two golden modules shown in :numref:`mcp_power`. The timing signals outputted by the timing preamplifiers, as well as all 4 position signals outputted from the position preamplifiers go directly into the first digitizer card inside the :code:`spdaq57` Pixie-16 crate after being converted to SMB outputs. 
+These 4 preamplifiers get their power from the two golden modules shown in :numref:`mcp_power`. The timing signals outputted by the timing preamplifiers, are fed into a "Quad Fast Amplifier" (only two inputs are used, the inputs and outputs are LEMO connections). The output of the fast amplifier together with all 4 position signals outputted from the position preamplifiers go directly into the first digitizer card inside the :code:`spdaq57` Pixie-16 crate after being converted to SMB outputs. 
 
 .. _mcp_preamp:
 .. figure:: Figures/IMG_3377.jpg

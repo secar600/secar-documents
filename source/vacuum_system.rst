@@ -375,6 +375,8 @@ To vent the Wien filter chambers:
     - :code:`SCR_BTS35:PG_D1612` for Wien filter 1.
     - :code:`SCR_BTS35:PG_D1709` for Wien filter 2.
 - Once the pressure gauge reaches about 690 Torr, the chamber is vented.
+- Close the pneumatic valve shown in :numref:`RV` if you had to open it.
+- Close the vent valve (see :numref:`WF_vent_valve`) and insert its provided rubber cork into the vent valve's tube.
 
 .. _RV:
 .. figure:: Figures/IMG_3392.jpg
@@ -431,21 +433,121 @@ To turn OFF a Wien filter turbo pump:
 Pumping Down Wien Filter Chambers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-There is a pneumatic valve (:numref:`RV`) upstream of each Wien filter's turbo pump. This valve is interlocked such that it can only be open when the turbo pump
+If a Wien filter chamber is vented and has to be pumped down, do the following:
 
-To turn ON a Wien filter turbo pump:
+- Make sure the cooling water for the Wien filter turbo pump is up and running and there are no faults there. This can be verified from the bottom of the :code:`Vac. by Type` tab on the "SECAR Global Controls Page" of CS-Studio shown in :numref:`WF-water`.
+- Close the vent valve (see :numref:`WF_vent_valve`) and insert its provided rubber cork into the vent valve's tube.
+- The turbo pump should be OFF and its gate valve should be closed.
+- The cryopump may or may not be ON but its gate valve should be closed.
+- Ensure the scroll pump is ON. The operation of this pump is manual.
+- Open the two manual valves that are open in the :numref:`WF_rough` photo: open the one that is on the foreline of the turbo pump first, then slowly open the roughing valve right on the scroll pump. The manual valve used for leak checking has to be kept closed.
+- Make sure the foreline pressure visible on the foreline gauge is going down.
+- Using the :code:`GVs` tab on the CS-Studio "SECAR Global Controls" page, open the pneumatic valve upstream of the Wien filter's turbo pump shown in :numref:`RV`.
+- You are now pumping on the chamber.
+- Monitor the Pirani gauge and the foreline gauges (only accessible locally) and ensure the pressures in the chamber and the foreline are going down:
+    
+    - :code:`SCR_BTS35:PG_D1612` for Wien filter 1.
+    - :code:`SCR_BTS35:PG_D1709` for Wien filter 2.
+- Let the pressure shown by the Pirani gauge get to 40 - 45 mTorr.
+- When the pressure in the chamber measured by the Pirani gauge is around 45 mTorr:
 
-- Make sure the roughing pump of the Wien filter is ON (see :numref:`WF_rough`). The operation of this pump is manual.
-- Make sure the manual valve used with the leak checker (the valve that is closed) shown in :numref:`WF_rough` is closed and the other two valves shown in the aforementioned photo are open.
-- Make sure 
+    - Close the pneumatic roughing valve shown in :numref:`RV`. Now, the chamber is isolated from all the pumps. Hopefully, the pressure rise is not going to be more than 5 mTorr before executing the next step, which should ideally take something like 10 minutes. If there is a leak and the pressure rose to above 50 mTorr, you cannot do the next step, so either open the pneumatic valve again and let the pressure go down even more before turning the turbo pump ON, or leak check the system and fix the issue. Make sure the pneumatic roughing valve is closed, before doing the next step.
+    - Start the turbo pump of the Wien filter. To do this:
 
-- Write about water cooling for the turbo pumps of Wien filters.
+        - Open the :code:`WF` tab under "SECAR Global Controls" page. 
+        - Click on the :code:`Eswards Pumps` button.
+        - If the desired turbo is for Wien filter 1, click on the :code:`SCR_BTS35:TMP_D1612` button (see :numref:`WF_turbo_css`).
+        - If the desired turbo is for Wien filter 2, click on the :code:`SCR_BTS35:TMP_D1709` button.
+        - Click on the :code:`RESET` button.
+        - Click on the green :code:`START` button.
+        - Monitor the turbo pump's measured speed. When it is at 13500 rpm, the turbo pump is fully ON and at speed. The warning indicators will turn green (no fault) when the speed is around 12000 rpm or so.
+- Once the turbo pump is up and running at full speed, then you can open the turbo gate valve (using the :code:`GVs` tab of the CS-Studio "SECAR Global Controls" page) only if:
+
+    - The turbo pump has no fault.
+    - The turbo pump has to be at its full speed.
+    - The pneumatic rough valve shown in :numref:`RV` has to be closed.
+    - The pressure in the Wien filter chamber read by the Pirani gauge should be 50 mTorr or below.
+    - Using the probe functionality of the CS-Studio (maybe by the time you are reading this, Dan Crisp has implemented this already), send a new value of 1 to this PV: :code:`SCR_BTS35:TGV_D1612:BYP_CMD` (for Wien filter 1) and :code:`SCR_BTS35:TMP_D1709:BYP_CMD` (for Wien filter 2). This will bypass the interlock present on the cold cathode gauge of the Wien filter chamber momentarily (until you turn OFF the bypass) so that you can open the turbo gate valve.
+- If all the above conditions are met, open the turbo gate valve by bypassing the interlock on the cold cathode gauge. 
+- Once the turbo gate valve is open:
+
+    - Reset the cold cathode gauge.
+    - Turn ON the cold cathode gauge.
+    - Turn off the turbo gate valve bypass by commanding a new value of 0 to this PV: :code:`SCR_BTS35:TGV_D1612:BYP_CMD` (for Wien filter 1) and :code:`SCR_BTS35:TMP_D1709:BYP_CMD` (for Wien filter 2), which ever is being done.
+- Monitor the cold cathode gauge and ensure the pressure is coming down.
+- If the cryopump is already ON:
+
+    - Open the cryo gate valve, which can only be accomplished if:
+
+        - The Pirani gauge on the Wien filter chamber is reading below 50 mTorr.
+        - The cold cathode gauge on the Wien filter chamber is reading below :math:`1\times10^{-6}` Torr.
+        - The cryo cold head is ON.
+        - The pneumatic roughing valve shown in :numref:`RV` is closed.
+- If the cryopump is OFF, regenerate the pump (see :numref:`regeneration`). Once the regeneration is complete and the cold head of the cryopump is ON and running at 14 - 15 K, open the cryo gate valve only if the 4 conditions mentioned above are met.
+
+.. note::
+
+   The vacuum of the Wien filters is a bit weird. Originally, it had a flaw and this flaw unfortunately remained to be the case even though neither Brandon and his team, nor me liked the way it was set up but we did not get the time to correct this. Maybe this improvment can be done in the future. In any case, the problem is, according to the current interlocks, the Wien filter's turbo pump has to be up and running at full speed and the pneumatic valve shown in :numref:`RV` has to be closed before one can open the turbo gate valve. This is the flaw of these systems because:
+
+    - The chambers are huge and it is not a good practice to open the turbo gate valve to a huge chamber like this when the turbo is already at full speed. This increases the load on the turbo pump suddenly. A better alternative would be to enable the gate valve to the turbo pump to be opened when the turbo's speed is coming up gradually.
+    - There is a short time between closing the pneumatic rough valve and turning ON the turbo pump when the chamber is isolated and not being pumped ON.
+
+.. _WF-water:
+.. figure:: Figures/WF-water.PNG
+   :width: 80 %
+
+   These controls are located in the buttom of the :code:`Vac. by Type` tab of the "SECAR Global Controls" page of CS-Studio. They let you turn ON/OFF and reset the water solenoid valves for the Wien filters turbo pumps. **The solenoid valve of Wien filter 2 is either wired backward or swapped in CS-Studio such that 0 means it is ON and 1 means it is OFF. The solenoid valves need to always be ON, which means Wien filter 1 solenoid should show 1 and Wien filter 2 solenoid should show 0.** I have asked Dan Crisp to take a look at this and correct it if it is a mistake in the EPICS or CS-Studio. The flow of the water has always been about 1.9 Gallons Per Minute (GPM) for Wien filter 1 and about 2.3 GPM for Wien filter 2. You can check the status of the solenoid valves and that of the water lines and their flow by looking at what is shown in :numref:`WF-waterline`, which are located near each Wien filter and above the beamline. While Wien filter 1 has cooling water for both the turbo pump and its Temperature Management System (TMS), the cooling water to the turbo pump (but not to TMS) of Wien filter 2 has been disconnected because of excessive condensation that has happened in the past, which was being problematic to its TMS. This is why, the motor temperature and the TMS temperature for Wien filter 2 are always higher than those in Wien filter 1.
+
+.. _WF-waterline:
+.. figure:: Figures/IMG_3404.jpg
+   :width: 50 %
+
+   The solenoid valve for the cooling water used with Wien filter turbo pumps is labelled as :code:`SV_D1709`. The other big monitors show the flow of the water. Those valves with blue handle should be open to let the water flow. 
 
 .. _WF_interlocks:
 
 Vacuum Interlocks for the Wien Filters
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The cryopumps have interlocks on them now (see :numref:`WF_interlocks`), so if these latter pumps are turned OFF, the cryo gate valves get shut immediately.
+The interlocks on the turbo pumps gate valves are as follows:
+
+- To be able to open a Wien filter turbo gate valve:
+
+    - Turbo pump should be ON AND running at full speed.
+    - There should be no fault with the turbo pump (the faults are the warnings that may be ON visible from the CS-Studio page showing the Edwards turbo pumps for the Wien filters.
+    - The pneumatic roughing valves to the chambers need to be closed (see :numref:`RV`).
+    - The pressure shown by the Pirani gauges on the Wien filter chambers have to be at 50 mTorr or below.
+    - The interlocks on the cold cathode gauges (set to :math:`1\times10^{-6}` Torr) have to be pypassed. To do this:
+
+        - Send a 1 command to the following PVs to enable the bypass: :code:`SCR_BTS35:TGV_D1612:BYP_CMD` (for Wien filter 1) and :code:`SCR_BTS35:TMP_D1709:BYP_CMD` (for Wien filter 2),
+        - **Please do not forget to send a 0 command to the above PVs to disable the bypass only after the turbo gate valve is opened AND the cold cathode gauges are turned ON AND if the pressure shown by the cold cathode gauge is below its interlock threshold.**
+
+The interlocks on the cryopumps gate valves are as follows:
+
+- To be able to open a cryo gate valve for a Wien filter:
+
+    - The pressure measured by the Pirani gauge should be 50 mTorr or lower.
+    - The high vauum pressure measured by the cold cathode gauge should be below the set points mentioned above.
+    - The pneumatic roughing valves to the chambers need to be closed (see :numref:`RV`).
+    - The cold heads have to be ON. This is indicated as :code:`CRYO ON 14 K` on the display of the cryopump's control (:numref:`on-board`). These interlock signals are set as follows in the PLC logic:
+
+        - The cold head of the first Wien filter is wired to relay 2 of the On-Board system corresponding to Wien filter 1.
+        - The cold head of the second Wien filter is wired to relay 1 of the On-Board system corresponding to Wien filter 2.
+
+The interlocks on the high voltage:
+
+- Before one can turn on the high voltage for each Wien filter, the following vacuum conditions have to be met, or else the HV will be interlocked and disabled:
+
+    - The pressure in the chamber must be below :math:`1\times10^{-6}` Torr. If the pressure rises above this limit, the PLC will disable the HV 0.5 second after the pressure rises above the threshold.
+    - If the pressure rises above :math:`5\times10^{-7}` Torr and stays like that for 3 seconds, then the HV will be also disablled. 
+    - To enable the HV if these events occur:
+
+        - Reset the cold cathode gauges of each Wien filter (:code:`SCR_BTS35:CCG_D1612` for Wien filter 1 and :code:`SCR_BTS35:CCG_D1709` for Wien filter 2) when the pressure in the chambers is below :math:`5\times10^{-7}` Torr. You should see the green indicators like what is shown in :numref:`WF_reset_CCGs`.
+
+.. _WF_reset_CCGs:
+.. figure:: Figures/Reset_CCGS.PNG
+   :width: 50 %
+
+   The PVs shown in this image should be both green before one can enable the HV of Wien filter 1. Similar PVs exist for Wien filter 2. Reset the Wien filter cold cathode gauges when the pressure is below :math:`5\times10^{-7}` Torr to be able to apply HV to the Wien filters. The PV shown on the second line refers to whether or not the chamber pressure is below :math:`5\times10^{-7}` Torr. This PV also shows up on the :code:`SECAR_Layout.opi` page together with the readback of each cold cathode gauge on the Wien filters. 
 
 .. [1] Note that if you have to turn it immediately back ON for whatever reason, you need to press 1 before the pump warms up. If it warms up above 65K, which is the temperature for the first stage, I would recommend to let it warm up all the way and then regenerate it (see :numref:`regeneration`) if you have to turn it back ON.

@@ -41,7 +41,15 @@ If you select "Show Setpoints & Readback in Tesla" found at the bottom of the "M
 
 .. note::
 
-        At the time of writing this instructions, Daniel Crisp is still working on updating CS-Studio to enable us to scale both Wien filters using the same methode as scaling all other magnets. This process is not yet available right now, so I will not be able to write instructions for scaling Wien filters. Please make sure you follow up with Dan Crisp and get to know the system he will be implementing for scaling both Wien filters.
+   At the time of writing this instructions, Daniel Crisp is still working on updating CS-Studio to enable us to scale both Wien filters using the same methode as scaling all other magnets. This process is not yet available right now, so I will not be able to write instructions for scaling Wien filters. Please make sure you follow up with Dan Crisp and get to know the system he will be implementing for scaling both Wien filters.
+
+Note that the photo shown in :numref:`magnet-water` shows the flow of water for a few magnets. Such devices can be seen all around SECAR above the beamline. Make sure that the flow of water for each magnet is properly maintained. If not, please consult Bradley Powell.
+        
+.. _magnet-water:
+.. figure:: Figures/IMG_3405.jpg
+   :scale: 20%
+
+   The devices shown on the top of the photo should be looked at periodically to ensure each magnet has a proper water flow for cooling.
 
 Hall Probes
 -----------
