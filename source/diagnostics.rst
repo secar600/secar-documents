@@ -6,6 +6,10 @@ This chapter presents a few instructions on how to operate SECAR diagnostics.
 
 The CS-Studio page for SECAR diagnostics is found under SECAR Global Controls, "Diag. by Type" tab.
 
+.. note::
+
+   The new :code:`SECAR_layout.opi` page in CS-Studio enables the users to insert Faraday cups and viewers IN/OUT from this page and presents Faraday cups' current readbacks as well.
+
 Viewers
 -------
 
@@ -24,6 +28,10 @@ Faraday Cups
 :code:`ReA_BTS34:FC_D1448` is controlled by ReA operators.
 
 :code:`SCR_BTS35:FC_D1485` and :code:`SCR_BTS35:FC_D1568` are pnuematic. All other SECAR Faraday cups are controlled by motorized drives. The actual positons (in mm) of the cups can be seen from the "Drives" section of the "Diag. by Type" page. The Faraday cups can be biased by clicking on "Settings" buttons found under cups section of the Diag. by Type page. Please enter :math:`-200` V in "Bias Voltage SP" field and then turn ON the bias power supply ("Bias PS") and "START" the acquisition of the cup.
+
+.. warning::
+
+   If the vacuum in the chamber where the Faraday cups are is not high vacuum (if the high vacuum pump is OFF), the cups biases are disabled, and one annot bias the Faraday cups. This is visible from the :code:`FC ILKS` page in CS-Studio "SECAR Global Controls" page. 
 
 Slits
 -----
