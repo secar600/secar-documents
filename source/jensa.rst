@@ -23,7 +23,7 @@ The JENSA target's controls can be found in :numref:`CSS`. The symbols on this p
 .. figure:: Figures/JENSA_GHS.png
    :width: 50 %
 
-   The schematic of the jet target's gas handling system. **This schematics is unfortunately not the most updated one and is missing a few valves, turbo pumps, etc.**
+   The schematic of the jet target's gas handling system. Image courtesy of Brandon Ewert. **This schematics is unfortunately not the most updated one and is missing a few valves, turbo pumps, etc.**
 
 Pumping Down JENSA
 ------------------
@@ -206,7 +206,7 @@ Turning ON the JET
 .. figure:: Figures/jensa-ghs2.png
    :width: 50 %
 
-   The outdated schematics of the GHS for the jet target while jet is ON. The figure is missing at least one valve (newly installed :code:`V21`) and the turbo pumps. 
+   The outdated schematics of the GHS for the jet target while jet is ON. The figure is missing at least one valve (newly installed :code:`V21`) and the turbo pumps. Image courtesy of Brandon Ewert.
 
 To turn the jet ON, make sure the chamber is under high vacuum and do the following:
 
