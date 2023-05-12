@@ -25,6 +25,7 @@ To build a pdf file from the material presented in this repository:
    :caption: How to build a pdf file
        
         cd the-path-where-the-repository-is-cloned
+        pip3 install -r requirements.txt --user
         make latex
         cd build/latex
         make

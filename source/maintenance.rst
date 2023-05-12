@@ -179,7 +179,13 @@ Refill the Compressor Crankcase with New Oil
 Coolant for the JENSA Compressor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The coolant is added to the stainless steel reservoir, where there is a threaded fill cap on top of the reservoir. It should be propylene glycol (not ethylene). PDC Machines uses a brand called Protocol NT-50, which is :math:`50\%` propylene glycol and :math:`50\%` distilled water. I have bought a lot of this material and it can be found near the compressor on the floor.
+The coolant is added to the stainless steel reservoir (see :numref:`coolant_reservoir`), where there is a threaded fill cap on top of the reservoir. It should be propylene glycol (not ethylene). PDC Machines uses a brand called Protocol NT-50, which is :math:`50\%` propylene glycol and :math:`50\%` distilled water. I have bought a lot of this material and it can be found near the compressor on the floor.
+
+.. _coolant_reservoir:
+.. figure:: Figures/IMG_3403.jpg
+   :scale: 20%
+
+   This big container contains the Protocol NT-50 coolant for the JENSA compressor. This coolant is an orange liquid which should be periodically poured into this reservoir (if the compressor is going to be used) to ensure the compressor has enough coolant.
 
 Cryopumps and Their Compressor
 ------------------------------
