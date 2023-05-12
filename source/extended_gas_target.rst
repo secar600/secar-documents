@@ -1,4 +1,12 @@
 
+.. raw:: html
+
+    <style> .orange {color:#FFA500; font-weight:bold; font-size:16px} </style>
+    <style> .green {color:#228B22; font-weight:bold; font-size:16px} </style>
+
+.. role:: orange
+.. role:: green   
+
 Windowless Extended Gas Target
 ==============================
 
@@ -115,7 +123,7 @@ Figure below shows the extended gas target’s gas handling system more clearly.
 
           The extended target’s gas handling system’s P&ID. NO and NC indicate normally open and normally closed, respectively. This target is only operated in recirculating mode.
 
-On :numref:`CSS_Screen`, an orange valve (|valveclose|) indicates it is closed, and a green valve (|valveopen|) indicates it is open. Those valves which can only be operated fully manually are shown in :numref:`CSS_Screen` by a white color (|manualvalve|). 
+On :numref:`CSS_Screen`, an :orange:`orange` valve (|valveclose|) indicates it is closed, and a :green:`green` valve (|valveopen|) indicates it is open. Those valves which can only be operated fully manually are shown in :numref:`CSS_Screen` by a white color (|manualvalve|). 
 
 How to Operate the Manual Valves on the GHS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -445,7 +453,7 @@ After the extended gas target is vented and fully closed up:
    - Upstream 2 and downstream 2.
    - Upstream 3 and downstream 3.
    - Upstream 4 and downstream 4.
-- Turn ON all 8 cold cathode gauges. These gauges have protection circuits and will turn themselves OFF if the pressure is too high. They may show :math:`10^{-11}` Torr or read "WAIT", both of which indicate the gauge is not ON. Wait for a while and they will turn ON. The better the vacuum, the more time it takes for them to come ON. 
+- Turn ON all 8 cold cathode gauges. These gauges have protection circuits and will turn themselves OFF if the pressure is too high. They may show :math:`10^{-11}` Torr or read "WAIT", both of which indicate the gauge is not ON. Wait for a while and they will turn ON. The better the vacuum, the more time it takes for them to come ON. These gauges can be read remotely via the :code:`JENSA` CS-Studio page, located under "SECAR Global Controls" (see :numref:`jensa_css`). However, Dan Crisp is in the process of changing this page, so by the time you read this manual, this page may not exist anymore and it may look a whole lot more awesome than the clutter you see in :numref:`jensa_css`.
 - Wait till all turbos reach their full speed: their LED lights shown as load will sequentially go all the way up and come all the way down. Once at full speed, there should be no load on them and only 1 LED light should be ON. The Varian turbo pump (used as the upstream 3 pump and labelled as "Temp UP 3") does not have any load LEDs. It should be rotating at 42k RPM when at full speed.
 - The last ReA beamline gate valve has an interlock with the :code:`SCR_BTS34:CCG_D1456` gauge, which is set to math:`5\times10^{-7}` Torr. If the pressure read by this gauge is above this limit, the gate valve cannot be opened. Once the pressure reaches below the aforementioned set point, one would need to reset this PV: :code:`SCR_BTS34:CCG_D1456:VAC_RST_CMD` and only then, the gate valve can be opened.
 - The first SECAR beamline gate valve (:code:`SCR_BTS35:BGV_D1483`) has an interlock with the :code:`SCR_BTS34:CCG_D1471` gauge, which is set to :math:`1\times10^{-6}` Torr. If the pressure read by this gauge is above this limit, the gate valve cannot be opened. Once the pressure reaches below the aforementioned set point, one would need to reset this PV: :code:`SCR_BTS34:CCG_D1471:VAC_RST_CMD` and only then, the gate valve can be opened.
@@ -467,6 +475,12 @@ After the extended gas target is vented and fully closed up:
    :width: 40 %
    
    These two fans (one hidden behind the toolbox) should be ON whenever the pumps underneath the JENSA compressor's noise enclosure are running.
+
+.. _jensa_css:
+.. figure:: Figures/jensa.PNG
+   :width: 50 %
+   
+   This CS-Studio page can be used to remotely access the readback of the 8 cold cathode gauges of the gas target.
 
 .. _pumps_off:
 
@@ -512,6 +526,23 @@ To turn the high vacuum pumps OFF, follow these steps:
 - Turn OFF the main water supply lines shown in :numref:`main_water` (do not touch the small manifold near the first quadrupole magnet shown :numref:`water_manifold`) by first closing the supply valve, then the bypass, and finally the return valve.
 - Turn OFF the big fan found in the walkway near the south wall facing the target chamber.
 - If you want to vent the system, see :numref:`vent_non_explosive_gas` if the system was running a non-explosive gas such as helium, and see :numref:`vent_hydrogen` if the system was running hydrogen. Otherwise, stop here.
+
+How to Zero the Capacitance Manometer Gauges
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Every time the gas target needs to be operated, make sure you follow the instructions given here to zero the capaciatance manometer gauge :code:`SCR_BTS34:CMG_D1465K`, which reads the pressure in the gas cell. **You can do the same for all other gauges but before that, you need to ensure the pressure is lower than a threshold (indicated by the controller for each of these gauges) before you zero the gauge. Or else, you risk making the gauge inaccurate by introducing an offset in its reading.**
+
+To zero the capacitance manometer :code:`SCR_BTS34:CGM_D1465K`:, which reads the gas cell pressure:
+
+- Make sure the system is under high vacuum with all pumps up and running.
+- **Make sure the pressure is below 1 mTorr. If not, do not continue with the next steps.**
+- Go to the pumps controller rack (see :numref:`pump_rack`) and find the :code:`MKS5` controller unit.
+- Using the up/down arrow buttons, select the :code:`CMG D1465K` gauge. When this is selected, a green LED indicator will be lit beside this label.
+- Press on the :code:`Channel Setup` button.
+- Using the up/down and left/right arrow buttons, select the :code:`No` entry (it will be highlighted blue) to the right of :code:`Manual Zero`.
+- Press :code:`Enter`. At this point the highlight color turns black.
+- Press on the up or down button once. The :code:`No` changes to :code:`Yes`. Once this is the case, press :code:`Enter` again to make the change.
+- Press on the :code:`ESC` button.
 
 Operation of the Extended Gas Target with a Non-Explosive Gas
 -------------------------------------------------------------
@@ -898,8 +929,8 @@ If at any time, the hydrogen bottle runs out of the supply gas and needs to be c
     - Switch to :code:`pump` mode and pump for 15 minutes.
     - Switch to :code:`fill` mode and fill the system again with the desired pressure, and then go to :code:`run` mode, and carry out the rest of the experiment.
 
-What to Do prior to and during Running Hydrogen?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+What to Do prior to and during Hydrogen Operation?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The hydrogen lead operator(s) and experts shall make sure that:
 
@@ -1024,8 +1055,8 @@ Once you are ready to fill the system with hydrogen:
 
 .. _vent_hydrogen:
 
-Venting the System after Running Hydrogen
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Venting the System after Running with Hydrogen
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 :code:`MF6` is used to fill the system slowly with dry nitrogen while the system is in :code:`vent` mode or :code:`purge` mode. However, :code:`MF6` is typically set to have a flow rate of 1000 sccm, which is safe to purge the system while the turbo pumps are running but too slow for venting the system. The flow rate of 1000 sccm used for purging the system with dry nitrogen is set to achieve purging in a controlled manner; and therefore, the flow rate has to be small during the purge to avoid overwhelming the turbo pumps during this process. 
 
@@ -1100,8 +1131,8 @@ To vent the system, do the following:
     - Set :code:`MF6` flow rate back to 1000 sccm.
     - Switch to :code:`MAN` mode and close :code:`V13`.
 
-Manual Mode of Operation during Hydrogen Operation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Changing to Manual Mode during Hydrogen Operation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This mode of operation is where the operator is able to command all valves (except :code:`V15`, which is interlocked with the flow rate of :code:`MF6`, see :numref:`interlocks`) manually via the software control. I would recommend that this mode is not operated during hydrogen operation at all unless the hydrogen bottle has to be exchanged (see :numref:`bottle_exchange`). Operating this mode for any other reason during hydrogen operation is a dangerous action and shall be avoided if hydrogen is in the system unless the operator is a system expert. The instructions below should only be followed if the automatic purging has failed for some reason. 
 
@@ -1123,8 +1154,8 @@ If for whatever weird reason, the automatic purging failed and/or something weir
 - Now, you should be purging the system with dry nitrogen. Keep purging for 10 minutes.
 - After 10 minutes, close :code:`V13`. Now, the system is being pumped on. Keep pumping for at least 15 minutes until all capacitance manometer pressure gauges of the system read 1 Torr or below.
 
-Emergency Shutdown Procedure while Running Hydrogen
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Emergency Shutdown Procedure while Running with Hydrogen
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - In case of an emergency:
     
