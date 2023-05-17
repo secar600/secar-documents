@@ -31,7 +31,7 @@ Pumping Down JENSA
 To pump down JENSA from atmospheric pressures:
 
 - Make sure all flanges are proeprly closed and their bolts are tightened. On the ISO-320 flanges, one needs up to 8 claw flange clamps to properly compress the o-rings.
-- Make sure :code:`V4` and :code:`V5` are open and :code:`V8` and :code:`V9` are both closed. These are manual valves on the gas handling system.
+- Make sure :code:`V4`, :code:`V5` and :code:`V11` are open and :code:`V8` and :code:`V9` are both closed. These are manual valves on the gas handling system.
 - Make sure the manual air vent valve located on the scroll pump (:numref:`air_vent`) is fully closed.
 - Open the intentional air leak valve with a black handle (see :numref:`air_leak_valve`) but keep its needle valve (see :numref:`air_leak_valve`) fully closed.
 - Make sure :code:`V21` valve and its associated needle valve (:numref:`vent_nitrogen`) are both closed. If :code:`V21` is open, open the CS-Studio page (see :ref:`CSS`). This valve can only be controlled when the system is in either :code:`vent` mode or :code:`MAN` mode. Switch to :code:`MAN` mode of operation. :code:`V21` can be closed by clicking on the "c" button next to :code:`V21` and opened by clicking on the "o" button next to the valve and only if the system is in :code:`vent` or :code:`MAN` mode of operation. When the valve is closed, the valve indicator on CS-Studio turns orange. If the valve is open, the valve indicator on CS-Studio is green.
