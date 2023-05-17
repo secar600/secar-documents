@@ -527,6 +527,8 @@ To turn the high vacuum pumps OFF, follow these steps:
 - Turn OFF the big fan found in the walkway near the south wall facing the target chamber.
 - If you want to vent the system, see :numref:`vent_non_explosive_gas` if the system was running a non-explosive gas such as helium, and see :numref:`vent_hydrogen` if the system was running hydrogen. Otherwise, stop here.
 
+.. _zero_gauges:
+
 How to Zero the Capacitance Manometer Gauges
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -550,6 +552,7 @@ Operation of the Extended Gas Target with a Non-Explosive Gas
 When the gas target needs to be operated with a non-explosive gas such as helium, do the following:
 
 - Make sure the gas target is under high vacuum (see :numref:`setting_up_high_vacuum`) and that the mode of operation is set to :code:`pump` mode.
+- Zero the :code:`SCR_BTS34:CMG_D1465K`, :code:`SCR_BTS34:CMG_D1465M` and :code:`SCR_BTS34:CMG_D1465E` capacitance manometer gauges (:numref:`zero_gauges`) if they show an offset.
 - Using the probe functionality in CS-Studio, verify that :code:`MF7` is CLOSED: open the probe window and search this PV: :code:`SCR_BTS34:MFC_D1465A:MODE_CSET_MFC`. Then, enter :file:`CLOSE` under new value and hit :code:`Enter`. :code:`MF7` is used to dilute the exhaust during hydrogen operation. When the gas target is running any other gas, this mass flow meter should be closed to avoid wasting the dry nitrogen.
 - Using the probe functionality in CS-Studio, verify that :code:`MF4` is OPEN: open the probe window and search this PV: :code:`SCR_BTS34:MFC_D1465D:MODE_CSET_MFC`. Then, enter :file:`OPEN` under new value and hit :code:`Enter`.
 - Click on :code:`MF4` indicator on the CS-Studio control page. A small window pops up. Make sure the flow set point is set to fully open (flow = 500 sccm).
@@ -987,7 +990,7 @@ Procedure to Secure ReA3 Hall for JENSA Extended Target Hydrogen Operation – C
 How to Operate the System with Hydrogen
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Since a pre-start checklist (DCC Document FRIB-M41600-TD-001693-R001) should be followed prior to operation with hydrogen, this subsection assumes that the system is in :code:`pump` mode to begin with and that all high vacuum pumps are ON. To do that, see :numref:`setting_up_high_vacuum`. Also, it is assumed that the ReA3 vault is fully secured and locked.
+Since a pre-start checklist (DCC Document FRIB-M41600-TD-001693-R001) should be followed prior to operation with hydrogen, this subsection assumes that the system is in :code:`pump` mode to begin with and that all high vacuum pumps are ON. To do that, see :numref:`setting_up_high_vacuum`. Zero the :code:`SCR_BTS34:CMG_D1465K`, :code:`SCR_BTS34:CMG_D1465M` and :code:`SCR_BTS34:CMG_D1465E` capacitance manometer gauges (:numref:`zero_gauges`) if they show an offset and before you leave the ReA3 vault. Also, it is assumed that the ReA3 vault is fully secured and locked.
 
 Once you are ready to fill the system with hydrogen:
 
