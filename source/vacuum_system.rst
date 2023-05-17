@@ -35,7 +35,7 @@ Figure :numref:`WF_rough` shows the foreline vacuum systems for one of the Wien 
 High Vacuum Pumps
 -----------------
 
-SECAR's high vacuum is obtained by Agilent TV 1001 turbo pumps up to Wien filter 1, and Pfeiffer Hipace 80 and 300 H turbo pumps from Wien filter 1 up to the end. On each of the Wien filters, there is an Edwards STP-iX3006C turbo pump and an On-Board cryopump producing high vacuum. On the gas target section, we have 3 DV650 screw pumps, 4 WSU 2001 and 3 WSU 501 Oerlikon Roots blower pumps, 7 TURBOVAC 1000 C Leybold turbo pumps, as well as one Varian Turbo V-550 pump.
+SECAR's high vacuum is obtained by Agilent TV 1001 turbo pumps up to Wien filter 1, and Pfeiffer Hipace 80 and 300 H turbo pumps from Wien filter 1 up to the end. On each of the Wien filters, there is an Edwards STP-iX3006C turbo pump and an On-Board cryopump producing high vacuum. On the gas target section, we have 3 DRYVAC DV650 screw pumps, 4 WSU 2001, 1 WSU 501 and 2 WS 1001 Oerlikon Roots blower pumps, 6 TURBOVAC 1000 C and 1 TURBOVAC 600 C Leybold turbo pumps, as well as one Varian Turbo V-550 pump of model 969-9049.
 
 Operation of the Cryo Pumps
 ---------------------------
