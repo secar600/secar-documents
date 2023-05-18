@@ -31,7 +31,7 @@ Pumping Down JENSA
 To pump down JENSA from atmospheric pressures:
 
 - Make sure all flanges are proeprly closed and their bolts are tightened. On the ISO-320 flanges, one needs up to 8 claw flange clamps to properly compress the o-rings.
-- Make sure :code:`V4`, :code:`V5` and :code:`V11` are open and :code:`V8` and :code:`V9` are both closed. These are manual valves on the gas handling system. :code:`V5` is the valve that allows the supply gas to flow from the gas handling system to the inlet of the JENSA compressor. :code:`V11` is the valve that allows the high pressure processed gas to flow from the outlet of the JENSA compressor to the gas handling system. :code:`V4` is the valve that needs to be opened for the gas to flow in the jet bypass loop. :code:`V14`, which is currently not installed, is the valve that allows the jet to flow into the jet gas target's chamber. :code:`V8` and :code:`V9` are valves that should be opened during the operation of the extended gas target but should remain closed during the operation of the jet target.
+- Make sure :code:`V4` is open and :code:`V8` and :code:`V9` are both closed. These are manual valves on the gas handling system. :code:`V4` is the valve that needs to be opened for the gas to flow in the jet bypass loop. :code:`V8` and :code:`V9` are valves that should be opened during the operation of the extended gas target but should remain closed during the operation of the jet target.
 - Make sure the manual air vent valve located on the scroll pump (:numref:`air_vent`) is fully closed.
 - Open the intentional air leak valve with a black handle (see :numref:`air_leak_valve`) but keep its needle valve (see :numref:`air_leak_valve`) fully closed.
 - Make sure :code:`V21` valve and its associated needle valve (:numref:`vent_nitrogen`) are both closed. If :code:`V21` is open, open the CS-Studio page (see :ref:`CSS`). This valve can only be controlled when the system is in either :code:`vent` mode or :code:`MAN` mode. Switch to :code:`MAN` mode of operation. :code:`V21` can be closed by clicking on the "c" button next to :code:`V21` and opened by clicking on the "o" button next to the valve and only if the system is in :code:`vent` or :code:`MAN` mode of operation. When the valve is closed, the valve indicator on CS-Studio turns orange. If the valve is open, the valve indicator on CS-Studio is green.
@@ -144,6 +144,8 @@ To pump on the compressor, do the following in sequence without skipping any ste
 
    This valve should be closed at the start of the procedure to pump down the JENSA compressor.
 
+- Make sure :code:`V4` is open (:code:`V4` is the valve that needs to be opened for the gas to flow in the jet bypass loop), and :code:`V8` and :code:`V9` are both closed. :code:`V8` and :code:`V9` are valves that should be opened during the operation of the extended gas target but should remain closed during the operation of the jet target.
+- Open :code:`V5` and :code:`V11`. These are manual valves on the gas handling system. :code:`V5` is the valve that allows the supply gas to flow from the gas handling system to the inlet of the JENSA compressor. :code:`V11` is the valve that allows the high pressure processed gas to flow from the outlet of the JENSA compressor to the gas handling system. 
 - Close the manual valve on the roughing pump labelled as :code:`VROUGH` (:numref:`VROUGH`).
 - There are two manual valves on the front-left-top of the compressor: :code:`Vair1` and :code:`Vair2` (see :numref:`V_air12`). For normal operation, :code:`Vair1` is open and :code:`Vair2` is closed. For pumping on the compressor, open both of them.
 
@@ -155,7 +157,7 @@ To pump on the compressor, do the following in sequence without skipping any ste
 
 - Switch to :code:`MAN` mode of operation using the CS-Studio control page for the gas target. 
 - Close the manual valve :code:`V20` on the GHS that is between the last DV650 screw pump and the JENSA scroll pump: this valve is also labelled as :code:`Vrough+compin` (the long manual valve at the bottom on GHS, see :numref:`V20`). This will isolate the compressor from JENSA gas target so that you are only pumping on the compressor but not on the JENSA chamber and its associated high vacuum pumps.
-- Make sure the manual valve just before the jet is closed (it is called :math:`V_{in}` or :code:`V14`). It has a green handle and is located on the JENSA chamber facing the gas handling system.
+- Make sure the manual valve just before the jet is closed (it is called :math:`V_{in}` or :code:`V14`). It has a green handle and is located on the JENSA chamber facing the gas handling system. :code:`V14` is the valve that allows the jet to flow into the jet gas target's chamber. 
 - Also make sure the main valve on the helium gas bottle is closed and :code:`V7` and :code:`V3` valves should also be closed. 
 - Make sure the small metallic hand valve after the helium regulator on the helium bottle (see :numref:`helium_valve`) is also closed.
 - Open :code:`V3` using CS-Studio control page of the extended gas target.
