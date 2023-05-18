@@ -284,7 +284,7 @@ The right side of the :code:`Main.opi` page in CS-Studio (see :numref:`CSS_Scree
    
 .. note::
 
-   After 10 minutes of purging, the operator has to click on |reset| button first and then change the mode of operation to either :code:`pump` or :code:`vent` mode. If switching to :code:`vent` mode, the operator has to enter the vault after it is safe to do so (only applies to hydrogen operation) and quickly turns off all high vacuum pumps before the target chamber pressure reaches 50 – 60 Torr.
+   After 10 minutes of purging, the operator has to click on |reset| button first and then change the mode of operation to :code:`vent` mode. If you do not want to actually vent the system, immediately switch to :code:`pump` mode. If you intend to vent the system, the operator has to enter the vault after it is safe to do so (only applies to hydrogen operation) and quickly turns off all high vacuum pumps before the target chamber pressure reaches 50 – 60 Torr.
 
 :code:`Purge` mode of operation is automatically triggered if any of the following events occur while the system is in :code:`run` or :code:`fill` mode:
 
@@ -311,7 +311,7 @@ The right side of the :code:`Main.opi` page in CS-Studio (see :numref:`CSS_Scree
 
 8. |reset| button: Click on this button once when the system is in run mode of operation (especially after and if purge mode was triggered beforehand) to allow the in-vacuum PIPS detectors to be biased.
 
-9. |emergencystop|: In case of an emergency, this button can be pushed. After pressing this button, the system will be switched to the :code:`purge` mode and flushes the gas out of the system. It will also disable the HV card and will cut off power to the silicon detectors. **It is therefore, advisable to debias these detectors before pressing the emergency stop button if time allows.**
+9. |emergencystop|: In case of an emergency, this button can be pushed. After pressing this button, the system will be switched to the :code:`purge` mode and flushes the gas out of the system. It will also disable the HV card and will cut off power to the silicon detectors. **It is therefore, advisable to debias these detectors before pressing the emergency stop button if time allows.** To switch the system from this mode to another, click on the |reset| button and then switch to :code:`vent` mode. If you do not intend to vent the system, immediately switch to :code:`pump` mode.
 
 The modes of operation of the extended gas target can be switched as follows:
 
@@ -322,6 +322,7 @@ The modes of operation of the extended gas target can be switched as follows:
 - From :code:`run` mode, one can switch to :code:`fill` mode and :code:`MAN` mode only.
 - :code:`Purge` mode is only accessible via pressing the emergency stop button while in any mode of operation, or via the control software automatically and while the system is in :code:`run` mode or :code:`fill` mode and some interlock(s) have been met (see :numref:`interlocks`).
 - E-stop (Emergency stop: |emergencystop|): this is accessible from any mode of operation. Operator can initiate a purge in case of an emergency using this button.
+- When the system is in :code:`purge` mode regardless of what causes the system to be in this mode, one has to click on the |reset| button and then switch to :code:`vent` mode. If you do not intend to vent the system, immediately switch to :code:`pump` mode after the system has been switched to :code:`vent` mode.
 
 :numref:`interlock_image` and :numref:`operation_state` summarize the discussions above.
 
@@ -750,7 +751,7 @@ The Interlocks of the Extended Gas Target
 Interlocks that are put in place for operation of the extended gas target are summarized below. Almost all of these interlocks are related to hydrogen operation but all these interlocks occur regardless of which gas is in use:
 
 - If the system is in :code:`purge` or :code:`pump` mode, and the roughing pump loses power or fails, the system is automatically switched to :code:`vent` mode 1 second after the pump failure. This prevents potential ignition source in contact with hydrogen. Venting triggers automatic removal of dangerous levels of hydrogen by dilution with nitrogen. Once the hydrogen is diluted such that the ratio of hydrogen to nitrogen is less than :math:`40\%`, it is safe to re-enter to the ReA3 vault (see :numref:`reentry`) and turn the high vacuum pumps OFF. The power loss of the roughing pump has to be investigated and any faults need to be fixed. The operators have to remember to click on the |reset| button found under operating mode controls of the control page before the control software allows switching to another mode of operation after the operation integrity of the scroll pump is restored.
-- If the system is in :code:`fill` or :code:`run` mode and the oxygen level in the system, detected by the oxygen sensor, is higher than :math:`0.4\%`, the system is automatically switched to :code:`purge` mode 2 seconds after the oxygen level reaches :math:`0.4\%`. Dry nitrogen is used to flush the system with capability to drive hydrogen out and to reduce hydrogen content in the system to low explosive levels. This triggers automatic removal of hydrogen in the event of a leak to atmosphere. The operators have to remember to click on the |reset| button found under operating mode controls of the control page before the control software allows switching to another mode of operation.
+- If the system is in :code:`fill` or :code:`run` mode and the oxygen level in the system, detected by the oxygen sensor, is higher than :math:`0.4\%`, the system is automatically switched to :code:`purge` mode 2 seconds after the oxygen level reaches :math:`0.4\%`. Dry nitrogen is used to flush the system with capability to drive hydrogen out and to reduce hydrogen content in the system to low explosive levels. This triggers automatic removal of hydrogen in the event of a leak to atmosphere. The operators have to remember to click on the |reset| button found under operating mode controls of the control page before the control software allows switching to another mode of operation. From the :code:`purge` mode, you can only switch to :code:`vent` mode. If the high vacuum pumps are ON and you do not intend to vent the system, after the system is switched to :code:`vent` mode, immediately switch to :code:`pump` mode.
 - A voice alarm will be triggered in the FRIB control room if the oxygen level in the system reaches :math:`0.4\%`.
 - A standard Phoebus alarm will be triggered if the oxygen level in the system reaches :math:`0.04\%`.
 - If the system is in :code:`vent` or :code:`purge` mode and :code:`MF6` flow rate reads :math:`<` 700 sccm, :code:`V15` valve will be automatically opened after 10 seconds to ensure constant source of dry nitrogen by opening the valve to the reserved nitrogen bottle.
@@ -885,7 +886,7 @@ If at any time, the hydrogen bottle runs out of the supply gas and needs to be c
     - Click on E-stop button (|emergencystop|) to initiate a purge.
     - Purge the system for 10 minutes.
     - After 10 minutes, click on the |reset| button.
-- Switch to :code:`pump` mode and pump on the system for at least 15 minutes.
+- Switch to :code:`vent` mode and then immediately switch to :code:`pump` mode and pump on the system for at least 15 minutes.
 - Verify :code:`V6` is closed.
 - Verify :code:`V7` and :code:`V3` are also closed.
 - Make sure the pressure gauges in the system read good vacuum (:math:`< 1` Torr) in the system. Note that :code:`SCR_BTS34:CMG_D1465M` should read below 20 mTorr. 
@@ -929,7 +930,7 @@ If at any time, the hydrogen bottle runs out of the supply gas and needs to be c
     - Switch to :code:`run` mode and run for 10 minutes.
     - Press on the |emergencystop| to initiate a purge.
     - Purge for 10 – 15 minutes.
-    - Switch to :code:`pump` mode and pump for 15 minutes.
+    - Switch to :code:`vent` mode and then immediately switch to :code:`pump` mode, and pump for 15 minutes.
     - Switch to :code:`fill` mode and fill the system again with the desired pressure, and then go to :code:`run` mode, and carry out the rest of the experiment.
 
 What to Do prior to and during Hydrogen Operation?
@@ -976,7 +977,7 @@ To ensure the oxygen sensor is calibrated correctly:
 
             - Close the needle valve and the valve with a black handle shown in :numref:`air_leak_valve`.
             - Click on the |reset| button found in "Operating Mode Controls" of the control page.
-            - Switch to :code:`pump` mode.
+            - Switch to :code:`vent` mode and then immediately switch to :code:`pump` mode.
 
 .. _reentry:
 
@@ -1034,6 +1035,7 @@ Once you are ready to fill the system with hydrogen:
     - If you do not have to go to the ReA3 vault:
         
         - Verify that :code:`V21` is closed.
+        - Switch to :code:`vent` mode of operation.
         - Switch to :code:`pump` mode.
         - Switch to :code:`fill` mode and fill the system again.
         - Then switch back to :code:`run` mode and bias the PIPS detectors.
@@ -1051,6 +1053,7 @@ Once you are ready to fill the system with hydrogen:
     - Let the system purge for 10 minutes.
     - Verify that :code:`V21` is closed.
     - Click on the |reset| button.
+    - Switch to :code:`vent` mode.
     - Switch to :code:`pump` mode.
     - Pump the system for at least 15 minutes.
     - Verify that the hydrogen is safely evacuated from the system by verifying the pressures read from capacitance manometer gauges at various locations. They should be below 1 Torr. :code:`SCR_BTS34:CMG_D1465M` should read below 20 mTorr.
@@ -1077,6 +1080,7 @@ To vent the system, do the following:
     - Press on the |emergencystop| button to initiate a purge.
     - Keep purging for 10 minutes.
     - Press on the |reset| button.
+    - Switch to :code:`vent` mode.
     - Switch to :code:`pump` mode.
     - Pump the system for at least 15 minutes.
     - Follow the procedures presented on point 3 below.
@@ -1167,6 +1171,7 @@ Emergency Shutdown Procedure while Running with Hydrogen
 - After the emergency situation is over and things are back to normal, you need to:
     
     - Click on the |reset| button.
+    - Switch to :code:`vent` mode.
     - Switch to :code:`pump` mode.
     - If the experiment is still going on, swicth to :code:`fill` mode. Fill the system again and switch to :code:`run` mode and carry on with the rest of the experiment. 
 - In a rare case of a total loss of network access that lasts for more than a few minutes, the hydrogen lead operator or system expert will have to re-enter the ReA3 vault and stop the hydrogen operation by forcing the system to go to :code:`purge` mode. In this case, the system is still filled with hydrogen when the expert enters the ReA3 vault. The system will maintain its current state in case of network loss, so the system expert or a hydrogen lead operator has to force it to go into :code:`purge` mode to remove hydrogen from the system. **To stop the hydrogen operation, do the following only if you are the system expert (or hydrogen lead operator):**
@@ -1224,7 +1229,7 @@ Emergency Shutdown Procedure while Running with Hydrogen
        - Keep pressing the down arrow button until the :code:`Set Param` is highlighted with a blue color.
        - Press on the :code:`Enter` button. The highlight will become black. Press on the up arrow button once. The highlighted text should now be changed to :code:`Disable`.
        - Press on the :code:`Enter` button again. Then press on :code:`ESC` button.
-   - Click on the |reset| button found under "Operating Mode Controls" part shown in :numref:`CSS_Screen`. Switch to :code:`pump` mode. If you need to carry on with the experiment:
+   - Click on the |reset| button found under "Operating Mode Controls" part shown in :numref:`CSS_Screen`. Switch to :code:`vent` mode, and immediately after, switch to :code:`pump` mode. If you need to carry on with the experiment:
 
        - Swicth to :code:`fill` mode, fill the system with the desired pressure and then switch to the :code:`run` mode and bias the PIPS detectors.
 
