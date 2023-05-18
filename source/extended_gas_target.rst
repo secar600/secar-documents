@@ -740,7 +740,7 @@ If at any time, the non-explosive gas bottle runs out of the supply gas and need
 - Switch to :code:`Auto` mode, and immediately without any delay switch to :code:`pump` mode.
 - Manually purge the system with the gas whose bottle was changed to remove any air bobbles. To do this, follow the procedure provided in :numref:`manual_purge_non_explosive_system`.
 - Purge for at least 10 – 15 minutes.
-- Switch to :code:`pump` mode and pump for at least another 15 minutes.
+- Switch to :code:`vent` mode and then immediately switch to :code:`pump` mode, and pump for at least another 15 minutes.
 - Fill the system again with the desired gas to the desired pressure, and then switch to :code:`run` mode and carry out the rest of the experiment.
 
 .. _interlocks:
