@@ -164,7 +164,7 @@ The default state of valves and MFs are shown in the :numref:`state_table`. The 
 
 .. note::
 
-   - :code:`V4`, :code:`V5` and :code:`V11` valves should remain closed during the operation of the extended gas target. These valves are only used when the jet taret is in use.
+   - :code:`V4`, :code:`V5` and :code:`V11` valves should remain closed during the operation of the extended gas target. These valves are only used when the jet taret is in use. :code:`V5` is the valve that allows the supply gas to flow from the gas handling system to the inlet of the JENSA compressor. :code:`V11` is the valve that allows the high pressure processed gas to flow from the outlet of the JENSA compressor to the gas handling system. :code:`V4` is the valve that needs to be opened for the gas to flow in the jet bypass loop. :code:`V14`, which is currently not installed, is the valve that allows the jet to flow into the jet gas target's chamber.
    - :code:`V8` and :code:`V9` valves should remain open during the operation of the extended gas target.
    - :code:`V14` is currently not installed. This is a manual valve with a green handle that was previously labelled as :math:`V_{in}`. This valve is only used with the jet target and will be only opened during the last steps of turning ON the jet to allow the jet to flow inside the jet target chamber.
    - :code:`V18` is a manual gate valve shown in :numref:`V18`. This valve should always be open unless in special circumstances such as leak checking to isolate the target section from the pumps underneath the JENSA noise enclosure.
