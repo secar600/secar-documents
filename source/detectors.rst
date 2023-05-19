@@ -338,7 +338,11 @@ To remove the gas out of the detector:
 - Open bypass valve.
 - Open the needle valve (micrometer) all the way.
 - Turn OFF :code:`PID Control` by pressing pressure control button twice. You should see a small menu on the display with a bunch of choices, including :code:`PID Control`. Using the arrow keys, select this menu and press :code:`Enter`. Using the arrow keys, turn it OFF and then press :code:`ESC`.
-- Wait for some time until the gas is slowly pumped out. Once the pressure gauge on the gas handling system shows a rough value (:math:`10^{-1}` Torr), slowly open the valve to the chamber (see :numref:`figure5`). This may trip the last cold cathode gauge (:code:`SCR_BST35:CCG_D1878`). If that was the case, wait for the gas to be pumped out and then turn ON this gauge again using the CS-Studio control page.
+- Wait for some time until the gas is slowly pumped out. Once the pressure gauge on the gas handling system shows a rough value (:math:`10^{-1}` Torr):
+    
+    - Close the green valves labelled as To/From IC on the gas handling system.
+    - Leave the other two valves with green handles near the beamline open. 
+    - Slowly open the valve to the chamber (see :numref:`figure5`). This may trip the last cold cathode gauge (:code:`SCR_BST35:CCG_D1878`). If that was the case, wait for the gas to be pumped out and then turn ON this gauge again using the CS-Studio control page.
 
 Hybrid Ionization Detector Bias
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
