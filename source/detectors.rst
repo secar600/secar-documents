@@ -354,7 +354,7 @@ To remove the gas out of the detector:
 What to Do in an Emergency
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If while filling the IC detector with isobutane, or anytime there is gas in the detector, the window breaks, follow the following instructions immediately:
+If while filling the IC detector with isobutane the window breaks, follow the following instructions immediately:
 
 - Close the gas IN valve on the gas handling system.
 - Open the bypass valve found also on the gas handling system all the way.
