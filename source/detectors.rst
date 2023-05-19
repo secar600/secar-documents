@@ -303,11 +303,11 @@ To flow isobutane gas into this detector:
 
 - Set the desired pressure by pressing the :code:`System Setup` button. A menu opens on the display. Using the arrow keys, select :code:`PID Recipe`. Press :code:`Enter`. At this point, the cursor will be on :code:`B1` under :code:`R1`. Press :code:`Enter` again. Using the arrow key, come down and to the right until you find the set pressure menu. Press :code:`Enter` again and using the arrow keys, go up or down until your desired pressure is reached. Press :code:`Enter` again to set the pressure. Press :code:`ESC` a few times to go back to the main display.
 - Close the manual valve which isolates the detector from the beamline (see :numref:`figure5`).
-- Open the gas supply and return valves located near the beamline (not on the gas handling system) but near the previous valve (these are two manual green valves shown on :numref:`figure6`). 
+- The gas supply and return valves located near the beamline (not on the gas handling system) but near the previous valve (these are two manual green valves shown on :numref:`figure6`) should already be open. 
 - Close the bypass valve on the gas handling system. This valve connects the gas inlet and outlet to the roughing pump.
 - Open the isobutane gas bottle.
 - Open the small black valve on the bottle passed the bottle regulator.
-- Make sure the green valves labelled as To/From IC on the gas handling system are all the way open.
+- Open the green valves labelled as To/From IC on the gas handling system all the way.
 - Open gas IN valve on the gas handling system.
 - Press pressure control button twice. You should see a small menu on the display with a bunch of choices, including :code:`PID Control`. Using the arrow keys, select this menu and press :code:`Enter`. Using the arrow keys, turn it ON and then press :code:`ESC`.
 - Close the micrometer at 100. 
