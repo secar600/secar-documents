@@ -328,7 +328,11 @@ To flow isobutane gas into this detector:
 .. figure:: Figures/IMG_2506.jpg
    :width: 50 %
 
-   The valve with a green handle is one of the two valves that supplies to and removes the gas from the detector. 
+   The valve with a green handle is one of the two valves that supplies to and removes the gas from the detector.
+   
+.. warning::
+
+   While filling the IC detector with gas, periodically check the pressure gauge on the focal plane 4 chamber (:code:`SCR_BTS35:CCG_D1878`). This is visible on the large rack near the B8 dipole. If the window of the IC (:math:`0.3\,{\mu}m` thick mylar foil) breaks, depending on its pressure the gas could harm the turbo pump, which is running at all times. In case of such an emergency, follow the instructions given in :numref:`IC_emergency`.
 
 To remove the gas out of the detector:
   
@@ -336,10 +340,28 @@ To remove the gas out of the detector:
 - Close the last beamline gate valve of SECAR (:code:`SCR_BTS35:BGV_D1877`).
 - Close the gas bottle and the small black valve on the gas bottle passed the regulator.
 - Close gas IN valve on the gas handling system.
-- Open bypass valve.
+- Open the bypass valve.
 - Open the needle valve (micrometer) all the way.
 - Turn OFF :code:`PID Control` by pressing pressure control button twice. You should see a small menu on the display with a bunch of choices, including :code:`PID Control`. Using the arrow keys, select this menu and press :code:`Enter`. Using the arrow keys, turn it OFF and then press :code:`ESC`.
-- Wait for some time until the gas is slowly pumped out. Once the pressure gauge on the gas handling system shows a rough value (:math:`10^{-1}` Torr):
+- Wait for some time until the gas is slowly pumped out. Once the pressure gauge on the gas handling system shows 0.1 Torr or lower:
+    
+    - Close the green valves labelled as To/From IC on the gas handling system.
+    - Leave the other two valves with green handles near the beamline open. 
+    - Slowly open the valve to the chamber (see :numref:`figure5`). This may trip the last cold cathode gauge (:code:`SCR_BST35:CCG_D1878`). If that was the case, wait for the gas to be pumped out and then turn ON this gauge again using the CS-Studio control page.
+   
+.. _IC_emergency:
+   
+What to Do in an Emergency
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If while filling the IC detector with isobutane, or anytime there is gas in the detector, the window breaks, follow the following instructions immediately:
+
+- Close the gas IN valve on the gas handling system.
+- Open the bypass valve found also on the gas handling system all the way.
+- Open the needle valve (micrometer) all the way.
+- Turn OFF :code:`PID Control` by pressing pressure control button twice. You should see a small menu on the display with a bunch of choices, including :code:`PID Control`. Using the arrow keys, select this menu and press :code:`Enter`. Using the arrow keys, turn it OFF and then press :code:`ESC`.
+- Close the gas bottle and the small black valve on the gas bottle passed the regulator.
+- Wait for some time until the gas is slowly pumped out. Once the pressure gauge on the gas handling system shows 0.1 Torr or lower:
     
     - Close the green valves labelled as To/From IC on the gas handling system.
     - Leave the other two valves with green handles near the beamline open. 
