@@ -37,12 +37,12 @@ This should install all the necessary packages.
 How to Install sauce Package
 ----------------------------
 
-Log into fishtank using an experimental user account. Clone the repository to the experimental account:
+Log into fishtank using an experimental user account. Clone the **master branch** of the following repository to the experimental account:
 
 .. code-block::
    :caption: How to clone sauce repository
         
-        git clone https://git.frib.msu.edu/secar/sauce.git
+        git clone https://github.com/dubiousbreakfast/sauce.git
 
 After cloning is done, install the package on the same user account (on fishtank) by running:
 
