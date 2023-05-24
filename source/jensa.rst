@@ -336,6 +336,7 @@ To quickly vent the system with air:
 
 - Make sure :code:`V1` is open.
 - Open the manual air vent valve (see :numref:`air_vent`) on the scroll pump slowly. Once the pressure gauges in the gas handling system read 730 – 760 Torr, the system is vented. Note that :code:`SCR_BTS34:CMG_D1465K` and :code:`SCR_BTS34:CMG_D1465M` will only read 100 Torr and 1 Torr, respectively, since these are the maximum pressures reached by these two gauges.
+- Once the system is fully vented, close the :numref:`air_vent` manual vent valve.
 
 To vent with dry nitrogen:
 
