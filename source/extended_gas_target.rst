@@ -939,6 +939,7 @@ What to Do prior to and during Hydrogen Operation?
 The hydrogen lead operator(s) and experts shall make sure that:
 
 - Prior to running the system with hydrogen, the prestart checklist (DCC Document FRIB-M41600-TD-001693-R001) is followed in full (see also :numref:`intentional_leak_section`).
+- Make sure the reserved nitrogen bottle has enough nitrogen, and that both its manual valves (one on the bottle and one metallic one near the bottle on the regulator) are open. The regulator should be set to 15 psi and the bottle should be at least half full.
 - After the prestart checklist is performed, the ReA3 high bay has to be swept and locked properly following the procedures found in DCC (FRIB-S30205-PR-001363-R001; and Procedure to Secure ReA3 Hall for JENSA Extended Target Hydrogen Operation – Credited Administrative Control with ESH Impact).
 - No personnel will be allowed to be present in the ReA3 high bay while the system is operating with hydrogen.
 
