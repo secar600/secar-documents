@@ -4,6 +4,15 @@ Vacuum System
 
 There are 9 vacuum systems in the SECAR system (not including Wien Filters). Two of those systems are located at the final focal plane.
 
++----------------+--------------+--------+---------------+---------------------------+
+| Magnets included | Cable Number | Name   | Serial Number | Digitizer Channel         |
++----------------+--------------+--------+---------------+---------------------------+
+|         Lower 4 Detectors from right to left:                                      |
++----------------+--------------+--------+---------------+---------------------------+
+| Beam Left      | 1            | BGO-1  | SFP244        | 0 – left card             |
++----------------+--------------+--------+---------------+---------------------------+
+| Beam Left      | 2            | BGO-2  | S1AA3651      | 1 – left card             |
++----------------+--------------+--------+---------------+---------------------------+
 .. list-table:: Title
    :widths: 25 15 15 15 15 15 
    :header-rows: 1
