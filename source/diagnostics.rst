@@ -6,7 +6,7 @@ This chapter presents a few instructions on how to operate SECAR diagnostics.
 
 .. note:: 
 
-Jorge/Fernando - the following probably needs updating for new interface
+   Jorge/Fernando - the following probably needs updating for new interface
 
 The CS-Studio page for SECAR diagnostics is found under SECAR Global Controls, "Diag. by Type" tab. Faraday cups, viewers and BCM can be inserted (In) or removed (Out) by pressing the corresponding button (left columns in the following figure). When the device is In, the LED light in the second button column (like FC_D1568 in the following figure) turns to   . For the slits, set the Gap to 0mm to close them (preventing beam transmission).
 
@@ -16,7 +16,7 @@ Viewers
 -------
 .. warning::
 
-   Prior to using viewers ensure beam intensities are adjusted according to the limits in <https://portal.frib.msu.edu/sites/dcc/pages/dcclink.aspx?WBS=M41600&Sub=PR&SN=001200>`_.
+   Prior to using viewers ensure beam intensities are adjusted according to the limits in the `SECAR Operations Procedure <https://portal.frib.msu.edu/sites/dcc/pages/dcclink.aspx?WBS=M41600&Sub=PR&SN=001200>`_.
 
 To move the viewers in and out, you may need to click on "Ignore" or "Override" check buttons before being able to move the viewers.
 
@@ -31,7 +31,7 @@ Faraday Cups
 ------------
 .. warning::
 
-   Prior to using Faraday Cups ensure biasing and vacuum procedures in <https://portal.frib.msu.edu/sites/dcc/pages/dcclink.aspx?WBS=M41600&Sub=PR&SN=001200>`_. are followed
+   Prior to using Faraday Cups ensure biasing and vacuum procedures in the `SECAR Operations Procedure <https://portal.frib.msu.edu/sites/dcc/pages/dcclink.aspx?WBS=M41600&Sub=PR&SN=001200>`_. are followed
 
 :code:`ReA_BTS34:FC_D1448` is controlled by ReA operators.
 
