@@ -4,6 +4,7 @@ Welcome to the official SECAR Manual
 ===============================
 
 This document was forked of Kiana's original draft. It will walk you through SECAR operation, data analysis, and maintenance. Safety (personnel and machine protection) relevant processes, training, operational envelopes etc are described in separate DCC documents and are referenced here when appropriate.
+**Make sure to refresh Browser to ensure you are viewing the current version**
 
 .. Contents:
 
