@@ -309,9 +309,10 @@ Pumping Down Beamline
 
 To pump down the beamline section that is vented:
 
+- Close the upstream and downstream gate valves
 - Use a new copper gasket on all flanges that were opened.
 - Close the open flanges and make sure their bolts are tightened down.
-- Close the vent valve(s).
+- Close the vent valve(s) by hand.
 - Put the rubber corks that I have provided in the vent valve's hose.
 - Make sure the roughing pump of the section is ON.
 - Slowly open the manual roughing valve and listen for any abnormal sound from the scroll pump. If the pump is too loud for too long, you may have a large leak.
@@ -322,6 +323,7 @@ To pump down the beamline section that is vented:
 - Turn ON the turbo pump from the :code:`Vac. by Type` page. 
 - When the turbo pump's speed is around 100 to 200 Hz, turn ON the cold cathode gauge on that section.
 - Once the turbo pump is at full speed (646 or 650 Hz for the Agilent pumps, 1000 Hz for the pfeiffer turbo pumps), reset the cold cathode gauge and the turbo pump using the :code:`Vac. by Type` page. 
+- In order to turn on the cold cathode gauge the pressure in the system has to be lower than 10E-5 Torr. There is an interlock preventing operation if the pressure is higher than that value (so there is no risk of damage). 
 
 .. warning::
 
@@ -467,8 +469,9 @@ Pumping Down Wien Filter Chambers
 
 If a Wien filter chamber is vented and has to be pumped down, do the following:
 
+- Close upstream and downstream gate valves if not closed already
 - Make sure the cooling water for the Wien filter turbo pump is up and running and there are no faults there. This can be verified from the bottom of the :code:`Vac. by Type` tab on the "SECAR Global Controls Page" of CS-Studio shown in :numref:`WF-water`.
-- Close the vent valve (see :numref:`WF_vent_valve`) and insert its provided rubber cork into the vent valve's tube.
+- Close the vent valve by hand (see :numref:`WF_vent_valve`) and insert its provided rubber cork into the vent valve's tube.
 - The turbo pump should be OFF and its gate valve should be closed.
 - The cryopump may or may not be ON but its gate valve should be closed.
 - Ensure the scroll pump is ON. The operation of this pump is manual.
