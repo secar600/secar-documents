@@ -3,7 +3,7 @@ Magnets
 =======
 
 .. note::
-   **Prior to operating the magnets follow the steps in the `SECAR Operations Procedure <https://portal.frib.msu.edu/sites/dcc/pages/dcclink.aspx?WBS=M41600&Sub=PR&SN=001200>`_.**
+   Prior to operating the magnets follow the steps in the `SECAR Operations Procedure <https://portal.frib.msu.edu/sites/dcc/pages/dcclink.aspx?WBS=M41600&Sub=PR&SN=001200>`_.
 
 
 The CS-Studio page for magnets is located under "SECAR Global Controls" page, "Magnets" tab, which is shown on :numref:`magnet_page`.
