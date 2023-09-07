@@ -14,7 +14,7 @@ The new :code:`SECAR_layout.opi` page in CS-Studio enables the users to insert F
 
 Viewers
 -------
-.. note::
+.. warning::
 
    Prior to using viewers ensure beam intensities are adjusted according to the limits in <https://portal.frib.msu.edu/sites/dcc/pages/dcclink.aspx?WBS=M41600&Sub=PR&SN=001200>`_.
 
@@ -29,7 +29,7 @@ The JNESA viewer at :code:`SCR_BTS35:VD_D1457` is a new viewer upstream of the e
 
 Faraday Cups
 ------------
-.. note::
+.. warning::
 
    Prior to using Faraday Cups ensure biasing and vacuum procedures in <https://portal.frib.msu.edu/sites/dcc/pages/dcclink.aspx?WBS=M41600&Sub=PR&SN=001200>`_. are followed
 
