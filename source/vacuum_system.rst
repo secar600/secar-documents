@@ -2,7 +2,75 @@
 Vacuum System
 =============
 
-This chapter describes what you need to know about SECAR's vacuum system.
+There are 9 vacuum systems in the SECAR system (not including Wien Filters). Two of those systems are located at the final focal plane.
+
+.. list-table:: Title
+   :widths: 25 15 15 15 15 15 
+   :header-rows: 1
+
+   * - Magnets included	
+     - Upstream gate valve (BGV_D)	
+     - Downstream gate valve (BGV_D)	
+     - Turbo pump (TMP_D)	
+     - Pirani /Baratron gauges
+     - Cold Cathode gauges (CCG_D)
+   * - B1-B2
+     - 1483
+     - 1515
+     - 1497
+     - CMG_D1509
+     - 1509
+   * - B1-B2 (spare)
+     - 
+     - 
+     - 1498		
+   * - Hex1-Q3
+     - 1515
+     - 1529
+     - 1515
+     - CMG_D1515
+     - 1515
+   * - Q4-Q6
+     - 1529
+     - 1575
+     - 1568
+     - CMG_D1562
+     - 1552 and 1562
+   * - Q7, WF1, Hex3
+     - 1575
+     - 1617
+     - 1612
+     - PG_D1612
+     - 1612
+   * - Oct1-B6
+     - 1617
+     - 1685
+     - 1638
+     - PG_D1658
+     - 1658
+   * - Q10-Q11
+     - 1685
+     - 1704
+     - 1688
+     - PG_D1697
+     - 1697
+   * - WF2
+     - 1704
+     - 1741
+     - 
+     - PG_D1741
+     - 1741
+   * - DL29 (removable section)
+     - 1741
+     - 1781
+     - 1773
+     - PG_D1773
+     - 1773
+
+Q12-Q15	1781	1853	1836	PG_D1815	1800
+Focal plane cross	1853	1877	1859	CMG_D1856	1856
+Focal plane box	1877		1878	CMG_D878	1878
+
 
 Foreline Vacumm Systems and Rough Pumps
 ---------------------------------------
