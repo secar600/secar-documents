@@ -3,7 +3,7 @@ Magnets
 =======
 
 .. note::
-   **Prior to operating the magnets follow the steps in the `SECAR Operations Procedure <https://portal.frib.msu.edu/sites/dcc/pages/dcclink.aspx?WBS=M41600&Sub=PR&SN=001200>`_. **
+   **Prior to operating the magnets follow the steps in the `SECAR Operations Procedure <https://portal.frib.msu.edu/sites/dcc/pages/dcclink.aspx?WBS=M41600&Sub=PR&SN=001200>`_.**
 
 
 The CS-Studio page for magnets is located under "SECAR Global Controls" page, "Magnets" tab, which is shown on :numref:`magnet_page`.
@@ -18,7 +18,7 @@ The optics file can be loaded from the "Enter optics filename:" entry located at
 
 Magnets are devided into 4 sections since SECAR has 4 focal planes. If "Section in Use?" is not checked for these divisions, those magnets in the sections not in use will not be affected by the operation, which includes scaling, zeroing current, turning ON/OFF, reseting, freezing ratios, etc.
 
-Prior to turning ON any of the SECAR magnets, you need to first turn ON the warning magnet light (yellow indicator on top left of this page). Once the warning light for existance of magnetic field near the SECAR magnets is turned ON, you can then turn ON individual magnets (On button on an individual magnet), or all magnets of a section via the On button visible at the end of each section. Similarly, magnets can be reset and turned OFF individually or combined in a section. The buttons that say "Zero", will turn the currents of all magnets of a section to zero. This is a useful feature to use at the end of an experiment to zero the currents of all magnets prior to turning them OFF section by section.
+Prior to turning ON any of the SECAR magnets, follow the steps in the `SECAR Operations Procedure <https://portal.frib.msu.edu/sites/dcc/pages/dcclink.aspx?WBS=M41600&Sub=PR&SN=001200>`_. You can then turn ON individual magnets (On button on an individual magnet), or all magnets of a section via the On button visible at the end of each section. Similarly, magnets can be reset and turned OFF individually or combined in a section. The buttons that say "Zero", will turn the currents of all magnets of a section to zero. This is a useful feature to use at the end of an experiment to zero the currents of all magnets prior to turning them OFF section by section.
 
 B1 and B2 have NMR probes. If the NMR signal is not locked, you will see an orange rectangle around the field readback. Once these magnets are turned ON and are set to some non-zero current and the NMR signal is locked on, the orange color disappears and the field remains constant unless the currents change. There is a toggle button near the field reading, with which one can change the range of the NMR probes: B1 high, B1 low, B2 high, and B2 low. The chosen range for these magnets is also indicated near the field readback.
 
