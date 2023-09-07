@@ -2,6 +2,10 @@
 Magnets
 =======
 
+Note
+
+Hydrogen operation is currently only allowed for the extended gas target.
+
 The CS-Studio page for magnets is located under "SECAR Global Controls" page, "Magnets" tab, which is shown on :numref:`magnet_page`.
 
 .. _magnet_page:
