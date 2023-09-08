@@ -26,7 +26,14 @@ This chapter presents the windowless extended gas target.
 
 .. note::
 
-   **Hydrogen operation is currently only allowed for the extended gas target.**
+   **Hydrogen operation is currently not authorized and is in the near future only forseen with the extended gas target.**
+
+Emergency response
+------------------
+If in an emergency situation (such as a building evacuation or a shelter in place order) the gas target needs to be left anattended for an extended period of time, use the following procedures to bring it into a safe state: 
+
+For He operation follow: `Emergency Response Procedure for SECAR
+Extended and Jet Gas Targets During Helium Operation <https://portal.frib.msu.edu/sites/dcc/pages/dcclink.aspx?WBS=M41600&Sub=PR&SN=001537>`_.
 
 .. _CSS:
 
