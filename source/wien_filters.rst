@@ -2,9 +2,14 @@
 Wien Filters
 ============ 
 
-Fernando Montes and Ken Schrock already know how to operate the Wien filters of SECAR, so I will not bother write the instructions here. One has to have special permission to operate these devices, which comes with training given by Fernando and Ken.
+.. warning::
+   Wien Filters can only be operated by specifically trained personnel following the `SECAR Wien Filter Conditioning and
+Operation Procedure <https://portal.frib.msu.edu/sites/dcc/pages/dcclink.aspx?WBS=M41600&Sub=PR&SN=001005>`_.
 
-a few things I would like to add are discussed in the following:
+
+This needs to be filled in by the current Wien Filter Lead Operators. 
+
+A few notes from Kiana:
 
 - If you need to increase the allowed current on any electrode, make sure you first set the "High Current" to the desired :code:`I Setpoint + 10`. This will ensure that this "High Current" is not reached. In other words, it should always be 10 A higher than the set point for current. Otherwise, if "High Current" is smaller than the set point for current, it will interefer with how high the current is allowed to reach by the PLC.
 
