@@ -1,7 +1,7 @@
 .. This file should at least contain the root `toctree` directive.
 
-Welcome to the official SECAR Manual
-===============================
+Welcome to the SECAR Manual
+===========================
 
 This document was forked of Kiana's original draft and is a manual on how to do various things related to SECAR and JENSA operation. Formal training recorded in the FRIB training database is required for all SECAR and JENSA operation. Processes and requirements for operation that ensure safe operation, such as saftey processes, operational parameter envelopes, training etc. are descrivbed in separate DCC documents and are referenced here when appropriate: 
 
