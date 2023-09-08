@@ -239,7 +239,7 @@ To vent the SECAR beamline sections:
 - Wait till they spin down to zero and their speed reduces to 0 Hz.
 - Once the turbo pumps are at 0 Hz, close the manual roughing valve(s) to the scroll pump(s) for the section to be vented.
 - The roughing pump(s) can be left ON.
-- If dry nitrogen is available for that section (this is the case for a large portion of the SECAR beamline):
+- [Fernando: shouldn't we specify which sections are vented with dry nitrogen and which not? Why not all?] If dry nitrogen is available for that section (this is the case for a large portion of the SECAR beamline):
  
     - Hook up the regulator shown in :numref:`nitrogen_vent_line` to the laboratory dry nitrogen supply line. 
     - Remove the rubber cork attached to the vent valve of the beamline section that is going to be vented.
@@ -314,16 +314,16 @@ To pump down the beamline section that is vented:
 - Close the open flanges and make sure their bolts are tightened down.
 - Close the vent valve(s) by hand.
 - Put the rubber corks that I have provided in the vent valve's hose.
-- Make sure the roughing pump of the section is ON.
+- [Fernando - is this manual or through high level controls?] Make sure the roughing pump of the section is ON (they should be physically located beneath or close to the turbo pump)
 - Slowly open the manual roughing valve and listen for any abnormal sound from the scroll pump. If the pump is too loud for too long, you may have a large leak.
 - Monitor the pressure gauge in the beamline:
 
     - If it is a Pirani gauge, wait until it comes down to 50 mTorr before starting the turbo pump.
     - If it is a Barathron gauge, wait until it showes 100 mTorr or 0 before starting the turbo pump.
-- Turn ON the turbo pump from the :code:`Vac. by Type` page. 
+- [Fernando - most transferred from your document ok?] Turn ON the turbo pump from the :code:`Vac. by Type` page. The On/Off/Rst button should have a RED color from vacuum interlock. Toggle it to reset the system and clear the interlock. Once the LED light is BLUE, toggle the menu to ON, and it should turn GREEN.  The indicators to the right indicate if there is an interlock preventing the turbo pump operation. Once the pump is on, the indicator speed should increase. The Power indicator may exceed 45W until the pump is at full speed (650 Hz for pumps upstream of D1568 and 1000 Hz for pumps downstream).
 - When the turbo pump's speed is around 100 to 200 Hz, turn ON the cold cathode gauge on that section.
 - Once the turbo pump is at full speed (646 or 650 Hz for the Agilent pumps, 1000 Hz for the pfeiffer turbo pumps), reset the cold cathode gauge and the turbo pump using the :code:`Vac. by Type` page. 
-- In order to turn on the cold cathode gauge the pressure in the system has to be lower than 10E-5 Torr. There is an interlock preventing operation if the pressure is higher than that value (so there is no risk of damage). 
+- [Fernando: from yours] In order to turn on the cold cathode gauge the pressure in the system has to be lower than 10E-5 Torr. There is an interlock preventing operation if the pressure is higher than that value (so there is no risk of damage). 
 
 .. warning::
 
@@ -369,10 +369,10 @@ Venting Wien Filter Chambers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To vent the Wien filter chambers:
+[Fernando: you have an "open RV-D1612" step in this procedure that I don't see - is that the pneumatic valve?]
 
 - Close the up- and downstream beamline gate valves that separate the filter from the rest of the beamline.
-- Turn OFF the high voltage on each electrode and both the high voltage power supplies (this assumes that you are a Wien filter operator, in which case, you should know how to do this). **If you are not a Wien filter operator, ask SECAR device physicist, Fernando Montes or Ken Schrock to do this step.**
-- Turn OFF the dipole magnet if it is running (this assumes that you are a Wien filter operator, in which case, you should know how to do this). **If you are not a Wien filter operator, ask SECAR device physicist, Fernando Montes or Ken Schrock to do this step.**
+- If the Wien filter high voltage or the Wien filter dipole magnet are on, **ask an authorized Wien Filter Operator to turn them off** (see FRIB-M41600-PR-001005). 
 - Close the cryo gate valve:
 
     - :code:`SCR_BTS35:GV_D1580` for Wien filter 1.
@@ -381,10 +381,12 @@ To vent the Wien filter chambers:
     
     - :code:`SCR_BTS35:CCG_D1612` for Wien filter 1.
     - :code:`SCR_BTS35:CCG_D1709` for Wien filter 2.
-    - This action will close the turbo gate valves:
+
+- This action will close the turbo gate valves:
     
-        - :code:`SCR_BTS35:TGV_D1612` for Wien filter 1.
-        - :code:`SCR_BTS35:TGV_D1709` for Wien filter 2.
+    - :code:`SCR_BTS35:TGV_D1612` for Wien filter 1.
+    - :code:`SCR_BTS35:TGV_D1709` for Wien filter 2.
+
 - To be on the safe side:
   
     - Shut down the cryopump (see :numref:`shutdown_cryo`).
@@ -404,6 +406,9 @@ To vent the Wien filter chambers:
     - Make sure the cleanroom is properly set up and its fan is running for at least 1 day before opening the chambers.
 - DO NOT USE AIR TO VENT.
 - Use dry nitrogen for venting. The vacuum group can help you set this up. Connect dry nitrogen to the vent valve (see :numref:`WF_vent_valve`).
+
+.. Warning
+
 - Open the vent valve while monitoring the pressure gauge of the system:
 
     - :code:`SCR_BTS35:PG_D1612` for Wien filter 1.
@@ -470,12 +475,12 @@ Pumping Down Wien Filter Chambers
 If a Wien filter chamber is vented and has to be pumped down, do the following:
 
 - Close upstream and downstream gate valves if not closed already
-- Make sure the cooling water for the Wien filter turbo pump is up and running and there are no faults there. This can be verified from the bottom of the :code:`Vac. by Type` tab on the "SECAR Global Controls Page" of CS-Studio shown in :numref:`WF-water`.
+- [Fernando: added your notes on cooling water - in your writeup this is done after the scroll pump is connected - does that matter?] Make sure the cooling water for the Wien filter turbo pump is up and running and there are no faults there. This can be verified from the bottom of the :code:`Vac. by Type` tab on the "SECAR Global Controls Page" of CS-Studio shown in :numref:`WF-water`. You may have to open SV_D1580 by hand and open :code:`SV_1612` (Solenoid) in the Vac. By Type page. It is located on top of the FP2 chamber. This will allow chilled water to the turbo pump D1612 controller (see :numref:`WF_water` and :numref:`WF_waterline`)
 - Close the vent valve by hand (see :numref:`WF_vent_valve`) and insert its provided rubber cork into the vent valve's tube.
 - The turbo pump should be OFF and its gate valve should be closed.
 - The cryopump may or may not be ON but its gate valve should be closed.
 - Ensure the scroll pump is ON. The operation of this pump is manual.
-- Open the two manual valves that are open in the :numref:`WF_rough` photo: open the one that is on the foreline of the turbo pump first, then slowly open the roughing valve right on the scroll pump. The manual valve used for leak checking has to be kept closed.
+- [Fernando: you have RV_D1612 to be opened - is this one of these?] Open the two manual valves that are open in the :numref:`WF_rough` photo: open the one that is on the foreline of the turbo pump first, then slowly open the roughing valve right on the scroll pump. The manual valve used for leak checking has to be kept closed.
 - Make sure the foreline pressure visible on the foreline gauge is going down.
 - Using the :code:`GVs` tab on the CS-Studio "SECAR Global Controls" page, open the pneumatic valve upstream of the Wien filter's turbo pump shown in :numref:`RV`.
 - You are now pumping on the chamber.
@@ -495,7 +500,7 @@ If a Wien filter chamber is vented and has to be pumped down, do the following:
         - If the desired turbo is for Wien filter 2, click on the :code:`SCR_BTS35:TMP_D1709` button.
         - Click on the :code:`RESET` button.
         - Click on the green :code:`START` button.
-        - Monitor the turbo pump's measured speed. When it is at 13500 rpm, the turbo pump is fully ON and at speed. The warning indicators will turn green (no fault) when the speed is around 12000 rpm or so.
+        - [Fernando: in your writeup final speed is 27000 rpm?] Monitor the turbo pump's measured speed. When it is at 13500 rpm, the turbo pump is fully ON and at speed. The warning indicators will turn green (no fault) when the speed is around 12000 rpm or so.
 - Once the turbo pump is up and running at full speed, then you can open the turbo gate valve (using the :code:`GVs` tab of the CS-Studio "SECAR Global Controls" page) only if:
 
     - The turbo pump has no fault.
@@ -507,8 +512,8 @@ If a Wien filter chamber is vented and has to be pumped down, do the following:
 - Once the turbo gate valve is open:
 
     - Reset the cold cathode gauge.
-    - Turn ON the cold cathode gauge.
-    - Turn off the turbo gate valve bypass by commanding a new value of 0 to this PV: :code:`SCR_BTS35:TGV_D1612:BYP_CMD` (for Wien filter 1) and :code:`SCR_BTS35:TMP_D1709:BYP_CMD` (for Wien filter 2), which ever is being done.
+    - [Fernando: added number - is this only for WF1?] Turn ON the cold cathode gauge :code:`CCG_D1612`.
+    - [Fernando: this sounds a bit different - ok?] Turn off the turbo gate valve bypass by commanding a new value of 0 to this PV: :code:`SCR_BTS35:TGV_D1612:BYP_CMD` (for Wien filter 1) and :code:`SCR_BTS35:TMP_D1709:BYP_CMD` (for Wien filter 2), which ever is being done.
 - Monitor the cold cathode gauge and ensure the pressure is coming down.
 - If the cryopump is already ON:
 
