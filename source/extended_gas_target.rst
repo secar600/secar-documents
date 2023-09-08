@@ -30,6 +30,7 @@ This chapter presents the windowless extended gas target.
 
 Emergency response
 ------------------
+
 If in an emergency situation (such as a building evacuation or a shelter in place order) the gas target needs to be left anattended for an extended period of time, use the following procedures to bring it into a safe state: 
 
 For He operation follow: `Emergency Response Procedure for SECAR
