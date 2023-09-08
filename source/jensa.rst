@@ -15,7 +15,7 @@ Currently, JENSA's controls are partly automatic, and partly still manual. This 
 
 .. warning::
 
-   **Hydrogen operation is currently not allowed for the jet target.**
+   **Hydrogen operation is currently not authorized.**
 
 The JENSA target's controls can be found in :numref:`CSS`. The symbols on this page are shown in :numref:`symbols_table`. This target utilizes a PDC Machines, Inc. PDC-4-100-500 (15096) diaphragm compressor for the JENSA helium jet target. This compressor outputs a maximum 400-psi discharge pressure to maintain the jet target at a high pressure. :numref:`GHS` shows the jet target's GHS.
 
