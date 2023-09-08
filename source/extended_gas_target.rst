@@ -704,11 +704,7 @@ If for some weird reason, :code:`vent` mode has some issue and you cannot use it
 Emergency Shutdown Procedure for Non-Explosive Gas
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- If the system is in :code:`pump`, :code:`vent`, or :code:`run` mode of operation, the system is already in a safe state and can be left unattended. The procedure is then completed.
-- If the system is in :code:`fill` mode:
-
-    - Set :code:`MF2` to 0 sccm (this is done by clicking on :code:`MF2` indicator on CS-Studio (see :numref:`CSS_Screen`) and then changing the set point to 0 sccm)
-    - Switch to :code:`pump` mode by clicking on the :code:`PUMP` button found on the right hand side of :numref:`CSS_Screen` under "Operating Mode Control". This completes the procedure.
+see `Emergency Response Procedure for SECAR Extended and Jet Gas Targets During Helium Operation <https://portal.frib.msu.edu/sites/dcc/pages/dcclink.aspx?WBS=M41600&Sub=PR&SN=001537>`_.
 
 How to Change the Non-Explosive Gas Bottle
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -781,6 +777,10 @@ Operation of the Extended Gas Target with Hydrogen
 --------------------------------------------------
 
 This section describes the specifics of the extended gas target while it is operated with hydrogen. 
+
+.. warning::
+
+    Operation with hydrogen is currently not permitted. This section is still in draft stage. 
 
 .. warning::
 
