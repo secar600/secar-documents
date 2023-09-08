@@ -284,6 +284,8 @@ Turning OFF the JET
 Emergency Shutdown
 ------------------
 
+If there is an emergency and you need to leave the building follow the `Emergency Response Procedure for SECAR Extended and Jet Gas Targets During Helium Operation <https://portal.frib.msu.edu/sites/dcc/pages/dcclink.aspx?WBS=M41600&Sub=PR&SN=001537>`_
+
 If something goes wrong while you are turning the jet ON/OFF:
 
 - Close :code:`V12` and then :code:`V2`.
@@ -291,16 +293,6 @@ If something goes wrong while you are turning the jet ON/OFF:
 - Close the jet inlet (:math:`V_{in}` also known as :code:`V14`).
 - The compressor has shut itself down by then.
 - If the last DV650 pump shuts itself down due to a high load, wait till it spins down to zero and then restart the pump by resetting the fault. The control panel is shown in :numref:`figure1`.
-
-If there is an emergency and you need to leave the building:
-
-- Turn OFF power to Si-detectors in the target chamber.
-- Enter the ReA3 vault and open the control software (:numref:`CSS_Screen`) from the computer in the lab.
-- Make sure the operating mode is selected to be :code:`MAN` mode.
-- Close :code:`V12` and then :code:`V2` using the control page of the gas target.
-- Open :code:`V1` and make sure the manual roughing valve (:code:`VROUGH`) to the scroll pump is all the way open.
-- Close the jet inlet valve (:math:`V_{in}` also known as :code:`V14`). This is a small hand valve with a green handle installed on the gas target near the panel for the Roots blower pumps (see :numref:`Rootspump_rack`).
-- The compressor will shut itself down. This completes the procedure.
 
 Venting JENSA
 -------------
