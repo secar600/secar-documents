@@ -475,7 +475,7 @@ Pumping Down Wien Filter Chambers
 If a Wien filter chamber is vented and has to be pumped down, do the following:
 
 - Close upstream and downstream gate valves if not closed already
-- [Fernando: added your notes on cooling water - in your writeup this is done after the scroll pump is connected - does that matter?] Make sure the cooling water for the Wien filter turbo pump is up and running and there are no faults there. This can be verified from the bottom of the :code:`Vac. by Type` tab on the "SECAR Global Controls Page" of CS-Studio shown in :numref:`WF-water`. You may have to open SV_D1580 by hand and open :code:`SV_1612` (Solenoid) in the Vac. By Type page. It is located on top of the FP2 chamber. This will allow chilled water to the turbo pump D1612 controller (see :numref:`WF_water` and :numref:`WF_waterline`)
+- [Fernando: CHECK added your notes on cooling water - in your writeup this is done after the scroll pump is connected - does that matter?] Make sure the cooling water for the Wien filter turbo pump is up and running and there are no faults there. This can be verified from the bottom of the :code:`Vac. by Type` tab on the "SECAR Global Controls Page" of CS-Studio shown in :numref:`WF-water`. You may have to open SV_D1580 by hand and open :code:`SV_1612` (Solenoid) in the Vac. By Type page. It is located on top of the FP2 chamber. This will allow chilled water to the turbo pump D1612 controller (see :numref:`WF_water` and :numref:`WF_waterline`)
 - Close the vent valve by hand (see :numref:`WF_vent_valve`) and insert its provided rubber cork into the vent valve's tube.
 - The turbo pump should be OFF and its gate valve should be closed.
 - The cryopump may or may not be ON but its gate valve should be closed.
