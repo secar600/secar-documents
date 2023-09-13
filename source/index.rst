@@ -3,7 +3,7 @@
 Welcome to the SECAR Manual
 ===========================
 
-This document was forked off Kiana's original draft and is a manual on how to do various things related to SECAR and JENSA operation. Formal training recorded in the FRIB training database is required for all SECAR and JENSA operation. Processes and requirements for operation that ensure safe operation, such as saftey processes, operational parameter envelopes, training etc. are descrivbed in separate DCC documents and are referenced here when appropriate: 
+This document was forked off Kiana's original draft and is a manual on how to do various things related to SECAR and JENSA operation. Formal training recorded in the FRIB training database is required for all SECAR and JENSA operation. Processes and requirements for operation that ensure safe operation, such as saftey processes, operational parameter envelopes, training etc. are described in separate DCC documents and are referenced here when appropriate: 
 
 - `SECAR Operations Procedure <https://portal.frib.msu.edu/sites/dcc/pages/dcclink.aspx?WBS=M41600&Sub=PR&SN=001200>`_
 - `SECAR Wien Filter Conditioning and Operation Procedure <https://portal.frib.msu.edu/sites/dcc/pages/dcclink.aspx?WBS=M41600&Sub=PR&SN=001005>`_
