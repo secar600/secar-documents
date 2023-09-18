@@ -759,11 +759,11 @@ Interlocks that are put in place for operation of the extended gas target are su
 - A voice alarm will be triggered in the FRIB control room if the oxygen level in the system reaches :math:`0.4\%`.
 - A standard Phoebus alarm will be triggered if the oxygen level in the system reaches :math:`0.04\%`.
 - If the system is in :code:`vent` or :code:`purge` mode, and :code:`MF6` flow rate reads :math:`<\,70\%` of its set value, :code:`V15` valve will be automatically opened after 10 seconds to ensure constant source of dry nitrogen by opening the valve to the reserved nitrogen bottle.
-- If the system is in :code:`run` or :code:`fill` mode and any of the following occur, the system is automatically switched to :code:`purge` mode to ensure system functions within its safety operating envelope:
+- If the system is in :code:`run` or :code:`fill` mode and any of the following occur, the system is automatically switched to :code:`purge` mode. The purpose of these interlocks is to react to an abnormal condition (such as a leak) by triggering on significant changes in pressure. They can be adjusted to the chosen operating conditions (i.e. target cell pressure) for a specific experiment. 
     
-    - If the pressure in the gas target, read by G11 capacitance manometer (:code:`SCR_BTS34:CMG_D1465K`), reaches 25 Torr.
-    - If the pressure read by capacitance manometer G2 (:code:`SCR_BTS34:CMG_D1465B`: foreline pressure) reaches 500 Torr.
-    - If the pressure read by capacitance manometer G3 (:code:`SCR_BTS34:CMG_D1465C`: pressure at the last DV650 pump) reaches 20 Torr.
+    - Gas target pressure, read by G11 capacitance manometer (:code:`SCR_BTS34:CMG_D1465K`), exceeds set maxumum value (50 Torr 9/18/2022).
+    - Foreline pressire, read by capacitance manometer G2 (:code:`SCR_BTS34:CMG_D1465B`) exceeds set maximum value (900 Torr 9/18/2022).
+    - Inlet pressure of the last DV650 pump, read by capacitance manometer G3 (:code:`SCR_BTS34:CMG_D1465C`) reaches 20 Torr.
     - If the pressure anywhere else in the system (read by any of the capacitance manometers G5, G9, or G10, which are :code:`SCR_BTS34:CMG_D1465E`, :code:`SCR_BTS34:CMG_D1465I`, and :code:`SCR_BTS34:CMG_D1465J`, respectively) reaches 10 Torr.
     - If the hydrogen lead operator(s) or the experts click on the emergency stop (|emergencystop|) software button, it triggers a controlled purge of hydrogen.
 - The positive HV supply card for in-vacuum detectors will be disabled and voltages from all the channels of this card are reduced to 0V (ramp down rate :math:`=` 50 V/s) if the system is in :code:`run` mode AND:
@@ -772,6 +772,9 @@ Interlocks that are put in place for operation of the extended gas target are su
     - The pressure in the gas target, read by G11 capacitance manometer (:code:`SCR_BTS34:CMG_D1465K`), reaches 25 Torr OR
     - The oxygen monitor reads above :math:`0.4\%`.
 - :code:`V21` valve remains closed and disabled at all times unless the system is in :code:`vent` or :code:`MAN` modes of operation. Only in these two modes of operation, :code:`V21` control is enabled and it can be opened by the operator if she/he desires to vent the system faster. This ensures the system can only be vented to atmosphere after purging the hydroge out of the system.
+
+Interlock settings can be read off the MKS controllers by selecting the channel of interest using :code:`Channel Setup` (see Fig. :numref:`MKS5_channel_setup` for an example display). 
+Each channel can trigger 2 interlocks indicated at the bottom of the screen. A pressure maximum is implemented as "ENABLE" below a maximum pressure. Unused interlocks are sending a CLEAR. 
 
 Operation of the Extended Gas Target with Hydrogen
 --------------------------------------------------
