@@ -9,7 +9,7 @@ This document was forked off Kiana's original draft and is a manual on how to do
 - `SECAR Wien Filter Conditioning and Operation Procedure <https://portal.frib.msu.edu/sites/dcc/pages/dcclink.aspx?WBS=M41600&Sub=PR&SN=001005>`_
 - `Emergency Response Procedure for SECAR Extended and Jet Gas Targets During Helium Operation <https://portal.frib.msu.edu/sites/dcc/pages/dcclink.aspx?WBS=M41600&Sub=PR&SN=001537>`_
 
-These documents define an envelope for all SECAR and JENSA operation. This manual describes how to do certain operational activities within that envelope. 
+These documents define an envelope for all SECAR and JENSA operation. This manual describes how to use SECAR within that envelope. 
 It will walk you through SECAR operation, data analysis, and maintenance. 
 
 **Make sure to refresh Browser to ensure you are viewing the current version**
