@@ -18,9 +18,45 @@ Viewers
 
    Prior to using viewers ensure beam intensities are adjusted according to the limits in the `SECAR Operations Procedure <https://portal.frib.msu.edu/sites/dcc/pages/dcclink.aspx?WBS=M41600&Sub=PR&SN=001200>`_.
 
-To move the viewers in and out, you may need to click on "Ignore" or "Override" check buttons before being able to move the viewers.
+Viewers are controlled from the Diagnostics tab and can be moved in and out using the corresponding buttons. They are named with a "VD" in it, for example :code:`SCR_BTS34:VD_D1783`. To move the viewers in and out, you may need to click on "Ignore" or "Override" check buttons before being able to move the viewers.
 
-To turn ON/OFF the cameras, click on the associated "Settings" button. Then, click on the "Start" button next to "Acquire". The light can be turned ON/OFF using another process variable that has "LT" in it, for example: :code:`SCR_BTS34:LT_D1457`.
+To turn ON/OFF the cameras, click on the associated "Settings" button. Then, click on the "Start" button to start acquisition. The red indicator should then turn green. The "Details Menu" brings up a new page where many viewer settings can be adjusted (see :numref:`Viewer_Details`). The important parameters to set properly are gain, exposure time, and acquire period. 
+
+The light can be turned ON/OFF using another process variable that has "LT" in it, for example: :code:`SCR_BTS34:LT_D1457`. This allows to see the viewer markings, but should otherwise be turned off to use the viewer for beam measurements. 
+
+Images are viewed by using Viola. To start up Viola:
+- start the viola shell script from the command line in the experiment account: :code:`start_viola.sh --setting ~/Documents/viola_settings/VD_D1783.json`. There should be a json file for each SECAR viewer that contains the specific viewer settings. 
+- this should bring up a new window (see :numref:`Viewer_Viola1`). 
+- click "Live" to enable live viewing of the viewer. The text "Live" should turn red. 
+- Adjust Threshold and Background sliders to enable the software to find intensity peak position, width, etc
+- To read x and y positions make sure the viewer is calibrated (see below). Viewers are usally calibrated so that the center of the viewer is X=0 and Y=0. However, the SECAR viewers are not perfectly aligned. Refer to the run plan or Portal (or Fernando) to get the current alignment information that relates X=0 and Y=0 on the viewer to the nominal beam axis of SECAR.  
+
+**Save a Viewer Image**
+Viewer images can be saved, for example for placement in the ELOG. To save a viewer image
+- Press stop button (next to Live) to pause live view
+- Click the button with the floppy disk icon to save the image – a typical path and file name (adapt to the viewer in use) is Documents/Pictures/D1836_year_month_day_hour_minute_viola.png
+
+**Calibration**
+
+The viewers need to be calibrated so Viola can display x and y coordinates with real distances. Viewers are usually calibrated such that X=0 and Y=0 corresponds to the center of the viewer (not necessarily the nominal beam axis). If a viewer is not calibrated yet, you can calibrate it with the following steps
+- in the Viola window select menu items Option -> Transform and Trim. This opens a new window (see :numref:`Viewer_Viola2`). 
+- in that new window verify that image size is set correctly – it needs to match the "Details Menu" information for the respective viewer (in the right column)
+- Drag the red rectangle corners with mouse to align with the viewer rectangular frame lines at the edge of the viewer that have known dimensions. Those dimensions are entered in “Fiducials” and can be obtained from the viewer machine drawings located on the Portal under SECAR -> Documentation -> Diagnostics -> Viewer.
+- Press Apply
+
+**Background subtraction**
+
+Viola can subtract background from the viewer image to have a clearer display of the beam. You can set up background subtraction with the following steps. This has to be redone each time viewer settings are changed (or any other effects change the background). 
+- Make sure camera settings are final, turn light on
+- In Viola menu select Option -> Preference
+- In the new window check the box “Subtract Background image” (see :numref:`Viewer_Viola3`)
+- Press the button with the “shutter” symbol on the far right 
+- A pop up window will come up (can be behind the window!) – select ok – saves background automatically in a predefined path
+- Check the box “Normalize Raw Data”
+- Close window 
+
+
+
 
 JENSA Viewer
 ~~~~~~~~~~~~
