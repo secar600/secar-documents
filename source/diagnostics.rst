@@ -26,6 +26,8 @@ To turn ON/OFF the cameras, click on the associated "Settings" button. Then, cli
 .. figure:: Figures/Viewer_Details.jpeg
    :width: 50 %
 
+   "Viewer Details" page
+
 The light can be turned ON/OFF using another process variable that has "LT" in it, for example: :code:`SCR_BTS34:LT_D1457`. This allows to see the viewer markings, but should otherwise be turned off to use the viewer for beam measurements. 
 
 Images are viewed by using Viola. To start up Viola:
@@ -39,6 +41,9 @@ Images are viewed by using Viola. To start up Viola:
 .. _Viewer_Viola1:
 .. figure:: Figures/Viewer_Viola1.jpeg
    :width: 50 %
+
+   Viola viewer main window.
+
 
 **Save a Viewer Image**
 
@@ -60,6 +65,8 @@ The viewers need to be calibrated so Viola can display x and y coordinates with 
 .. figure:: Figures/Viewer_Viola2.jpeg
    :width: 50 %
 
+   Viola viewer calibration window.
+
 **Background subtraction**
 
 Viola can subtract background from the viewer image to have a clearer display of the beam. You can set up background subtraction with the following steps. This has to be redone each time viewer settings are changed (or any other effects change the background). 
@@ -75,6 +82,8 @@ Viola can subtract background from the viewer image to have a clearer display of
 .. _Viewer_Viola3:
 .. figure:: Figures/Viewer_Viola3.jpeg
    :width: 50 %
+
+   Viola viewer background subtraction window.
 
 
 
