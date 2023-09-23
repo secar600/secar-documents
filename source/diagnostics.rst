@@ -22,6 +22,10 @@ Viewers are controlled from the Diagnostics tab and can be moved in and out usin
 
 To turn ON/OFF the cameras, click on the associated "Settings" button. Then, click on the "Start" button to start acquisition. The red indicator should then turn green. The "Details Menu" brings up a new page where many viewer settings can be adjusted (see :numref:`Viewer_Details`). The important parameters to set properly are gain, exposure time, and acquire period. 
 
+.. _Viewer_Details:
+.. figure:: Figures/Viewer_Details.jpeg
+   :width: 50 %
+
 The light can be turned ON/OFF using another process variable that has "LT" in it, for example: :code:`SCR_BTS34:LT_D1457`. This allows to see the viewer markings, but should otherwise be turned off to use the viewer for beam measurements. 
 
 Images are viewed by using Viola. To start up Viola:
@@ -31,6 +35,10 @@ Images are viewed by using Viola. To start up Viola:
 - click "Live" to enable live viewing of the viewer. The text "Live" should turn red. 
 - Adjust Threshold and Background sliders to enable the software to find intensity peak position, width, etc
 - To read x and y positions make sure the viewer is calibrated (see below). Viewers are usally calibrated so that the center of the viewer is X=0 and Y=0. However, the SECAR viewers are not perfectly aligned. Refer to the run plan or Portal (or Fernando) to get the current alignment information that relates X=0 and Y=0 on the viewer to the nominal beam axis of SECAR.  
+
+.. _Viewer_Viola1:
+.. figure:: Figures/Viewer_Viola1.jpeg
+   :width: 50 %
 
 **Save a Viewer Image**
 
@@ -48,6 +56,10 @@ The viewers need to be calibrated so Viola can display x and y coordinates with 
 - Drag the red rectangle corners with mouse to align with the viewer rectangular frame lines at the edge of the viewer that have known dimensions. Those dimensions are entered in “Fiducials” and can be obtained from the viewer machine drawings located on the Portal under SECAR -> Documentation -> Diagnostics -> Viewer.
 - Press Apply
 
+.. _Viewer_Viola2:
+.. figure:: Figures/Viewer_Viola2.jpeg
+   :width: 50 %
+
 **Background subtraction**
 
 Viola can subtract background from the viewer image to have a clearer display of the beam. You can set up background subtraction with the following steps. This has to be redone each time viewer settings are changed (or any other effects change the background). 
@@ -60,6 +72,9 @@ Viola can subtract background from the viewer image to have a clearer display of
 - Check the box “Normalize Raw Data”
 - Close window 
 
+.. _Viewer_Viola3:
+.. figure:: Figures/Viewer_Viola3.jpeg
+   :width: 50 %
 
 
 
