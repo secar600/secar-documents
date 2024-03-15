@@ -20,7 +20,7 @@ Viewers
 
 Viewers are controlled from the Diagnostics tab and can be moved in and out using the corresponding buttons. They are named with a "VD" in it, for example :code:`SCR_BTS34:VD_D1783`. To move the viewers in and out, you may need to click on "Ignore" or "Override" check buttons before being able to move the viewers.
 
-To turn ON/OFF the cameras, click on the associated "Settings" button. Then, click on the "Start" button to start acquisition. The red indicator should then turn green. The "Details Menu" brings up a new page where many viewer settings can be adjusted (see :numref:`Viewer_Details`). The important parameters to set properly are gain, exposure time, and acquire period. 
+To turn ON/OFF the cameras, click on the associated "Settings" button. Then, click on the "Start" button to start acquisition. The red indicator should then turn green. The "Details Menu" brings up a new page where many viewer settings can be adjusted (see :numref:`Viewer_Details`). The important parameters to set properly are gain, exposure time, and acquire period. Good choices are 30-50, 
 
 .. _Viewer_Details:
 .. figure:: Figures/Viewer_Details.jpeg
@@ -32,7 +32,7 @@ The light can be turned ON/OFF using another process variable that has "LT" in i
 
 Images are viewed by using Viola. To start up Viola:
 
-- Start the viola shell script from the command line in the experiment account: :code:`start_viola.sh --setting ~/Documents/viola_settings/VD_D1783.json`. There should be a json file for each SECAR viewer that contains the specific viewer settings. 
+- Start the viola shell script from the command line in the experiment account: :code:`start_viola.sh --setting ~/Documents/viola_settings/VD_D1783.json`. There should be a json file for each SECAR viewer that contains the specific viewer settings. If Viola is already running you can select a new json file for a new viewer in File -> Open Settings.
 - This should bring up a new window (see :numref:`Viewer_Viola1`). 
 - Click "Live" to enable live viewing of the viewer. The text "Live" should turn red. 
 - Adjust Threshold and Background sliders to enable the software to find intensity peak position, width, etc
@@ -50,7 +50,8 @@ Images are viewed by using Viola. To start up Viola:
 Viewer images can be saved, for example for placement in the ELOG. To save a viewer image
 
 - Press stop button (next to Live) to pause live view
-- Click the button with the floppy disk icon to save the image – a typical path and file name (adapt to the viewer in use) is Documents/Pictures/D1836_year_month_day_hour_minute_viola.png
+- Goto File and "Save Results" - this is recommended as it saves all settings that go along with the image. It will create a png, a tiff, and a json file with the viewer settings. 
+- Alternatively you can just save the image by clicking the button with the floppy disk icon  – a typical path and file name (adapt to the viewer in use) is Documents/Pictures/D1836_year_month_day_hour_minute_viola.png
 
 **Calibration**
 
@@ -58,7 +59,7 @@ The viewers need to be calibrated so Viola can display x and y coordinates with 
 
 - Select menu items Option -> Transform and Trim in the Viola window. This opens a new window (see :numref:`Viewer_Viola2`). 
 - Verify in that new window that image size is set correctly – it needs to match the "Details Menu" information for the respective viewer (in the right column)
-- Drag the red rectangle corners with mouse to align with the viewer rectangular frame lines at the edge of the viewer that have known dimensions. Those dimensions are entered in “Fiducials” and can be obtained from the viewer machine drawings located on the Portal under SECAR -> Documentation -> Diagnostics -> Viewer.
+- Drag the red rectangle corners with mouse to align with the viewer rectangular frame lines at the edge of the viewer that have known dimensions. Those dimensions are entered in “Fiducials” and can be obtained from the viewer machine drawings located on the Portal under SECAR -> Documentation -> Diagnostics -> Viewer. These are the actual dimensions, viola takes the viewing angle into account, which is set as an additional parameter.
 - Press Apply
 
 .. _Viewer_Viola2:
@@ -71,7 +72,7 @@ The viewers need to be calibrated so Viola can display x and y coordinates with 
 
 Viola can subtract background from the viewer image to have a clearer display of the beam. You can set up background subtraction with the following steps. This has to be redone each time viewer settings are changed (or any other effects change the background). 
 
-- Make sure camera settings are final, turn light on
+- Make sure camera settings are final, turn light off
 - In Viola menu select Option -> Preference
 - In the new window check the box “Subtract Background image” (see :numref:`Viewer_Viola3`)
 - Press the button with the “shutter” symbol on the far right 
