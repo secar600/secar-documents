@@ -33,7 +33,9 @@ The light can be turned ON/OFF using another process variable that has "LT" in i
 Images are viewed by using Viola. To start up Viola:
 
 - Start the viola shell script from the command line in the experiment account: :code:`start_viola.sh --setting ~/Documents/viola_settings/VD_D1783.json`. There should be a json file for each SECAR viewer that contains the specific viewer settings. If Viola is already running you can select a new json file for a new viewer in File -> Open Settings.
+
   - NOTE: you may have to enter viewer name ":image1:ArrayData" by hand into the "Source" field in the viola main window, for example :code:`SCRBTS35:VD_D15125:image1:ArrayData` - then just click "Live"
+
 - This should bring up a new window (see :numref:`Viewer_Viola1`). 
 - Click "Live" to enable live viewing of the viewer. The text "Live" should turn red. 
 - Adjust Threshold and Background sliders to enable the software to find intensity peak position, width, etc
