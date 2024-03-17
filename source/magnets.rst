@@ -55,6 +55,21 @@ Note that the photo shown in :numref:`magnet-water` shows the flow of water for 
 
    The devices shown on the top of the photo should be looked at periodically to ensure each magnet has a proper water flow for cooling.
 
+Setting Dipoles by Field
+------------------------
+
+run_parallel_dipole.py is a Python code to set dipole magnets by field (Hall-probe or NMR reading). The code is located in the E20008 experiment folder under :code:`Documents/tune_optimizer`. 
+- Edit input file :code:`gedit dipole_values.txt` (see image :numref:`Fig_rundipoleinput` ). Enter desired magnetic fields, if you want to cycle (0 or 1), and whether the specific dipole is supposed to be set at this time or not (0 or 1)
+- You need to cycle if the field increases from the current value (you can also do this via the control system separately)
+- save
+- :code:`python run_parallel_dipole.py`
+
+.. _Fig_rundipoleinput:
+.. figure:: Figures/rundipoleinput.png
+   :scale: 20%
+
+   Input file for :code:`run_parallel_dipole.py`
+
 Hall Probes
 -----------
 
