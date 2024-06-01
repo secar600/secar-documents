@@ -2,6 +2,56 @@
 Data Acquisition
 ================
 
+Instructions for Users
+----------------------
+
+General Layout
+~~~~~~~~~~~~~~
+
+SECAR has two data acquisition systems that are connected with each other to create a common data stream, one for the focal plane and one for the target. Each system consists of an spdaq machine (:code:`spdaq57`for the focal plane and `spdaq58` for the target), which is located in the vault and directly connected to Pixie-16 crates. The creates include digiztizer cards with typically 16 channels each where detector and other signals are plugged into. A channel map file :code:`/daq/daq_map_file.csv` lists crates, modules, channels, and what is connected to them. 
+
+.. warning::
+
+  Do not run anything unnecessary on the spdaq machines. Unless indicated otherwise, everything discussed in this section should be run on any data U machine connected to the DAQ network. 
+
+After logging in on the experiment account on a DAQ neytwork machine (see label on monitor) and opening a terminal you can start the readout code, which can be used to start data taking and writing data to disk, the scale code which starts the scalers for each channel that are also added to the data stream, and SpecTcl, which is used for online monitoring of either incoming data, or data that have already been written to disk and allows you to look at various spectra. 
+
+If you need to setup data acqusition parameters or trouble shoot the data acquisition you can use nscope. This needs to be run on the respective spdaq machine. 
+
+Start Readout
+~~~~~~~~~~~~~
+
+#. Logon to the experiment account on a computer connected to the DAQ network (label on monitor says DAQ)
+#. Open a terminal
+#. Enter :code:`goReadout.sh`
+#. Click on :code:`Start` button to initialize. Two tabs appear for the two spdaq machines - wait until you see "Scalers know crate ID=0" messages - 2 for spdaq 58 and 5 for spdaq 57
+#. You can now start a run by entering a title and clicking on :code:`Begin`. You should start the scalers first - see next section. 
+
+Start Scalers
+~~~~~~~~~~~~~
+#. Open a terminal
+#. Enter :code:`goscalers.sh`
+#. Note for experiments with SiLi detector: it is plugged into Si1 (the first of the two scattering monitor silicon channels
+
+Start SpecTcl
+~~~~~~~~~~~~~
+#. Open a terminal
+#. Enter :code:`goSpecTcl.sh`
+#. Load the standard Definitions file basics_definitions.tcl
+#. Load the desired windows configuration
+#. Note for experiments with SiLi detector: parameter is SiAScat0 and spectrum SiLi.energy
+
+Start nscope
+~~~~~~~~~~~~
+#. Open a terminal
+#. ssh to the respective spdaq machine: :code:`ssh -Y spdaq57' for focal plane system, and :code:`ssh -Y spdaq58' for target system.
+#. start nscope by entering :code:`sgonscope_FP.sh` or :code:`sgonscope_TAR.sh` for focal plane or target system, respectively
+#. click on :code:`Boot`
+
+.. warning::
+
+  The following are notes for experts that are not up to date
+
 Digitizers
 ----------
 
