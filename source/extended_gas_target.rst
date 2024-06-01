@@ -149,7 +149,7 @@ MFs are Mass Flow meters, also called Mass Flow Controllers (MFCs), which are de
 
 To operate the MFs
 
-- To view and set the mode of a MF one currently needs to use the PV Probe functionality: Right click on the flow display field (not the MF), select "Probe", and in the window that is popping up enter the PV for setting the mode - replace the text after the ":" (usually F_RD) with :code:`MODE_CSET_MFC'. You may need to wait a bit for the current mode to be displayed as value. You can then change the mode by entering either OPEN, CLOSE, or SETPOINT. 
+- To view and set the mode of a MF one currently needs to use the PV Probe functionality: Right click on the flow display field (not the MF), select "Probe", and in the window that is popping up enter the PV for setting the mode - replace the text after the ":" (usually F_RD) with :code:`MODE_CSET_MFC`. You may need to wait a bit for the current mode to be displayed as value. You can then change the mode by entering either OPEN, CLOSE, or SETPOINT. 
 - To view and adjust the flow, right click on the MF symbol on the controls page and select "Open Mass Flow Controller Details". A small window pops up that allows to view and set the current flow. Note that this only makes sense in :code:`SETPOINT` mode, however, currently this window also displays something in the other modes, with no indication that its not meaningful. 
 
 .. warning::
