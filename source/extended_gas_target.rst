@@ -141,11 +141,20 @@ These valves are locked into their state and have to first be unlocked before ch
 How to Operate the Mass Flow Meters of the GHS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-MFs are Mass Flow meters, which are devices to control the flow of the process gas. One can click on any MF on the CS-Studio control page to open a popup window, from which the flow rate can be set, maximum allowed set point for that MF is also displayed (different MFs have different maximum flow rates), and the live flow readback is also shown. 
+MFs are Mass Flow meters, also called Mass Flow Controllers (MFCs), which are devices to control the flow rate of the process gas. The MF have three modes: :code:`OPEN`, :code:`CLOSE`, and :code:`SETPOINT`: 
+
+- :code:`OPEN` creates a maximum opening without any defined flow, for example for pumping the system out
+- :code:`CLOSE` closes the MF so no gas can flow through
+- :code:`SETPOINT` allows the user to set a flow rate that is then maintained (if possible). There is a maximum setpoint defined that may have been set based on safety or engineering considerations. Note that setting the MF to the maximum flow rate in SETPOINT mode is NOT the same as setting it to OPEN mode. 
+
+To operate the MFs
+
+- To view and set the mode of a MF one currently needs to use the PV Probe functionality: Right click on the flow display field (not the MF), select "Probe", and in the window that is popping up enter the PV for setting the mode - replace the text after the ":" (usually F_RD) with :code:`MODE_CSET_MFC'. You may need to wait a bit for the current mode to be displayed as value. You can then change the mode by entering either OPEN, CLOSE, or SETPOINT. 
+- To view and adjust the flow, right click on the MF symbol on the controls page and select "Open Mass Flow Controller Details". A small window pops up that allows to view and set the current flow. Note that this only makes sense in :code:`SETPOINT` mode, however, currently this window also displays something in the other modes, with no indication that its not meaningful. 
 
 .. warning::
 
-   For :code:`MF2`, which regulates the flow of the supplied gas into the system, if one clicks on the small check box labelled as :code:`show more` found near the :code:`MF2` indicator on the CS-Studio control page, one can have the option to fully open this mass flow meter (by clicking on :code:`Set to OPEN`), or set the flow to the desired set point (by clicking on :code:`Set to SETPOINT`). It is highly recommended to not set the gas supply mass flow meter (:code:`MF2`) to :code:`Set to OPEN` using the checkbox :code:`show more` because it might fill the system with a lot of gas too quickly and the fill volume will not be integrated accurately in that case. Setting :code:`MF2` to :code:`Set to OPEN` is not the same as setting its set point to 100 sccm, which is the maximum flow delivered by :code:`MF2`. The orifice of the mass flow meter will be fully opened if it is set to :code:`OPEN` and the flow rate will not be known precisely. It may flood the system with gas so please avoid setting it to :code:`Set to OPEN`. 
+   It is highly recommended to not set the gas supply mass flow meter (:code:`MF2`) to :code:`Set to OPEN` because it might fill the system with a lot of gas too quickly and the fill volume will not be integrated accurately in that case. Setting :code:`MF2` to :code:`Set to OPEN` is not the same as setting its set point to 100 sccm, which is the maximum flow delivered by :code:`MF2`. The orifice of the mass flow meter will be fully opened if it is set to :code:`OPEN` and the flow rate will not be known precisely. It may flood the system with gas so please avoid setting it to :code:`Set to OPEN`. 
 
 The default state of valves and MFs are shown in the :numref:`state_table`. The state of the manual valves during operation of the extended gas target is also shown in this table.
 
