@@ -25,7 +25,7 @@ Start Readout
 #. Open a terminal
 #. Enter :code:`goReadout.sh`
 #. Click on :code:`Start` button to initialize. Two tabs appear for the two spdaq machines - wait until you see "Scalers know crate ID=0" messages - 2 for spdaq 58 and 5 for spdaq 57
-#. You can now start a run by entering a title and clicking on :code:`Begin`. You should start the scalers first - see next section. 
+#. You can now start a run by entering a title and clicking on :code:`Begin`. You should start the scalers first - see next section. You need to select :code:`Record` to write data to disk. 
 
 Start Scalers
 ~~~~~~~~~~~~~
