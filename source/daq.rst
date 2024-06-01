@@ -8,13 +8,17 @@ Instructions for Users
 General Layout
 ~~~~~~~~~~~~~~
 
-SECAR has two data acquisition systems that are connected with each other to create a common data stream, one for the focal plane and one for the target. Each system consists of an spdaq machine (:code:`spdaq57`for the focal plane and `spdaq58` for the target), which is located in the vault and directly connected to Pixie-16 crates. The creates include digiztizer cards with typically 16 channels each where detector and other signals are plugged into. A channel map file :code:`/daq/daq_map_file.csv` lists crates, modules, channels, and what is connected to them. 
+SECAR has two data acquisition systems that are connected with each other to create a common data stream, one for the focal plane and one for the target. Each system consists of an spdaq machine (:code:`spdaq57` for the focal plane and :code:`spdaq58` for the target), which is located in the vault and directly connected to Pixie-16 crates. The creates include digiztizer cards with typically 16 channels each where detector and other signals are plugged into. A channel map file :code:`/daq/daq_map_file.csv` lists crates, modules, channels, and what is connected to them. 
 
 .. warning::
 
   Do not run anything unnecessary on the spdaq machines. Unless indicated otherwise, everything discussed in this section should be run on any data U machine connected to the DAQ network. 
 
-After logging in on the experiment account on a DAQ network machine (see label on monitor) and opening a terminal you can start the readout code, which can be used to start data taking and writing data to disk, the scale code which starts the scalers for each channel that are also added to the data stream, and SpecTcl, which is used for online monitoring of either incoming data, or data that have already been written to disk and allows you to look at various spectra. 
+After logging in on the experiment account on a DAQ network machine (see label on monitor) and opening a terminal you can 
+
+- start the readout code, which can be used to start data taking and writing data to disk, 
+- the scaler code which starts the scalers for each channel that are also added to the data stream,
+- SpecTcl, which is used for online monitoring of either incoming data, or data that have already been written to disk, and which allows you to look at various spectra. 
 
 If you need to setup data acqusition parameters or trouble shoot the data acquisition you can use nscope. This needs to be run on the respective spdaq machine. 
 
