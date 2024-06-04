@@ -139,6 +139,29 @@ Collimators
 
 There are two collimators monted on a separate motorized drive: :code:`SCR_BTS35:DD_D1457` and :code:`SCR_BTS35:DD_D1568`. The former has 4 circular apertures with diameters of 1.5 mm, 2 mm, 4 mm, and 8 mm. The latter only has one aperture with diameter of 5 mm. These apertures can be put in by clicking on the appropriate button corresponding to each aperture. Each of these apertures can be retracted fully by clicking on the "Retract Drive" buttons.
 
+Automated Aperture Scans
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Software is available to automate aperture scans. You can select the aperture to be moved and the quanity that should be monitored as a function of position, typically a Faraday cup downstream of the aperture. You can also select range, steps, and how many data points should be taken per step to get a reliable average. 
+
+- In home directory, type “run_phyapps” and wait for a GUI app launcher to pop up
+- Select the “Correlation Viewer” application.
+- In the top left corner, there are buttons that read “Load Lattice”, “Save As”,”Open”, “High Dimensional”, and “Exit”
+- To open an existing configuration, select “Open” and navigate to “~/Documents/device_scan/xxxx.json”
+- If you create a new configuration, you can save it as a .json file for future use.
+- “High Dimensional” allows you to see multiple PVs at the same time.
+- The device you want to change should be in the “Alter Element”. The device you want to observe can be selected in “Monitor”.
+    - If you have Phoebus open, you can simply copy and paste a PV name over to this window.
+- If you wish to alter the range of the scan, it can be changed in the “Alter Range” section.
+- The number of steps and wait time at each step can be altered at the bottom of the left sidebar. You can also adjust the number of measurements (Shot Number) during the measurement time (Alter Timeout) per step over which the results are averaged. 
+- To operate the scan, simply click the blue play button with the text “Start” at the very bottom of the sidebar.
+- After the scan is complete, do not forget to save the results!
+    - To do this, select the floppy disc icon in the toolbar directly above the displayed graph.
+    - Please save results in the “~/Documents/device_scan_results/” folder with the format “yearmonthday_hourminute_{devicename}scan.csv”, i.e. “20240602_2311_1477scan.csv” for a scan performed at 11:11pm on June 02, 2024 with the 1477 drive.
+    - NOTE: Please change file format to .csv for easy analysis. The application saves files as .h5 format by default. 
+    - It also may be a good idea to save an image. This can be done with the picture button to the left of the save key.
+
+
 JENSA Collimator
 ~~~~~~~~~~~~~~~~
 
