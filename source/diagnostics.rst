@@ -32,14 +32,24 @@ The light can be turned ON/OFF using another process variable that has "LT" in i
 
 Images are viewed by using Viola. To start up Viola:
 
-- Start the viola shell script from the command line in the experiment account: :code:`start_viola.sh --setting ~/Documents/viola_settings/VD_D1783.json`. There should be a json file for each SECAR viewer that contains the specific viewer settings. If Viola is already running you can select a new json file for a new viewer in File -> Open Settings.
+- Start the viola shell script from the command line in the experiment account (the terminal must be running on a computer on the controls network, e.g. U5PC1, U5PC5, U5PC8, or U5PC9): :code:`start_viola.sh --setting ~/Documents/viola_settings/VD_D1783.json`. There should be a json file for each SECAR viewer that contains the specific viewer settings. 
+- The viewers and their standard file names are: 
+    - Viewer 1457: VD_D1457.json
+    - Viewer 1515: VD_D1515.json
+    - Viewer 1542: VD_D1542.json
+    - Viewer 1638: VD_D1638.json
+    - Viewer 1688: VD_D1688.json
+    - Viewer 1783: VD_D1783.json
+    - Viewer 1836: VD_D1836.json
+    - Viewer 1879: VD_D1879.json
+- If Viola is already running you can select a new json file for a new viewer in File -> Open Settings.
 
   - NOTE: you may have to enter viewer name ":image1:ArrayData" by hand into the "Source" field in the viola main window, for example :code:`SCRBTS35:VD_D15125:image1:ArrayData` - then just click "Live"
 
 - This should bring up a new window (see :numref:`Viewer_Viola1`). 
 - Click "Live" to enable live viewing of the viewer. The text "Live" should turn red. 
 - Adjust Threshold and Background sliders to enable the software to find intensity peak position, width, etc
-- To read x and y positions make sure the viewer is calibrated (see below). Viewers are usally calibrated so that the center of the viewer is X=0 and Y=0. However, the SECAR viewers are not perfectly aligned. Refer to the run plan or Portal (or Fernando) to get the current alignment information that relates X=0 and Y=0 on the viewer to the nominal beam axis of SECAR.  
+- To read x and y positions make sure the viewer is calibrated (see below - calibration should be checked prior to each experiment). Viewers are usally calibrated so that the center of the viewer is X=0 and Y=0. However, the SECAR viewers are not perfectly aligned. Refer to the run plan or Portal (or Fernando) to get the current alignment information that relates X=0 and Y=0 on the viewer to the nominal beam axis of SECAR.  
 
 .. _Viewer_Viola1:
 .. figure:: Figures/Viewer_Viola1.jpeg
@@ -58,8 +68,10 @@ Viewer images can be saved, for example for placement in the ELOG. To save a vie
 
 **Calibration**
 
-The viewers need to be calibrated so Viola can display x and y coordinates with real distances. Viewers are usually calibrated such that X=0 and Y=0 corresponds to the center of the viewer (not necessarily the nominal beam axis). If a viewer is not calibrated yet, you can calibrate it with the following steps
+The viewers need to be calibrated so Viola can display x and y coordinates with real distances. Viewers are usually calibrated such that X=0 and Y=0 corresponds to the center of the viewer (not necessarily the nominal beam axis). Calibration should be checked prior to each experiment. If a viewer is not calibrated yet, you can calibrate it with the following steps
 
+- Insert the viewer and start the live display as described above
+- Turn on the light on the Phoebus diagnostics tab (LT ON OFF - see above). You should now see markings on the viewer that are used to determine the center. The nominal dimensions of these markings can be taken from the mechanical drawings on the viewers, which can be found on portal.frib.msu.edu under Projects -> SECAR -> Documentation -> Viewers.
 - Select menu items Option -> Transform and Trim in the Viola window. This opens a new window (see :numref:`Viewer_Viola2`). 
 - Verify in that new window that image size is set correctly – it needs to match the "Details Menu" information for the respective viewer (in the right column)
 - Drag the red rectangle corners with mouse to align with the viewer rectangular frame lines at the edge of the viewer that have known dimensions. Those dimensions are entered in “Fiducials” and can be obtained from the viewer machine drawings located on the Portal under SECAR -> Documentation -> Diagnostics -> Viewer. These are the actual dimensions, viola takes the viewing angle into account, which is set as an additional parameter.
