@@ -450,7 +450,7 @@ To operate this power supply:
         geco # this is an alias for /user/opt/geco/bin/CAENGEC02020
         # The IP address for this power supply is 10.65.50.44
 
-Then, a window pops up. Use the correct credentials to log into the GUI for this CAEN power supply shown in :numref:`geco`. Once the GUI opens, you can see MCP, IC and DSSD channels. To input a new value. You can click on the desired input and type the desired value. To set a new channel, please make sure you input the voltage setpoint, current setpoint, ramp up/down rates and maximum allowed voltage and current, whose nomenclature is similar to the ones from JENSA crate (see :numref:`caen_section`). To turn a channel ON/OFF, please use the :code:`spacebar` or right click and select ON/OFF.
+Then, a window pops up. Use the correct credentials to log into the GUI for this CAEN power supply shown in :numref:`geco`. Once the GUI opens, you can see MCP, IC (labeled dE) and DSSD (labeled Si) channels. To input a new value. You can click on the desired input and type the desired value. To set a new channel, please make sure you input the voltage setpoint, current setpoint, ramp up/down rates and maximum allowed voltage and current, whose nomenclature is similar to the ones from JENSA crate (see :numref:`caen_section`). To turn a channel ON/OFF, please use the :code:`spacebar` or right click and select ON/OFF.
 
 .. _geco:
 .. figure:: Figures/geco.png
