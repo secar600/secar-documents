@@ -15,6 +15,7 @@ Wien Filter Users
 Some notes on operation: 
 
 - At the beginning of your shift the lead operator must communicate the shift limit to you in terms of voltage, magnet settings and any survey thresholds. Make sure you know the limits and never exceed them. Do not change ramp and limits fields in the GUI. 
+- WF1 has negative magnet current, WF2 has positive magnet current (need to have sign correct when entering values)
 - Magnet Cycling: The magnet cycling procedure built into the control system is not working properly. Magnetic field should only be adjusted downwards. Cycle the magnets when you first use them, and each time you need to increase the field. Use the following procedure: 
     - Set magnetic field to zero and waith 3 min.
     - Increase current to 540 A, which is the maximum current. The control system takes care of the ramp rate. 
