@@ -144,8 +144,7 @@ Automated Aperture Scans
 
 Software is available to automate aperture scans. You can select the aperture to be moved and the quanity that should be monitored as a function of position, typically a Faraday cup downstream of the aperture. You can also select range, steps, and how many data points should be taken per step to get a reliable average. 
 
-- In home directory, type “run_phyapps” and wait for a GUI app launcher to pop up
-- Select the “Correlation Viewer” application.
+- In home directory, type “correlation_visualizer” 
 - In the top left corner, there are buttons that read “Load Lattice”, “Save As”,”Open”, “High Dimensional”, and “Exit”
 - To open an existing configuration, select “Open” and navigate to “~/Documents/device_scan/xxxx.json”
 - If you create a new configuration, you can save it as a .json file for future use.
