@@ -1352,6 +1352,7 @@ To operate the JENSA CAEN power supply:
    :caption: How to operate the JENSA CAEN power supply
         
         cd ~
+        startev
         caen_supply
         # the above command is an alias for: telnet 10.65.50.95 1527
         # The IP address of the power supply is 10.65.50.95
