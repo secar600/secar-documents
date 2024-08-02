@@ -569,6 +569,9 @@ Operation of the Extended Gas Target with a Non-Explosive Gas
 
 When the gas target needs to be operated with a non-explosive gas such as helium, do the following:
 
+Filling the pumped down system with target gas
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 - Make sure the gas target is under high vacuum (see :numref:`setting_up_high_vacuum`) and that the mode of operation is set to :code:`pump` mode.
 - Zero the :code:`SCR_BTS34:CMG_D1465K`, :code:`SCR_BTS34:CMG_D1465M` and :code:`SCR_BTS34:CMG_D1465E` capacitance manometer gauges (:numref:`zero_gauges`) if they show an offset.
 - Using the probe functionality in CS-Studio, verify that :code:`MF7` is CLOSED: open the probe window and search this PV: :code:`SCR_BTS34:MFC_D1465A:MODE_CSET_MFC`. Then, enter :file:`CLOSE` under new value and hit :code:`Enter`. :code:`MF7` is used to dilute the exhaust during hydrogen operation. When the gas target is running any other gas, this mass flow meter should be closed to avoid wasting the dry nitrogen.
@@ -624,6 +627,19 @@ If oxygen is rising when the system is being filled with a gas, it could be the 
 - After an hour of purging the system, set the flow of :code:`MF2` to 0 sccm. Close :code:`V3` and :code:`V7`.
 - Keep the scroll pump ON and leave :code:`V1` open and let the system run like this (pumping the gas out in non-recirculating state) for at least another 1 hour or more. 
 - These actions will hopefully flow the trapped air out of the system and may help stopping the oxygen content from rising.
+
+Removing Non Explosive Target Gas and Leave System Pumped Down
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+If the system is in :code:`run` mode:
+    
+- Stop DAQ and scalers.
+- Safely debias the PIPS detectors.
+- Verify :code:`MF6` is set to 0 sccm - for non explosive gas we do not need to purge with nitrogen
+- Press on the |emergencystop| button to initiate a purge.
+- Press on the |reset| button.
+- Switch to :code:`vent` mode.
+- Switch to :code:`pump` mode.
+- The gas will then be pumped out and the system will go to high vacuum
 
 .. _vent_non_explosive_gas:
 
@@ -786,6 +802,14 @@ Interlocks that are put in place for operation of the extended gas target are su
 
 Interlock settings can be read off the MKS controllers by selecting the channel of interest using :code:`Channel Setup` (see Fig. :numref:`MKS5_channel_setup` for an example display). 
 Each channel can trigger 2 interlocks indicated at the bottom of the screen. A pressure maximum is implemented as "ENABLE" below a maximum pressure. Unused interlocks are sending a CLEAR. 
+
+Trouble Shooting
+~~~~~~~~~~~~~~~~
+If the GHS is unresponsive or multiple modes are indicated, for example, in case you forgot the reset after emergency stop the system can be recovered by: 
+- Switch to manual mode
+- Set by hand all valves to an appropriate mode configuration
+- Switch to Auto mode
+
 
 Operation of the Extended Gas Target with Hydrogen
 --------------------------------------------------
