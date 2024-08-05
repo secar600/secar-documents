@@ -817,19 +817,19 @@ Each channel can trigger 2 interlocks indicated at the bottom of the screen. A p
         - G9 (:code:`SCR_BTS34:CMG_D1465I`) > 10 Torr. This is the pressure inbetween the Roots blower stages. 
         - G10 (:code:`SCR_BTS34:CMG_D1465J) > 10 Torr. This is the Roots blower stage inlet pressure. 
 
-- ** Positive HV card is disabled** in :code:`fill` or :code:`run` modes if: (The positive HV supply card used for the in-gas detectors will be disabled and voltages from all the channels of this card are reduced to 0V with a ramp down rate of :math:`=` 50 V/s. The negative polarity cards used for the BGO array are unaffected.)
+- **Positive HV card is disabled** in :code:`fill` or :code:`run` modes if: (The positive HV supply card used for the in-gas detectors will be disabled and voltages from all the channels of this card are reduced to 0V with a ramp down rate of :math:`=` 50 V/s. The negative polarity cards used for the BGO array are unaffected.)
 
-    - ** :math:`0.4\%` oxygen**. This setpoint value is required to operate with hydrogen.
-    - ** Target cell pressure exceeds set point** (see above) Target pressure is read by capacitance manometer G11 (:code:`SCR_BTS34:CMG_D1465K`). This setpoint should be adjusted to experiment requirements to be above planned max operating pressure to ensure there is no unexpected pressure increase that may indicate a leak to atmosphere or some other malfunction. 
-    - ** Target chamber pressure exeeds 0.01 Torr**. This is measured by G13 (:code:`SCR_BTS34:CMG_D1465M`)
+    - **:math:`>0.4\%` oxygen**. This setpoint value is required to operate with hydrogen.
+    - **Target cell pressure exceeds set point** (see above) Target pressure is read by capacitance manometer G11 (:code:`SCR_BTS34:CMG_D1465K`). This setpoint should be adjusted to experiment requirements to be above planned max operating pressure to ensure there is no unexpected pressure increase that may indicate a leak to atmosphere or some other malfunction. 
+    - **Target chamber pressure exeeds 0.01 Torr**. This is measured by G13 (:code:`SCR_BTS34:CMG_D1465M`)
 
-- ** Open V15 for reserve nitrogen bottle** in :code:`vent` or :code:`purge` modes if:
+- **Open V15 for reserve nitrogen bottle** in :code:`vent` or :code:`purge` modes if:
 
     - **:code:`MF6` nitrogen flow :math:`<\,70\%` of setpoint** after 10 seconds. This ensures a constant source of dry nitrogen to vent or purge the system in case of a failure of the lab nitrogen supply system. 
 
-- ** Enable opening of code:`V21` valve by operator**
+- **Enable opening of code:`V21` valve by operator**
 
-    - **if system is in :code:`vent` or :code:`MAN` modes of operation. Only in these two modes of operation, :code:`V21` control is enabled and it can be opened by the operator if she/he desires to vent the system faster. This ensures the system can only be vented to atmosphere after purging the hydroge out of the system.
+    - **if system is in :code:`vent` or :code:`MAN` modes of operation.** Only in these two modes of operation, :code:`V21` control is enabled and it can be opened by the operator if she/he desires to vent the system faster. This ensures the system can only be vented to atmosphere after purging the hydroge out of the system.
 
 Alarms
 ~~~~~~
