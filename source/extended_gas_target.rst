@@ -807,7 +807,7 @@ Each channel can trigger 2 interlocks indicated at the bottom of the screen. A p
 
 - **Purge mode triggered** during :code:`fill` or :code:`run` modes if:
 
-    - **:math:`>0.4\%` oxygen**. This setpoint value is required to operate with hydrogen. Dry nitrogen is used to flush the system with capability to drive hydrogen out and to reduce hydrogen content in the system to low explosive levels. This triggers automatic removal of hydrogen in the event of a leak to atmosphere. The operators have to remember to click on the |reset| button found under operating mode controls of the control page before the control software allows switching to another mode of operation. From the :code:`purge` mode, you can only switch to :code:`vent` mode. If the high vacuum pumps are ON and you do not intend to vent the system, after the system is switched to :code:`vent` mode, immediately switch to :code:`pump` mode.
+    - **Oxygen** :math:`>0.4\%`. This setpoint value is required to operate with hydrogen. Dry nitrogen is used to flush the system with capability to drive hydrogen out and to reduce hydrogen content in the system to low explosive levels. This triggers automatic removal of hydrogen in the event of a leak to atmosphere. The operators have to remember to click on the |reset| button found under operating mode controls of the control page before the control software allows switching to another mode of operation. From the :code:`purge` mode, you can only switch to :code:`vent` mode. If the high vacuum pumps are ON and you do not intend to vent the system, after the system is switched to :code:`vent` mode, immediately switch to :code:`pump` mode.
     - **Target pressure exceeds setpoint**. Target pressure is read by capacitance manometer G11 (:code:`SCR_BTS34:CMG_D1465K`). This setpoint should be adjusted to experiment requirements to be above planned max operating pressure to ensure there is no unexpected pressure increase that may indicate a leak to atmosphere or some other malfunction. 
     - **Foreline pressure exceeds 500 Torr**. The foreline pressure is read by capacitance manometer G2 (:code:`SCR_BTS34:CMG_D1465B`). This setpoint is required for hydrogen operation and ensures the amount of target gas is within the envelope for hydrogen operation. 
     - **Additional system pressures exceed setpoints**. These interlocks provide additional safeguards against leaks to atmosphere or other malfunctions. Setpoints can be adjusted as needed to be above the operating values for a particular experiment. The interlocks are: 
@@ -819,13 +819,13 @@ Each channel can trigger 2 interlocks indicated at the bottom of the screen. A p
 
 - **Positive HV card is disabled** in :code:`fill` or :code:`run` modes if: (The positive HV supply card used for the in-gas detectors will be disabled and voltages from all the channels of this card are reduced to 0V with a ramp down rate of :math:`=` 50 V/s. The negative polarity cards used for the BGO array are unaffected.)
 
-    - **:math:`>0.4\%` oxygen**. This setpoint value is required to operate with hydrogen.
+    - **Oxygen** :math:`>0.4\%`. This setpoint value is required to operate with hydrogen.
     - **Target cell pressure exceeds set point** (see above) Target pressure is read by capacitance manometer G11 (:code:`SCR_BTS34:CMG_D1465K`). This setpoint should be adjusted to experiment requirements to be above planned max operating pressure to ensure there is no unexpected pressure increase that may indicate a leak to atmosphere or some other malfunction. 
     - **Target chamber pressure exeeds 0.01 Torr**. This is measured by G13 (:code:`SCR_BTS34:CMG_D1465M`)
 
 - **Open V15 for reserve nitrogen bottle** in :code:`vent` or :code:`purge` modes if:
 
-    - **:code:`MF6` nitrogen flow :math:`<\,70\%` of setpoint** after 10 seconds. This ensures a constant source of dry nitrogen to vent or purge the system in case of a failure of the lab nitrogen supply system. 
+    - **MF6 nitrogen flow :math:`<\,70\%` of setpoint** after 10 seconds. This ensures a constant source of dry nitrogen to vent or purge the system in case of a failure of the lab nitrogen supply system. 
 
 - **Enable opening of code:`V21` valve by operator**
 
