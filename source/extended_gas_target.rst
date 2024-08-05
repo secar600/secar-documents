@@ -33,7 +33,7 @@ Emergency response
 
 If in an emergency situation (such as a building evacuation or a shelter in place order) the gas target needs to be left anattended for an extended period of time, use the following procedures to bring it into a safe state: 
 
-For He operation follow: `Emergency Response Procedure for SECAR
+For He operation follow: `Emergency Response Procedxure for SECAR
 Extended and Jet Gas Targets During Helium Operation <https://portal.frib.msu.edu/sites/dcc/pages/dcclink.aspx?WBS=M41600&Sub=PR&SN=001537>`_.
 
 .. _CSS:
@@ -786,35 +786,61 @@ If the GHS is unresponsive or multiple modes are indicated, for example, in case
 - Set by hand all valves to an appropriate mode configuration
 - Switch to Auto mode
 
-The Interlocks of the Extended Gas Target
------------------------------------------
+Interlocks and Alarms of the Extended Gas Target
+------------------------------------------------
 
-Interlocks that are put in place for operation of the extended gas target are summarized below. Almost all of these interlocks are related to hydrogen operation but all these interlocks occur regardless of which gas is in use:
+Interlocks and alarms that are put in place for operation of the extended gas target are summarized below. Almost all of these interlocks are related to hydrogen operation but all these interlocks occur regardless of which gas is in use. 
 
 
 
-- If the system is in :code:`purge` or :code:`pump` mode, and the roughing pump loses power or fails, the system is automatically switched to :code:`vent` mode 1 second after the pump failure. This prevents potential ignition source in contact with hydrogen. Venting triggers automatic removal of dangerous levels of hydrogen by dilution with nitrogen. Once the hydrogen is diluted such that the ratio of hydrogen to nitrogen is less than :math:`40\%`, it is safe to re-enter to the ReA3 vault (see :numref:`reentry`) and turn the high vacuum pumps OFF. The power loss of the roughing pump has to be investigated and any faults need to be fixed. The operators have to remember to click on the |reset| button found under operating mode controls of the control page before the control software allows switching to another mode of operation after the operation integrity of the scroll pump is restored.
-- If the system is in :code:`fill` or :code:`run` mode and the oxygen level in the system, detected by the oxygen sensor, is higher than :math:`0.4\%`, the system is automatically switched to :code:`purge` mode 2 seconds after the oxygen level reaches :math:`0.4\%`. Dry nitrogen is used to flush the system with capability to drive hydrogen out and to reduce hydrogen content in the system to low explosive levels. This triggers automatic removal of hydrogen in the event of a leak to atmosphere. The operators have to remember to click on the |reset| button found under operating mode controls of the control page before the control software allows switching to another mode of operation. From the :code:`purge` mode, you can only switch to :code:`vent` mode. If the high vacuum pumps are ON and you do not intend to vent the system, after the system is switched to :code:`vent` mode, immediately switch to :code:`pump` mode.
-- A voice alarm will be triggered in the FRIB control room if the oxygen level in the system reaches :math:`0.4\%`.
-- A standard Phoebus alarm will be triggered if the oxygen level in the system reaches :math:`0.04\%`.
-- If the system is in :code:`vent` or :code:`purge` mode, and :code:`MF6` flow rate reads :math:`<\,70\%` of its set value, :code:`V15` valve will be automatically opened after 10 seconds to ensure constant source of dry nitrogen by opening the valve to the reserved nitrogen bottle.
-- If the system is in :code:`run` or :code:`fill` mode and any of the following occur, the system is automatically switched to :code:`purge` mode. The purpose of these interlocks is to react to an abnormal condition (such as a leak) by triggering on significant changes in pressure. They can be adjusted to the chosen operating conditions (i.e. target cell pressure) for a specific experiment. 
-    
-    - Gas target pressure, read by G11 capacitance manometer (:code:`SCR_BTS34:CMG_D1465K`), exceeds set maxumum value (50 Torr 9/18/2022).
-    - Foreline pressire, read by capacitance manometer G2 (:code:`SCR_BTS34:CMG_D1465B`) exceeds set maximum value (900 Torr 9/18/2022).
-    - Inlet pressure of the last DV650 pump, read by capacitance manometer G3 (:code:`SCR_BTS34:CMG_D1465C`) reaches 20 Torr.
-    - If the pressure anywhere else in the system (read by any of the capacitance manometers G5, G9, or G10, which are :code:`SCR_BTS34:CMG_D1465E`, :code:`SCR_BTS34:CMG_D1465I`, and :code:`SCR_BTS34:CMG_D1465J`, respectively) reaches 10 Torr.
-    - If the hydrogen lead operator(s) or the experts click on the emergency stop (|emergencystop|) software button, it triggers a controlled purge of hydrogen.
-- The positive HV supply card for in-vacuum detectors will be disabled and voltages from all the channels of this card are reduced to 0V (ramp down rate :math:`=` 50 V/s) if the system is in :code:`run` mode AND:
+Interlocks:
+~~~~~~~~~~~
 
-    - The pressure read by capacitance manometer G13 (:code:`SCR_BTS34:CMG_D1465M`) reaches 10 mTorr OR
-    - The pressure in the gas target, read by G11 capacitance manometer (:code:`SCR_BTS34:CMG_D1465K`), reaches 25 Torr OR
-    - The oxygen monitor reads above :math:`0.4\%`.
-- :code:`V21` valve remains closed and disabled at all times unless the system is in :code:`vent` or :code:`MAN` modes of operation. Only in these two modes of operation, :code:`V21` control is enabled and it can be opened by the operator if she/he desires to vent the system faster. This ensures the system can only be vented to atmosphere after purging the hydroge out of the system.
+The current interlocks are referenced in the DCC document  `N3010221-RC-008874<https://portal.frib.msu.edu/sites/dcc/pages/dcclink.aspx?WBS=N3010221&Sub=RC&SN=008874>`_
 
-Interlock settings can be read off the MKS controllers by selecting the channel of interest using :code:`Channel Setup` (see Fig. :numref:`MKS5_channel_setup` for an example display). 
+In the following the triggered event, and the conditions to trigger it are summarized for each interlock. The set points are set through the MKS controllers of the respective gauges. Interlock settings can be read off the MKS controllers by selecting the channel of interest using :code:`Channel Setup` (see Fig. :numref:`MKS5_channel_setup` for an example display). 
 Each channel can trigger 2 interlocks indicated at the bottom of the screen. A pressure maximum is implemented as "ENABLE" below a maximum pressure. Unused interlocks are sending a CLEAR. 
 
+- **Vent mode triggered** in :code:`purge` or :code:`pump` modes if:
+
+    - **Scroll pump off**. For hydrogen operation it is critical that hydrogen can be removed when needed. This is usually done in the purge or pump modes. If the scroll pump fails, the vent mode will dilute the target gas with nitrogen, and eventually push gas into the exhaust via the overpressure valves. Once the hydrogen is removed the operatures need to address the root cause of the scroll pump failure, and then click on the |reset| button found under operating mode controls of the control page before the control software allows switching to another mode of operation. 
+
+- **Purge mode triggered** during :code:`fill` or :code:`run` modes if:
+
+    - **>:math:`0.4\%` oxygen**. This setpoint value is required to operate with hydrogen. Dry nitrogen is used to flush the system with capability to drive hydrogen out and to reduce hydrogen content in the system to low explosive levels. This triggers automatic removal of hydrogen in the event of a leak to atmosphere. The operators have to remember to click on the |reset| button found under operating mode controls of the control page before the control software allows switching to another mode of operation. From the :code:`purge` mode, you can only switch to :code:`vent` mode. If the high vacuum pumps are ON and you do not intend to vent the system, after the system is switched to :code:`vent` mode, immediately switch to :code:`pump` mode.
+    - **Target pressure exceeds setpoint**. Target pressure is read by capacitance manometer G11 (:code:`SCR_BTS34:CMG_D1465K`). This setpoint should be adjusted to experiment requirements to be above planned max operating pressure to ensure there is no unexpected pressure increase that may indicate a leak to atmosphere or some other malfunction. 
+    - **Foreline pressure exceeds 500 Torr**. The foreline pressure is read by capacitance manometer G2 (:code:`SCR_BTS34:CMG_D1465B`). This setpoint is required for hydrogen operation and ensures the amount of target gas is within the envelope for hydrogen operation. 
+    - **Additional system pressures exceed setpoints**. These interlocks provide additional safeguards against leaks to atmosphere or other malfunctions. Setpoints can be adjusted as needed to be above the operating values for a particular experiment. The interlocks are: 
+
+        - G3 (:code:`SCR_BTS34:CMG_D1465C`) > 20 Torr. This is the inlet pressure of the last DV650 pump.
+        - G5 (:code:`SCR_BTS34:CMG_D1465E`) > 10 Torr. This is the pressure at the DV650 stage inlet/Roots blower stage exit.
+        - G9 (:code:`SCR_BTS34:CMG_D1465I`) > 10 Torr. This is the pressure inbetween the Roots blower stages. 
+        - G10 (:code:`SCR_BTS34:CMG_D1465J) > 10 Torr. This is the Roots blower stage inlet pressure. 
+
+- ** Positive HV card is disabled** in :code:`fill` or :code:`run` modes if: (The positive HV supply card used for the in-gas detectors will be disabled and voltages from all the channels of this card are reduced to 0V with a ramp down rate of :math:`=` 50 V/s. The negative polarity cards used for the BGO array are unaffected.)
+
+    - ** :math:`0.4\%` oxygen**. This setpoint value is required to operate with hydrogen.
+    - ** Target cell pressure exceeds set point** (see above) Target pressure is read by capacitance manometer G11 (:code:`SCR_BTS34:CMG_D1465K`). This setpoint should be adjusted to experiment requirements to be above planned max operating pressure to ensure there is no unexpected pressure increase that may indicate a leak to atmosphere or some other malfunction. 
+    - ** Target chamber pressure exeeds 0.01 Torr**. This is measured by G13 (:code:`SCR_BTS34:CMG_D1465M`)
+
+- ** Open V15 for reserve nitrogen bottle** in :code:`vent` or :code:`purge` modes if:
+
+    - **:code:`MF6` nitrogen flow :math:`<\,70\%` of setpoint** after 10 seconds. This ensures a constant source of dry nitrogen to vent or purge the system in case of a failure of the lab nitrogen supply system. 
+
+- ** Enable opening of code:`V21` valve by operator**
+
+    - **if system is in :code:`vent` or :code:`MAN` modes of operation. Only in these two modes of operation, :code:`V21` control is enabled and it can be opened by the operator if she/he desires to vent the system faster. This ensures the system can only be vented to atmosphere after purging the hydroge out of the system.
+
+Alarms
+~~~~~~
+- Alarms are specified in the Alarm Change Request system under "Overpressure alarms for JENSA Target GHS" - for example request `ACR23-224<https://portal.frib.msu.edu/sites/engineering/Lists/Alarm%20Change%20Request/Item/displayifs.aspx?List=491f79dc-271a-4918-a164-7f85fbc1dfda&ID=270&Source=https%3a//portal.frib.msu.edu/sites/engineering/Lists/Alarm%2520Change%2520Request/AllRequests.aspx%23InplviewHash267afa80-5559-4303-9e5a-d7031424550a%3D&ContentTypeId=0x0100D709E523E131A14B9A5CE9D80DA591E7>`_
+
+[These are from Kiana]
+- A voice alarm will be triggered in the FRIB control room if the oxygen level in the system reaches :math:`0.4\%`.
+- A standard Phoebus alarm will be triggered if the oxygen level in the system reaches :math:`0.04\%`.
+
+[Add list of Alarms and instructions for setting values]
+[Add description of what happens when an alarim is triggered - red edge around displayed value in GHS; when is controlroom voice alarm enabled? procedure?]
 
 
 Operation of the Extended Gas Target with Hydrogen
