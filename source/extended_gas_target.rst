@@ -776,10 +776,22 @@ If at any time, the non-explosive gas bottle runs out of the supply gas and need
 
 .. _interlocks:
 
+
+Trouble Shooting
+~~~~~~~~~~~~~~~~
+
+If the GHS is unresponsive or multiple modes are indicated, for example, in case you forgot the reset after emergency stop the system can be recovered by: 
+
+- Switch to manual mode
+- Set by hand all valves to an appropriate mode configuration
+- Switch to Auto mode
+
 The Interlocks of the Extended Gas Target
 -----------------------------------------
 
 Interlocks that are put in place for operation of the extended gas target are summarized below. Almost all of these interlocks are related to hydrogen operation but all these interlocks occur regardless of which gas is in use:
+
+
 
 - If the system is in :code:`purge` or :code:`pump` mode, and the roughing pump loses power or fails, the system is automatically switched to :code:`vent` mode 1 second after the pump failure. This prevents potential ignition source in contact with hydrogen. Venting triggers automatic removal of dangerous levels of hydrogen by dilution with nitrogen. Once the hydrogen is diluted such that the ratio of hydrogen to nitrogen is less than :math:`40\%`, it is safe to re-enter to the ReA3 vault (see :numref:`reentry`) and turn the high vacuum pumps OFF. The power loss of the roughing pump has to be investigated and any faults need to be fixed. The operators have to remember to click on the |reset| button found under operating mode controls of the control page before the control software allows switching to another mode of operation after the operation integrity of the scroll pump is restored.
 - If the system is in :code:`fill` or :code:`run` mode and the oxygen level in the system, detected by the oxygen sensor, is higher than :math:`0.4\%`, the system is automatically switched to :code:`purge` mode 2 seconds after the oxygen level reaches :math:`0.4\%`. Dry nitrogen is used to flush the system with capability to drive hydrogen out and to reduce hydrogen content in the system to low explosive levels. This triggers automatic removal of hydrogen in the event of a leak to atmosphere. The operators have to remember to click on the |reset| button found under operating mode controls of the control page before the control software allows switching to another mode of operation. From the :code:`purge` mode, you can only switch to :code:`vent` mode. If the high vacuum pumps are ON and you do not intend to vent the system, after the system is switched to :code:`vent` mode, immediately switch to :code:`pump` mode.
@@ -803,12 +815,6 @@ Interlocks that are put in place for operation of the extended gas target are su
 Interlock settings can be read off the MKS controllers by selecting the channel of interest using :code:`Channel Setup` (see Fig. :numref:`MKS5_channel_setup` for an example display). 
 Each channel can trigger 2 interlocks indicated at the bottom of the screen. A pressure maximum is implemented as "ENABLE" below a maximum pressure. Unused interlocks are sending a CLEAR. 
 
-Trouble Shooting
-~~~~~~~~~~~~~~~~
-If the GHS is unresponsive or multiple modes are indicated, for example, in case you forgot the reset after emergency stop the system can be recovered by: 
-- Switch to manual mode
-- Set by hand all valves to an appropriate mode configuration
-- Switch to Auto mode
 
 
 Operation of the Extended Gas Target with Hydrogen
