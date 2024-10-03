@@ -655,11 +655,10 @@ To vent the system after running the gas target with a non-explosive gas, do the
     - Ensure :code:`MF2` is set to 0 sccm. Then, switch to :code:`fill` mode and immediately after switch to :code:`pump` mode.
 - Make sure the first beamline gate valve of SECAR (:code:`SCR_BTS35:BGV_D1483`) is closed.
 - Make sure ReA's last beamline gate valve (:code:`REA_BTS34:BGV_D1450`) is closed.
-- While in :code:`pump` mode, turn all the high vacuum pumps OFF (see :numref:`pumps_off`).
+- While in :code:`pump` mode, turn all the high vacuum pumps OFF. To do so, follow all the steps in section :numref:`pumps_off`.
+- Proceed once you completed all steps in section :numref:`pumps_off`.
 - Wait until all the turbo pumps fully spin down to zero.
-- Put your hands on each of the turbo pumps and make sure you do not feel any vibration. Only then, you can safely say the turbo pumps are OFF.
-- Turn OFF the main water supply lines shown in :numref:`main_water` by first closing the supply valve, then the bypass, and finally the return valve.
-- Turn OFF the big fan found in the walkway near the south wall facing the target chamber.
+- Make sure all the turbo pumps have spun  down. Put your hands on each of the turbo pumps and make sure you do not feel any vibration. Only then, you can safely say the turbo pumps are OFF.
 - You can now have the option to vent with air or with dry nitrogen. The latter is a safer option because it keeps the system dry and dust free.
 
 To quickly vent the system with air **(this action should only be allowed if the system has not been operated with hydrogen recently)**:
