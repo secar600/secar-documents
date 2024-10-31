@@ -849,46 +849,45 @@ This section describes the specifics of the extended gas target while it is oper
 
 .. warning::
 
-    Operation with hydrogen is currently not permitted. This section is still in draft stage. 
+    Hydrogen can be highly explosive and dangerous. Only specially trained personnel as documented in the FRIB training database can perform any role related to hydrogen operation. If you are not trained you cannot do anything described in this section. 
 
-.. warning::
 
-   Hydrogen is highly explosive and dangerous. Therefore, only expert(s) and hydrogen lead operator(s) shall operate the extended gas target when the gas in use is hydrogen.
+Basic Featuers and Roles of Hydrogen Operation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Subsection below explains the roles and responsibilities of personnel involved with hydrogen operation.
+All documents describing hydrogen operation can be found under the link 'JENSA Hydrogen Operating Information <https://https://portal.frib.msu.edu/sites/nscl/nsclproject/secar/_layouts/15/start.aspx#/Shared%20Documents1/Operation/Hydrogen%20Operation>' on the SECAR Portal homepage.
 
-Roles and Responsibilities of Hydrogen Operation of the Extended Gas Target
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+When operating with hydrogen
 
-The SECAR extended gas target can be operated with hydrogen only by expert(s) and hydrogen lead operator(s). The experts are Kiana Setoodehnia (SECAR device scientist) and Brandon Ewert (vacuum group leader). Only these personnel can train those who later become hydrogen lead operator(s). The latter can train other personnel who need to operate the extended gas target using a non-explosive gas, the hydrogen users, as well as non-explosive gas users of the system. Training checklist can be found in the DCC document FRIB-M41600-PR-001528-R001. 
+- They system is brought into the configuraton appropriate for hydrogen operation via a configuration change request and remains in this configuration until it is changed back. 
+- Only trained personnel can do anything with the gas target while in hydrogen operation mode **INCLUDING ANY OPERATION WITH HELIUM**
+- Access to JENSA controls is limited to authorized personnel based on login. Authorized personnel for hydrogen operation cannot control screens unattended.
+- There is no access to the ReA3 vault while the target runs hydrogen gas and all operation, including fillng, running, and removing gas, is performed remotely. Card readers are locked. There is a search and evict procedure prior to starting up,  and a re-entry procedure for putting the system in a safe hydrogen free state and re-open access to the ReA3 vault. 
+- Operation is limited to at most 13 standard liters of hydrogen, as enforced by the 500 Torr limit and interlock on 
 
-Hydrogen lead operator(s) should already be non-explosive gas operators of the extended gas target prior to becoming hydrogen lead operator(s). Non-explosive gas operators of the extended gas target are those personnel who have been trained (using the training checklist document mentioned above but specific to non-explosive gas operators) either by an expert or by a hydrogen lead operator. The non-explosive gas operators of the extended gas target can only operate the gas target using non-explosive gases such as helium. They are not allowed to operate the system using hydrogen. Thus, they are not required to know the details of the hydrogen operation. However, they are expected to know:
+There are three roles as described in the 'SECAR Gas Target Procedure for Operation with Hydrogen<https://portal.frib.msu.edu/sites/dcc/pages/dcclink.aspx?WBS=M41600&Sub=PR&SN=001642>'
 
-- What to do in case of an emergency whether the system is running with non-explosive gas or with hydrogen.
-- How to contact operator in charge (OIC) in case of emergencies.
+**Hydrogen Lead Operator:** anyone with the training "JENSA Hydrogen Lead Operator" in the FRIB training database. 
 
-Those senior (in rank) non-explosive gas operators who have accomplished a very good experience operating the extended gas target with non-explosive gasses can further be trained by the experts to become hydrogen lead operators using the specific training mentioned before. The hydrogen lead operators need to know all the details of the system when being operated with hydrogen and all other gases.
+- Only person to start up hydrogen operation at the beginning of an experiment
+- Only person to change hydrogen bottle
+- Can perform all functions
 
-Users of the extended gas target are categorized into two groups: non-explosive gas users, and hydrogen users. The former are group of people who will participate in experiments using a non-explosive gas in the extended gas target. Such users should be trained to:
+**Hydrogen User:** anyone with the training "JENSA Hydrogen User" can serve as hydrogen user on shift. 
 
-- Know what to do in case of an emergency.
-- How to contact the OIC.
-- What to monitor during operation of the gas target.
-- How to access process variables being monitored.
-- How to operate the gas target's controls via the software control system but without knowing how to operate the hardware (such as pumps) manually.
+- Can watch proper operation of the target as directed by HUIC
+- Alerts HUIC if there are any problems and responds to time critical emergencies by pumping or purging the target. 
 
-The hydrogen users are not allowed to actually operate the system. But they should be trained to be able to:
+**Hydrogen User in Charge (HUIC):** Has "JENSA Hydrogen User Training" AND is specifically designated to serve as HUIC for a specific shift by the hydrogen lead operator. The designation has to be documented in the ELOG. 
 
-- Know what to do in case of an emergency.
-- How to contact the OIC.
-- What to monitor during operation of the gas target.
-- How to access process variables being monitored.
+- In charge of watching proper running of hydrogen target and responding to any abnormal events
+- Can delegate watching the target to another hydrogen user temporarily
+- Can stop hydrogen operation temporarily, carry out the ReA3 vault re-entry procedure, put the ReA3 vault in a safe state for personnel to access it, can carry out the ReA3 vault search and evict procedure, and can restart hydrogen operation. 
+- Documents any abnormal events 
+- Documents and reports to the FRIB OIC successful completion of any instance of the search and evict or re-entry procedure
+
 
 The write access restrictions are described in Channel Access DCC document (FRIB-M41600-RC-008517-R001). 
-
-.. attention::
-
-   Every time the system should operate He, a configuration change request should be submitted to change the write access to EPICS channels so that non-explosive gas operators can run the system. If the gas to be used is hydrogen, only the device scientist and hydrogen lead operator(s) can run the system. Only these personnel together with the OIC will have write access to EPICS channels to be able to operate the extended gas target with hydrogen.
 
 Hardware Specific to Hydrogen Operation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
