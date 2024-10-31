@@ -855,7 +855,7 @@ This section describes the specifics of the extended gas target while it is oper
 Basic Featuers and Roles of Hydrogen Operation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-All documents describing hydrogen operation can be found under the link 'JENSA Hydrogen Operating Information <https://https://portal.frib.msu.edu/sites/nscl/nsclproject/secar/_layouts/15/start.aspx#/Shared%20Documents1/Operation/Hydrogen%20Operation>'_ on the SECAR Portal homepage.
+All documents describing hydrogen operation can be found under the link `JENSA Hydrogen Operating Information <https://https://portal.frib.msu.edu/sites/nscl/nsclproject/secar/_layouts/15/start.aspx#/Shared%20Documents1/Operation/Hydrogen%20Operation>`_ on the SECAR Portal homepage.
 
 
 
@@ -867,7 +867,7 @@ When operating with hydrogen
 - There is no access to the ReA3 vault while the target runs hydrogen gas and all operation, including filling, running, and removing gas, is performed remotely. Access card readers are locked. There is a search and evict procedure prior to starting up,  and a re-entry procedure for putting the system back into a safe, hydrogen free state and re-open access to the ReA3 vault. 
 - Operation is limited to at most 13 standard liters of hydrogen, as enforced by the 500 Torr limit and interlock on capacitance manometer G2 (:code:`SCR_BTS34:CMG_D1465B`)
 
-There are three roles as described in the 'SECAR Gas Target Procedure for Operation with Hydrogen<https://portal.frib.msu.edu/sites/dcc/pages/dcclink.aspx?WBS=M41600&Sub=PR&SN=001642>'_
+There are three roles as described in the `SECAR Gas Target Procedure for Operation with Hydrogen<https://portal.frib.msu.edu/sites/dcc/pages/dcclink.aspx?WBS=M41600&Sub=PR&SN=001642>`_
 
 **Hydrogen Lead Operator:** anyone with the training "JENSA Hydrogen Lead Operator" in the FRIB training database. 
 
