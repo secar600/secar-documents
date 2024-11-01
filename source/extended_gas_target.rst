@@ -1084,10 +1084,8 @@ Checklist for resecuring the ReA3 vault and restarting
 - Verify V3 and V6 are closed, pumps are running, and the system is still in pump mode and functioning properly
 - Ensure the two card reader covers for the doors to the ReA3 vault from HW13 hallway (along the west side of the ReA3 vault) are locked and signage is posted. 
 - Lock one of the door card reader cover on the east side of the ReA3 vault and add signage, and enter the ReA3 vault via the last unlocked door (you can post signage to not enter). 
-- Verify that chains to Penthouse are closed and locked - is that is the case you do not have to re-search the Penthouse. Otherwise carry out the search and evict procedure for the Penthouse following `Search and Evict Procedure for ReA3
-Vault for JENSA Extended Target Hydrogen Operation – Credited Administrative Control with ESH Impact FRIB-M41600-PR-001653 <https://portal.frib.msu.edu/sites/dcc/pages/dcclink.aspx?WBS=M41600&Sub=PR&SN=001653>`_.
-- Carry out search and evict procedure for the ground floor as described in `Search and Evict Procedure for ReA3
-Vault for JENSA Extended Target Hydrogen Operation – Credited Administrative Control with ESH Impact FRIB-M41600-PR-001653 <https://portal.frib.msu.edu/sites/dcc/pages/dcclink.aspx?WBS=M41600&Sub=PR&SN=001653>`_. to make sure noone other than the search team is in the vault. 
+- Verify that chains to Penthouse are closed and locked - is that is the case you do not have to re-search the Penthouse. Otherwise carry out the search and evict procedure for the Penthouse following `Search and Evict Procedure for ReA3 Vault for JENSA Extended Target Hydrogen Operation – Credited Administrative Control with ESH Impact FRIB-M41600-PR-001653 <https://portal.frib.msu.edu/sites/dcc/pages/dcclink.aspx?WBS=M41600&Sub=PR&SN=001653>`_.
+- Carry out search and evict procedure for the ground floor as described in `Search and Evict Procedure for ReA3 Vault for JENSA Extended Target Hydrogen Operation – Credited Administrative Control with ESH Impact FRIB-M41600-PR-001653 <https://portal.frib.msu.edu/sites/dcc/pages/dcclink.aspx?WBS=M41600&Sub=PR&SN=001653>`_. to make sure noone other than the search team is in the vault. 
 - Open unlock and open hydrogen bottle main valve before you leave the ReA3 vault (last thing before you leave). Check that pressure after regulator is between 30-50 psi. 
 - Veerify that your search team partner has also exited the vault
 - Lock and post signage on the last open door
