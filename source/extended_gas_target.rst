@@ -892,8 +892,6 @@ There are three roles as described in the `SECAR Gas Target Procedure for Operat
 Hardware Specific to Hydrogen Operation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-These are listed below:
-
 - Two flammable gas detectors (see :numref:`flammable_gas_detector`) calibrated for hydrogen are installed near the gas target's GHS and inside the JENSA compressor noise reducing enclosure. They detect hydrogen leak from the gas bottle (or the high pressure line) to air.
 
 .. _flammable_gas_detector:
@@ -906,7 +904,7 @@ These are listed below:
 .. figure:: Figures/IMG_3344.jpg
    :width: 50 %
    
-   If hydrogen is leaking into the air in ReA3 high bay, this device will sound an alarm inside the ReA3 vault. It is attached to the top of the panel that controls the Roots blower pumps.
+   If hydrogen is leaking into the air in ReA3 high bay, this device will sound an alarm inside the ReA3 vault. It is attached to the top of the panel that controls the Roots blower pumps. There will also be a voice alarm in the FRIB control room and operators will contact the experimenters. 
 
 - There is a dry nitrogen bottle that acts as a backup in case of a failure of the laboratory dry nitrogen supply. This bottle is installed behind the touch panel for control of the DV650 pumps. **Make sure its regulator is set to 15 psi at all times.** If the system is in :code:`vent` or :code:`purge` mode, and :code:`MF6` flow rate reads :math:`<\,70\%` of its set value, :code:`V15` valve will be automatically opened after 10 seconds to ensure constant source of dry nitrogen by opening the valve to the reserved dry nitrogen bottle. :code:`V15` is the only valve in the GHS that cannot be commanded manually even via using the :code:`MAN` mode of operation.
 - A flash arrestor (see :numref:`flash_arrestor`) is installed on the hydrogen bottle to extinguish the flames and prevent the bottle from explosion.
@@ -918,8 +916,8 @@ These are listed below:
    The flash arrestor is the golden device that is attached to the hydrogen regulator.
 
 - Flow switches will be added in future to the fans in the noise enclosure of JENSA compressor. These are not installed yet and will only be installed if the JENSA compressor gets the approval to run hydrogen.
-- Lighting above the system are removed to have no potential ignition sources.
-- An in situ Oxygen sensor inside the vacuum system (see :numref:`oxygen_sensor`) allows early detection of oxygen ingress at :math:`< 1\%` and :math:`10\%` of hydrogen Low Explosive Level (LEL). At :math:`1\%` of LEL (sensor readback :math:`= 0.04\%`), a standard Pheobus alarm will be triggered. At :math:`10\%` of LEL (sensor readback :math:`= 0.4\%`), a voice alarm is activated in the FRIB control room and the system will automatically be switched to :code:`purge` mode.
+
+- An in situ Oxygen sensor inside the vacuum system (see :numref:`oxygen_sensor`) allows early detection of oxygen ingress at :math:`< 1\%` and :math:`10\%` of hydrogen Low Explosive Level (LEL). At :math:`1\%` of LEL (sensor readback :math:`= 0.04\%`), a standard Pheobus alarm will be triggered. At :math:`10\%` of LEL (sensor readback :math:`= 0.4\%`) the system will automatically be switched to :code:`purge` mode.
 
 .. _oxygen_sensor:
 .. figure:: Figures/IMG_3292.jpg
@@ -948,6 +946,11 @@ These are listed below:
 
 How to Change Hydrogen Bottle
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. warning::
+
+    Only hydrogen lead operators can change the hydrogen bottle
+
 
 If at any time, the hydrogen bottle runs out of the supply gas and needs to be changed, follow the procedure below:
 
@@ -1012,17 +1015,19 @@ If at any time, the hydrogen bottle runs out of the supply gas and needs to be c
 What to Do prior to and during Hydrogen Operation?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The hydrogen lead operator(s) and experts shall make sure that:
+The hydrogen lead operator(s) shall make sure that:
 
-- Prior to running the system with hydrogen, the prestart checklist (DCC Document FRIB-M41600-TD-001693-R001) is followed in full (see also :numref:`intentional_leak_section`).
+- Prior to running the system with hydrogen, the hydrogen lead operator executes the complete `Prestart Checklist for Hydrogen Operation of SECAR’s Extended Gas
+Target FRIB-M41600-TD-001693 <https://portal.frib.msu.edu/sites/dcc/pages/dcclink.aspx?WBS=M41600&Sub=TD&SN=001693>`_ (see also :numref:`intentional_leak_section`).
 - Make sure the reserved nitrogen bottle has enough nitrogen, and that both its manual valves (one on the bottle and one metallic one near the bottle on the regulator) are open. The regulator should be set to 15 psi and the bottle should be at least half full.
-- After the prestart checklist is performed, the ReA3 high bay has to be swept and locked properly following the procedures found in DCC (FRIB-S30205-PR-001363-R001; and Procedure to Secure ReA3 Hall for JENSA Extended Target Hydrogen Operation – Credited Administrative Control with ESH Impact).
+- After the prestart checklist is performed, the ReA3 high bay has to be swept and locked properly following the `Search and Evict Procedure for ReA3
+Vault for JENSA Extended Target Hydrogen Operation – Credited Administrative Control with ESH Impact FRIB-M41600-PR-001653 <https://portal.frib.msu.edu/sites/dcc/pages/dcclink.aspx?WBS=M41600&Sub=PR&SN=001653>`_.
 - No personnel will be allowed to be present in the ReA3 high bay while the system is operating with hydrogen.
 
 During hydrogen operation:
 
-- While running with hydrogen, monitor the oxygen content in the system. Oxygen sensor is sensitive down to :math:`0.01\%`. A standard Phoebus alarm will be triggered if the oxygen level in the system reaches :math:`0.04\%`.
-- If the oxygen level reaches :math:`0.4\%`, a voice alarm is activated in FRIB control room and the system will be automatically switched to :code:`purge` mode.
+- While running with hydrogen, monitor the oxygen content in the system. Oxygen sensor is sensitive down to :math:`0.01\%`. A standard Phoebus alarm will be triggered if the oxygen level in the system reaches :math:`0.04\%`. The target should then be pumped out and restarted with fresh gas. If there is a rapid rise press E-stop to initiate a purge. 
+- If the oxygen level reaches :math:`0.4\%`, the system will be automatically switched to :code:`purge` mode.
 - In case of an emergency and if you are in :code:`run` mode, click on the emergency stop button found on the operating mode controls section of the control page (|emergencystop|) to initiate a purge of the system with dry nitrogen.
 
 .. _intentional_leak_section:
@@ -1060,6 +1065,37 @@ To ensure the oxygen sensor is calibrated correctly:
 
 Locking and Re-entering into ReA3 Vault
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The Hydrogen user in Charge (HUIC) can stop hydrogen operation to enable access to the ReA3 vault, can resecure the vault, and can restart hydrogen operation. The re-entry and search and evict proceduers in `Search and Evict Procedure for ReA3
+Vault for JENSA Extended Target Hydrogen Operation – Credited Administrative Control with ESH Impact FRIB-M41600-PR-001653 <https://portal.frib.msu.edu/sites/dcc/pages/dcclink.aspx?WBS=M41600&Sub=PR&SN=001653>`_. must be followed exactly. There are some additional considerations included in the checklists below: 
+
+Checklist for re-entry carried out by the HUIC
+
+- Stop run and unbias the PIPS detectors 
+- Switch to pump mode and evacuate target gas (gauges should read zero)
+- Close V3 and V6
+- Verify that SCR_BTS34:CMG_D1465M gauge reads <20 mTorr
+- Lock JENSA controls screen so that in your absence nobody can operate the target
+- Go to a ReA3 Vault door and open the card cover
+- Enter the ReA3 vault alone and immediately close and lock the main valve on the hydrogen bottle
+- The system is now in a safe state and others can enter
+- Report successful completion of the r-entry procedure to the FRIB control room and make an entry in the ELOG
+
+Checklist for resecuring the ReA3 vault and restarting
+
+- Assign another hydrogen user to form a search team with you
+- Verify V3 and V6 are closed, pumps are running, and the system is still in pump mode and functioning properly
+- Ensure the two card reader covers for the doors to the ReA3 vault from HW13 hallway (along the west side of the ReA3 vault) are locked and signage is posted. 
+- Lock one of the door card reader cover on the east side of the ReA3 vault and add signage, and enter the ReA3 vault via the last unlocked door (you can post signage to not enter). 
+- Verify that chains to Penthouse are closed and locked - is that is the case you do not have to re-search the Penthouse. Otherwise carry out the search and evict procedure for the Penthouse following `Search and Evict Procedure for ReA3
+Vault for JENSA Extended Target Hydrogen Operation – Credited Administrative Control with ESH Impact FRIB-M41600-PR-001653 <https://portal.frib.msu.edu/sites/dcc/pages/dcclink.aspx?WBS=M41600&Sub=PR&SN=001653>`_.
+- Carry out search and evict procedure for the ground floor as described in `Search and Evict Procedure for ReA3
+Vault for JENSA Extended Target Hydrogen Operation – Credited Administrative Control with ESH Impact FRIB-M41600-PR-001653 <https://portal.frib.msu.edu/sites/dcc/pages/dcclink.aspx?WBS=M41600&Sub=PR&SN=001653>`_. to make sure noone other than the search team is in the vault. 
+- Open unlock and open hydrogen bottle main valve before you leave the ReA3 vault (last thing before you leave). Check that pressure after regulator is between 30-50 psi. 
+- Veerify that your search team partner has also exited the vault
+- Lock and post signage on the last open door
+- Report successful completion of the Search and Evict procedure to the FRIB control room and make an ELOG entry
+- In the data U, refill target and continue operation
 
 Procedure to Secure ReA3 Hall for JENSA Extended Target Hydrogen Operation – Credited Administrative Control with ESH Impact; and the procedure with DCC code FRIB-S30205-PR-001363-R001 explain what to do to lock and re-enter to the ReA3 vault. Please refer to those documents. Please also ensure that before re-entry to the ReA3 vault and prior to purging the system with dry nitrogen, the DAQ and scalers are safely stopped and the silicon detectors are safely debiased (see :numref:`PIPS_operation`). Only then, follow the aforementioned procedures to re-enter the ReA3 vault.
 
@@ -1121,20 +1157,6 @@ Once you are ready to fill the system with hydrogen:
     
     - Verify that :code:`MF6` is set to 1000 sccm.
     - Click on |emergencystop| button, which will switch the system to :code:`purge` mode. It is safe to keep purging the system for a long time assuming that :code:`MF6` is set to have a flow of 1000 sccm and that its upstream needle valve (see :numref:`MF6_needle`) was not touched.
-- If you need to go into the ReA3 vault and the system is in :code:`run` mode:
-    
-    - Stop the DAQ and scalers.
-    - Safely debias the silicon detectors (see :numref:`PIPS_operation`).
-    - Verify that :code:`MF6` is set to 1000 sccm.
-    - While in :code:`run` mode, click on the |emergencystop| button, which will switch the system to the :code:`purge` mode.
-    - Let the system purge for 10 minutes.
-    - Verify that :code:`V21` is closed.
-    - Click on the |reset| button.
-    - Switch to :code:`vent` mode.
-    - Switch to :code:`pump` mode.
-    - Pump the system for at least 15 minutes.
-    - Verify that the hydrogen is safely evacuated from the system by verifying the pressures read from capacitance manometer gauges at various locations. They should be below 1 Torr. :code:`SCR_BTS34:CMG_D1465M` should read below 20 mTorr.
-    - Now it is safe to follow the procedures discussed in :numref:`reentry` to enter the ReA3 vault.
 
 .. _vent_hydrogen:
 
