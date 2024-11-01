@@ -1019,8 +1019,7 @@ The hydrogen lead operator(s) shall make sure that:
 
 - Prior to running the system with hydrogen, the hydrogen lead operator executes the complete `Prestart Checklist for Hydrogen Operation of SECAR’s Extended Gas Target FRIB-M41600-TD-001693 <https://portal.frib.msu.edu/sites/dcc/pages/dcclink.aspx?WBS=M41600&Sub=TD&SN=001693>`_. (see also :numref:`intentional_leak_section`).
 - Make sure the reserved nitrogen bottle has enough nitrogen, and that both its manual valves (one on the bottle and one metallic one near the bottle on the regulator) are open. The regulator should be set to 15 psi and the bottle should be at least half full.
-- After the prestart checklist is performed, the ReA3 high bay has to be swept and locked properly following the `Search and Evict Procedure for ReA3
-Vault for JENSA Extended Target Hydrogen Operation – Credited Administrative Control with ESH Impact FRIB-M41600-PR-001653 <https://portal.frib.msu.edu/sites/dcc/pages/dcclink.aspx?WBS=M41600&Sub=PR&SN=001653>`_.
+- After the prestart checklist is performed, the ReA3 high bay has to be swept and locked properly following the `Search and Evict Procedure for ReA3 Vault for JENSA Extended Target Hydrogen Operation – Credited Administrative Control with ESH Impact FRIB-M41600-PR-001653 <https://portal.frib.msu.edu/sites/dcc/pages/dcclink.aspx?WBS=M41600&Sub=PR&SN=001653>`_.
 - No personnel will be allowed to be present in the ReA3 high bay while the system is operating with hydrogen.
 
 During hydrogen operation:
@@ -1065,8 +1064,7 @@ To ensure the oxygen sensor is calibrated correctly:
 Locking and Re-entering into ReA3 Vault
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Hydrogen user in Charge (HUIC) can stop hydrogen operation to enable access to the ReA3 vault, can resecure the vault, and can restart hydrogen operation. The re-entry and search and evict proceduers in `Search and Evict Procedure for ReA3
-Vault for JENSA Extended Target Hydrogen Operation – Credited Administrative Control with ESH Impact FRIB-M41600-PR-001653 <https://portal.frib.msu.edu/sites/dcc/pages/dcclink.aspx?WBS=M41600&Sub=PR&SN=001653>`_. must be followed exactly. There are some additional considerations included in the checklists below: 
+The Hydrogen user in Charge (HUIC) can stop hydrogen operation to enable access to the ReA3 vault, can resecure the vault, and can restart hydrogen operation. The re-entry and search and evict proceduers in `Search and Evict Procedure for ReA3 Vault for JENSA Extended Target Hydrogen Operation – Credited Administrative Control with ESH Impact FRIB-M41600-PR-001653 <https://portal.frib.msu.edu/sites/dcc/pages/dcclink.aspx?WBS=M41600&Sub=PR&SN=001653>`_. must be followed exactly. There are some additional considerations included in the checklists below: 
 
 Checklist for re-entry carried out by the HUIC
 
