@@ -1093,8 +1093,6 @@ Checklist for resecuring the ReA3 vault and restarting
 - In the data U, refill target
 - Once the target is operating at the nominal pressure, re-bias detectors
 
-Procedure to Secure ReA3 Hall for JENSA Extended Target Hydrogen Operation – Credited Administrative Control with ESH Impact; and the procedure with DCC code FRIB-S30205-PR-001363-R001 explain what to do to lock and re-enter to the ReA3 vault. Please refer to those documents. Please also ensure that before re-entry to the ReA3 vault and prior to purging the system with dry nitrogen, the DAQ and scalers are safely stopped and the silicon detectors are safely debiased (see :numref:`PIPS_operation`). Only then, follow the aforementioned procedures to re-enter the ReA3 vault.
-
 .. _hydrogen_operation:
 
 How to Operate the System with Hydrogen
