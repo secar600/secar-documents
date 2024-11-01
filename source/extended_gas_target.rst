@@ -1017,8 +1017,7 @@ What to Do prior to and during Hydrogen Operation?
 
 The hydrogen lead operator(s) shall make sure that:
 
-- Prior to running the system with hydrogen, the hydrogen lead operator executes the complete `Prestart Checklist for Hydrogen Operation of SECAR’s Extended Gas
-Target FRIB-M41600-TD-001693 <https://portal.frib.msu.edu/sites/dcc/pages/dcclink.aspx?WBS=M41600&Sub=TD&SN=001693>`_ (see also :numref:`intentional_leak_section`).
+- Prior to running the system with hydrogen, the hydrogen lead operator executes the complete `Prestart Checklist for Hydrogen Operation of SECAR’s Extended Gas Target FRIB-M41600-TD-001693 <https://portal.frib.msu.edu/sites/dcc/pages/dcclink.aspx?WBS=M41600&Sub=TD&SN=001693>`_. (see also :numref:`intentional_leak_section`).
 - Make sure the reserved nitrogen bottle has enough nitrogen, and that both its manual valves (one on the bottle and one metallic one near the bottle on the regulator) are open. The regulator should be set to 15 psi and the bottle should be at least half full.
 - After the prestart checklist is performed, the ReA3 high bay has to be swept and locked properly following the `Search and Evict Procedure for ReA3
 Vault for JENSA Extended Target Hydrogen Operation – Credited Administrative Control with ESH Impact FRIB-M41600-PR-001653 <https://portal.frib.msu.edu/sites/dcc/pages/dcclink.aspx?WBS=M41600&Sub=PR&SN=001653>`_.
