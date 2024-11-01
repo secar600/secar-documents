@@ -1071,7 +1071,7 @@ Vault for JENSA Extended Target Hydrogen Operation – Credited Administrative C
 
 Checklist for re-entry carried out by the HUIC
 
-- Stop run and unbias the PIPS detectors 
+- Stop run and unbias the PIPS detectors (see :numref:`PIPS_operation`)
 - Switch to pump mode and evacuate target gas (gauges should read zero)
 - Close V3 and V6
 - Verify that SCR_BTS34:CMG_D1465M gauge reads <20 mTorr
@@ -1095,7 +1095,8 @@ Vault for JENSA Extended Target Hydrogen Operation – Credited Administrative C
 - Veerify that your search team partner has also exited the vault
 - Lock and post signage on the last open door
 - Report successful completion of the Search and Evict procedure to the FRIB control room and make an ELOG entry
-- In the data U, refill target and continue operation
+- In the data U, refill target
+- Once the target is operating at the nominal pressure, re-bias detectors
 
 Procedure to Secure ReA3 Hall for JENSA Extended Target Hydrogen Operation – Credited Administrative Control with ESH Impact; and the procedure with DCC code FRIB-S30205-PR-001363-R001 explain what to do to lock and re-enter to the ReA3 vault. Please refer to those documents. Please also ensure that before re-entry to the ReA3 vault and prior to purging the system with dry nitrogen, the DAQ and scalers are safely stopped and the silicon detectors are safely debiased (see :numref:`PIPS_operation`). Only then, follow the aforementioned procedures to re-enter the ReA3 vault.
 
@@ -1273,9 +1274,18 @@ Emergency Shutdown Procedure while Running with Hydrogen
     - Switch to :code:`vent` mode.
     - Switch to :code:`pump` mode.
     - If the experiment is still going on, swicth to :code:`fill` mode. Fill the system again and switch to :code:`run` mode and carry on with the rest of the experiment. 
-- In a rare case of a total loss of network access that lasts for more than a few minutes, the hydrogen lead operator or system expert will have to re-enter the ReA3 vault and stop the hydrogen operation by forcing the system to go to :code:`purge` mode. In this case, the system is still filled with hydrogen when the expert enters the ReA3 vault. The system will maintain its current state in case of network loss, so the system expert or a hydrogen lead operator has to force it to go into :code:`purge` mode to remove hydrogen from the system. **To stop the hydrogen operation, do the following only if you are the system expert (or hydrogen lead operator):**
+- In a rare case of a total loss of network access that lasts for more than a few minutes, if vault access is needed, the hydrogen lead operator follows the procedure in  `Search and Evict Procedure for ReA3 Vault for JENSA Extended Target Hydrogen Operation – Credited Administrative Control with ESH Impact FRIB-M41600-PR-001653 <https://portal.frib.msu.edu/sites/dcc/pages/dcclink.aspx?WBS=M41600&Sub=PR&SN=001653>`_:
+
+- We will install a physical E-STOP button at the entrance of the ReA3 Hall (west side). If that button is installed press it.
+- Take a remote reading of the oxygen level in the gas target. We will have remote reading without network enabled - either by an external display next to the above mentioned E-STOP button, or a wired camera feed in the data U. 
+  - If the reading is less than 0.4% proceed. 
+  - If the reading is moree than 0.4% the equivalent protection process must be followed
+- If oxygen level is below 0.4% enter vault alone
+- Close and lock valve on hydrogen bottle
+- Execute manual purging procedure described beelow 
+
+**To stop the hydrogen operation, do the following only if you are the system expert (or hydrogen lead operator):**
  
-- Follow the procedures given in :numref:`reentry` and enter the ReA3 vault.
 - Go to the panel, where all the gauge controllers are (see :numref:`pump_rack`). Find :code:`MKS5` controller (see :numref:`MKS5`).
 - Using the up/down arrow buttons, select :code:`CMG D1465K`. Once it is seleceted, you will see a green LED light next to this label.
 
