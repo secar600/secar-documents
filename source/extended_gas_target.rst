@@ -580,6 +580,7 @@ Filling the pumped down system with target gas
 - Click on :code:`MF4` indicator on the CS-Studio control page. A small window pops up. Make sure the flow set point is set to fully open (flow = 500 sccm).
 - Switch the operating mode from :code:`pump` mode to :code:`fill` mode.
 - Click on :code:`MF2` indicator on the CS-Studio control page. A small window pops up. Set the flow to 100 sccm.
+- Set :code:`MF2` to SETPOINT: open the probe window and search this PV: :code:`SCR_BTS34:MFC_D1465B:MODE_CSET_MFC`. Then, enter :file:`SETPOINT` under new value and hit :code:`Enter`. 
 - Watch the gas pressures inside the gas target and the foreline. Once the desired gas pressure inside the gas target, read by capacitance manometer G11 (:code:`SCR_BTS34:CMG_D1465K`), is reached, set :code:`MF2` flow set point back to 0 sccm.
 - Switch to :code:`run` mode of operation to recirculate the gas. To operate the detectors, see :numref:`PIPS_operation`.
 - Once in :code:`run` mode, set :code:`MF4` to SETPOINT mode using the Probe functionality (see above)
