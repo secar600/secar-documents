@@ -1,4 +1,5 @@
- Data Acquisition
+
+Data Acquisition
 ================
 
 Instructions for Users
