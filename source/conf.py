@@ -209,6 +209,15 @@ html_static_path = []   # ['_static']
 #
 # html_use_index = True
 
+# add Edit with Github botton
+html_context = {
+       "display_github": True,  # Enable GitHub integration
+#       "github_user": "secar600",  # Your GitHub username
+#       "github_repo": "secar-documents",  # Your GitHub repository name
+#       "github_version": "secar-documents",  # The branch you want to link to (usually master)
+#      "conf_py_path": "/source/",  # Path to your Sphinx documentation
+   }
+
 # If true, the index is split into individual pages for each letter.
 #
 # html_split_index = False
