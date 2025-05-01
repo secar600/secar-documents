@@ -302,6 +302,7 @@ Hybrid Ionization Chamber (IC)
 To flow isobutane gas into this detector:
 
 - Close the last beamline gate valve of SECAR (:code:`SCR_BTS35:BGV_D1877`).
+- Make sure that the MFC is set to CLOSE. If not, select the MFC channel with the up & down arrow keys, press :code:`Channel Setup`, navigate to Mode and press :code:`Enter`. Use up or down arrow keys to select CLOSE, press :code:`Enter` and then press :code:`Esc` to exit.
 - Set the desired pressure by pressing the :code:`System Setup` button. A menu opens on the display. Using the arrow keys, select :code:`PID Recipe`. Press :code:`Enter`. At this point, the cursor will be on :code:`B1` under :code:`R1`. Press :code:`Enter` again. Using the arrow key, come down and to the right until you find the set pressure menu. Press :code:`Enter` again and using the arrow keys, go up or down until your desired pressure is reached. Press :code:`Enter` again to set the pressure. Press :code:`ESC` a few times to go back to the main display.
 - Close the manual valve which isolates the detector from the beamline (see :numref:`figure5`).
 - The gas supply and return valves located near the beamline (not on the gas handling system) but near the previous valve (these are two manual green valves shown on :numref:`figure6`) should already be open. 
