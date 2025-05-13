@@ -16,7 +16,7 @@ Two PIPS detectors (see :numref:`PIPS_dets`) are used inside the JENSA jet targe
 
 The PIPS detectors mounted in the JENSA target are not collimated. 
 
-Inside the extended gas target, the two PIPS detectors are mounted in their designated holders (see :numref:`PIPS_extended`) that are part of the target chamber's assembly. In this target configuration, the detectors can only be places at :math:`30^{\circ}` and :math:`45^{\circ}` and are both collimated.
+Inside the extended gas target, the two PIPS detectors are mounted in their designated holders (see :numref:`PIPS_extended`) that are part of the target chamber's assembly. In this target configuration, the detectors can only be places at :math:`30^{\circ}` for the downstream position and :math:`45^{\circ}` for the upstream position and are both collimated.
 
 .. _PIPS_dets:
 .. figure:: Figures/IMG_3364.jpg
@@ -43,7 +43,7 @@ Please use the JENSA CAEN power supply (see :numref:`CAEN_ON`) to bias these det
 
 .. attention::
 
-   The PIPS detectors used with the JENSA target are biased to :math:`+130` V each, while those inside the extended gas target are only biased to :math:`+40` V each.
+   The PIPS detectors used with the JENSA target are biased to :math:`+130` V each, while those inside the extended gas target are only biased to :math:`+120` V each.
 
 PIPS Electronics
 ~~~~~~~~~~~~~~~~
