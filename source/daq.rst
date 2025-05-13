@@ -44,7 +44,7 @@ Start SpecTcl
 #. Open a terminal
 #. Enter :code:`goSpecTcl.sh`
 #. First, load the standard Definitions file basics_definitions.tcl in the treegui window by clicking the load button.
-#. Next, load the desired window configuration in Xamine Window->Read Configuration
+#. Next, load the desired window configuration in Xamine Window->Read Configuration (For example :code:`PIPS basic` loads the two spectra for the PIPS detectors) 
 #. Note for experiments with SiLi detector: parameter is SiAScat0 and spectrum SiLi.energy
 
 Start qtscope
