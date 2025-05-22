@@ -445,7 +445,7 @@ After the extended gas target is vented and fully closed up:
 - Once the pressure inside the gas target reaches 0.5 - 1 Torr:
     
     - Close the valve with black handle labelled as "To Leak Air In" (see :numref:`air_leak_valve`).
-    - Turn ON the DV650 screw pumps and wait till all three of them reach full speed (120 Hz). Make sure the pumps' indicators are all green and are running at full speed. To turn these pumps ON, you need to go to the ReA3 high bay. Find their control panel (see :numref:`DV650_panel`).
+    - Turn ON the DV650 screw pumps. Pump P1 is currently offline and needs repairs but is not needed for the extended gas target. Wait till P2 & P3 reach full speed (120 Hz). Make sure the pumps' indicators are all green and are running at full speed. To turn these pumps ON, you need to go to the ReA3 high bay. Find their control panel (see :numref:`DV650_panel`).
         
         - Make sure water is flowing (one of the above-mentioned steps).
         - The panel is a touch panel. Touch the "GRAPHIC" on the bottom of the panel. A schematics diagram shows up, and you will see a red pump and two yellow pumps.
@@ -464,17 +464,17 @@ After the extended gas target is vented and fully closed up:
    The touchable control panel for the DV650 screw pumps.
     
 - Make sure both fans on the side of the JENSA compressor noise enclosure (see :numref:`fans`) are ON and running.
-- Make sure the main 208 V power for the Roots blower pumps is ON (the handle should point up, see :numref:`Rootspump_rack`). Turn ON the Roots blower pumps sequentially from pump 1 to pump 6 skipping pump 4, which is disconnected for the extended gas target. Wait 10 seconds between turning each pump ON to avoid overwhelming the circuit breaker. The first two Roots blower pumps are underneath the noise reducing enclosure around the JENSA compressor.
+- Make sure the main 208 V power for the Roots blower pumps is ON (the handle should point up, see :numref:`Rootspump_rack`). Turn ON the Roots blower pumps sequentially from pump 1.) to pump 6.). (Pump 7.) is disconnected for the extended gas target.) Wait 10 seconds between turning each pump ON to avoid overwhelming the circuit breaker. The first two Roots blower pumps are underneath the noise reducing enclosure around the JENSA compressor.
 - Turn ON the turbo pumps with the following sequence:
         
    - Upstream 1 and downstream 1. From this step onwards, wait 10 seconds between each step to avoid overwhelming the circuit breakers.
    - Upstream 2 and downstream 2.
    - Upstream 3 and downstream 3.
    - Upstream 4 and downstream 4.
-- Turn ON all 8 cold cathode gauges. These gauges have protection circuits and will turn themselves OFF if the pressure is too high. They may show :math:`10^{-11}` Torr or read "WAIT", both of which indicate the gauge is not ON. Wait for a while and they will turn ON. The better the vacuum, the more time it takes for them to come ON. These gauges can be read remotely via the :code:`JENSA` CS-Studio page, located under "SECAR Global Controls" (see :numref:`jensa_css`). However, Dan Crisp is in the process of changing this page, so by the time you read this manual, this page may not exist anymore and it may look a whole lot more awesome than the clutter you see in :numref:`jensa_css`.
-- Wait till all turbos reach their full speed: their LED lights shown as load will sequentially go all the way up and come all the way down. Once at full speed, there should be no load on them and only 1 LED light should be ON. The Varian turbo pump (used as the upstream 3 pump and labelled as "Temp UP 3") does not have any load LEDs. It should be rotating at 42k RPM when at full speed.
-- The last ReA beamline gate valve has an interlock with the :code:`SCR_BTS34:CCG_D1456` gauge, which is set to math:`5\times10^{-7}` Torr. If the pressure read by this gauge is above this limit, the gate valve cannot be opened. Once the pressure reaches below the aforementioned set point, one would need to reset this PV: :code:`SCR_BTS34:CCG_D1456:VAC_RST_CMD` and only then, the gate valve can be opened.
-- The first SECAR beamline gate valve (:code:`SCR_BTS35:BGV_D1483`) has an interlock with the :code:`SCR_BTS34:CCG_D1471` gauge, which is set to :math:`1\times10^{-6}` Torr. If the pressure read by this gauge is above this limit, the gate valve cannot be opened. Once the pressure reaches below the aforementioned set point, one would need to reset this PV: :code:`SCR_BTS34:CCG_D1471:VAC_RST_CMD` and only then, the gate valve can be opened.
+- Turn ON the 4 cold cathode gauges at upstream 3, downstream 3, upstream 4 and downstream 4. These gauges have protection circuits and will turn themselves OFF if the pressure is too high (:math:`>5\times10^{-4}` Torr). Because of this the gauges closer to the target were removed, since pressure can reach :math:`10^{-2}` Torr in sections 1 & 2. They may show :math:`10^{-11}` Torr or read "WAIT", both of which indicate the gauge is not ON. Wait for a while and they will turn ON. The better the vacuum, the more time it takes for them to come ON. These gauges can be read remotely via the :code:`JENSA` CS-Studio page, located under "SECAR Global Controls" (see :numref:`jensa_css`).
+- Wait till all turbos reach their full speed: their LED lights shown as load will sequentially go all the way up and come all the way down. Once at full speed, there should be no load on them and only 1 LED light should be ON. The Varian turbo pump (used as the upstream 4 pump and labelled as "Temp UP 4") does not have any load LEDs but can display power and temperature. It should be rotating at 42k RPM when at full speed. Downstream turbo pump 4 can dispay the power and temperature as well. 
+- The last ReA beamline gate valve has an interlock with the :code:`SCR_BTS34:CCG_D1456` gauge, which is set to :math:`1\times10^{-5}` Torr. If the pressure read by this gauge is above this limit, the gate valve cannot be opened. Once the pressure reaches below the aforementioned set point, one would need to reset this PV: :code:`SCR_BTS34:CCG_D1456:VAC_RST_CMD` and only then, the gate valve can be opened.
+- The first SECAR beamline gate valve (:code:`SCR_BTS35:BGV_D1483`) has an interlock with the :code:`SCR_BTS34:CCG_D1471` gauge, which is set to :math:`2\times10^{-5}` Torr. If the pressure read by this gauge is above this limit, the gate valve cannot be opened. Once the pressure reaches below the aforementioned set point, one would need to reset this PV: :code:`SCR_BTS34:CCG_D1471:VAC_RST_CMD` and only then, the gate valve can be opened.
 
 .. _water_manifold:
 .. figure:: Figures/IMG_3336.jpg
@@ -532,7 +532,7 @@ To turn the high vacuum pumps OFF, follow these steps:
     - Upstream 3 and downstream 3.
     - Upstream 2 and downstream 2.
     - Upstream 1 and downstream 1.
-- Turn OFF the Roots blower pumps from pump 6 to pump 1 (i.e., in reverse order) while waiting 10 seconds after each step before switching the next pump OFF. Roots blower pump #4 (and also Roots blower #7) is disconnected for the extended gas target cofiguration.
+- Turn OFF the Roots blower pumps from pump 6 to pump 1 (i.e., in reverse order) while waiting 10 seconds after each step before switching the next pump OFF. Roots blower pump 7.) is disconnected for the extended gas target cofiguration.
 - Turn OFF the DV650 pumps.
     
     - Go to their control panel (see :numref:`DV650_panel`).
