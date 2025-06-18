@@ -387,7 +387,7 @@ After the extended gas target is vented and fully closed up:
 - Make sure the scroll pump's power switch is in OFF state (only then it will be remotely controlled). The pump will be turned ON by the control software when you switch to the :code:`pump` mode of operation. It will be turned OFF again by the control software when you switch to the :code:`vent` mode of operation.
 - Make sure the manual :code:`AIR VENT` valve located on the scroll pump is fully closed.
 - Make sure the :code:`V21` vent valve is closed (this valve can only be controlled using :code:`MAN` mode or :code:`vent` mode).
-- Make sure the intentional air leak valve and its associated needle valve are closed (see :numref:`air_leak_valve`).
+- Make sure the intentional air leak valve and its associated MFC are closed (:code:`SCR_BTS34:MFC_D1465G:MODE_CSET_MFC' set to  :code:`CLOSE', see :numref:`air_leak_valve`).
 - Close the manual valve on the roughing pump (:code:`VROUGH`).
 - Make sure the scroll pump's control cable, as well as all the control cables for all valves of the gas handling system are in place (see :numref:`solenoids`), properly connected (see :numref:`solenoid_table`), and secured.
 - Make sure mass flow meters :code:`MF2`, :code:`MF4`, :code:`MF6` and :code:`MF7` are properly connected and the needle valves for :code:`MF6` and :code:`MF7` are in the locations they should be: flow rates should be 1000 sccm.
@@ -406,7 +406,7 @@ After the extended gas target is vented and fully closed up:
 .. figure:: Figures/Air_leak_valve.PNG
    :width: 50 %
    
-   This valve should always be closed unless one wants to test the integrity of the oxygen sensor via creating an intentional air leak, which can be done by the needle valve shown in the photo. The yellow metallic cone is an air filter.
+   This valve should always be closed unless one wants to test the integrity of the oxygen sensor via creating an intentional air leak, which can be done by the MFC G. This MFC has a max flow of 10 sccm that can be read via probe command :code:`SCR_BTS34:MFC_D1465G:F_RD`, adjusted via :code:`SCR_BTS34:MFC_D1465G:F_CSET` and opened to setpoint via :code:`SCR_BTS34:MFC_D1465G:MODE_CSET_MFC' set to :code:`SETPOINT', (need to update photo since the valve and MFC are now on the target side, injecting the oxygen into the low pressure target chamber). The yellow metallic cone is an air filter.
 
 .. _solenoids:
 .. figure:: Figures/IMG_3296.jpg
@@ -433,7 +433,7 @@ After the extended gas target is vented and fully closed up:
 
 .. important::
 
-   At the moment, :code:`V7` is connected to :code:`SV4` and :code:`V6` is not connected to any solenoid valve. This is how we have so far run the gas target with helium. Once you purchase hydrogen and get all the necessary approval for hydrogen operation, please connect :code:`V7` properly to :code:`SV5` and :code:`V6` to :code:`SV4`. Then, please talk to Brandon Ewert and ask him to test the system once more with :code:`V7` properly connected to its solenoid valve.
+   If :code:`V7` is connected to :code:`SV4` and :code:`V6` is not connected to any solenoid valve, then the auto controlled valves operate the target with He. For hydrogen mode connect :code:`V7` securely to :code:`SV5` and :code:`V6` to :code:`SV4`.
 
 - Make sure the water valves to the turbo pumps are all ON located on the manifold near SECAR's first quadrupole (see :numref:`water_manifold`). One of these valves is closed and shall remain closed as it was for the Monster turbo pump, which is not used with the extended gas target.
 - Turn ON main laboratory supply of water flow (see :numref:`main_water`) by first turning OFF the bypass valve, then turning ON the water return valve and finally turning ON the water supply valve. The supply line has a high pressure and should be closed first and opened last.
@@ -803,7 +803,7 @@ Each channel can trigger 2 interlocks indicated at the bottom of the screen. A p
 
 - **Vent mode triggered** in :code:`purge` or :code:`pump` modes if:
 
-    - **Scroll pump off**. For hydrogen operation it is critical that hydrogen can be removed when needed. This is usually done in the purge or pump modes. If the scroll pump fails, the vent mode will dilute the target gas with nitrogen, and eventually push gas into the exhaust via the overpressure valves. Once the hydrogen is removed the operatures need to address the root cause of the scroll pump failure, and then click on the |reset| button found under operating mode controls of the control page before the control software allows switching to another mode of operation. 
+    - **Scroll pump off**. For hydrogen operation it is critical that hydrogen can be removed when needed. This is usually done in the purge or pump modes. If the scroll pump fails, the vent mode will dilute the target gas with nitrogen, and eventually push gas into the exhaust via the overpressure valves. Once the hydrogen is removed the operators need to address the root cause of the scroll pump failure, and then click on the |reset| button found under operating mode controls of the control page before the control software allows switching to another mode of operation. 
 
 - **Purge mode triggered** during :code:`fill` or :code:`run` modes if:
 
@@ -812,8 +812,8 @@ Each channel can trigger 2 interlocks indicated at the bottom of the screen. A p
     - **Foreline pressure exceeds 500 Torr**. The foreline pressure is read by capacitance manometer G2 (:code:`SCR_BTS34:CMG_D1465B`). This setpoint is required for hydrogen operation and ensures the amount of target gas is within the envelope for hydrogen operation. 
     - **Additional system pressures exceed setpoints**. These interlocks provide additional safeguards against leaks to atmosphere or other malfunctions. Setpoints can be adjusted as needed to be above the operating values for a particular experiment. The interlocks are: 
 
-        - G3 (:code:`SCR_BTS34:CMG_D1465C`) > 20 Torr. This is the inlet pressure of the last DV650 pump.
-        - G5 (:code:`SCR_BTS34:CMG_D1465E`) > 10 Torr. This is the pressure at the DV650 stage inlet/Roots blower stage exit.
+        - G3 (:code:`SCR_BTS34:CMG_D1465C`) > 50 Torr. This is the inlet pressure of the last DV650 pump.
+        - G5 (:code:`SCR_BTS34:CMG_D1465E`) > 20 Torr. This is the pressure at the DV650 stage inlet/Roots blower stage exit.
         - G9 (:code:`SCR_BTS34:CMG_D1465I`) > 10 Torr. This is the pressure inbetween the Roots blower stages. 
         - G10 (:code:`SCR_BTS34:CMG_D1465J) > 10 Torr. This is the Roots blower stage inlet pressure. 
 
@@ -821,7 +821,7 @@ Each channel can trigger 2 interlocks indicated at the bottom of the screen. A p
 
     - **Oxygen** :math:`>0.4\%`. This setpoint value is required to operate with hydrogen.
     - **Target cell pressure exceeds set point** (see above) Target pressure is read by capacitance manometer G11 (:code:`SCR_BTS34:CMG_D1465K`). This setpoint should be adjusted to experiment requirements to be above planned max operating pressure to ensure there is no unexpected pressure increase that may indicate a leak to atmosphere or some other malfunction. 
-    - **Target chamber pressure exeeds 0.01 Torr**. This is measured by G13 (:code:`SCR_BTS34:CMG_D1465M`)
+    - **Target chamber pressure exeeds 0.5 Torr**. This is measured by G13 (:code:`SCR_BTS34:CMG_D1465M`)
 
 - **Open V15 for reserve nitrogen bottle** in :code:`vent` or :code:`purge` modes if:
 
@@ -835,9 +835,8 @@ Alarms
 ~~~~~~
 - Alarms are specified in the Alarm Change Request system under "Overpressure alarms for JENSA Target GHS" - for example request `ACR23-224<https://portal.frib.msu.edu/sites/engineering/Lists/Alarm%20Change%20Request/Item/displayifs.aspx?List=491f79dc-271a-4918-a164-7f85fbc1dfda&ID=270&Source=https%3a//portal.frib.msu.edu/sites/engineering/Lists/Alarm%2520Change%2520Request/AllRequests.aspx%23InplviewHash267afa80-5559-4303-9e5a-d7031424550a%3D&ContentTypeId=0x0100D709E523E131A14B9A5CE9D80DA591E7>`_
 
-[These are from Kiana]
 - A voice alarm will be triggered in the FRIB control room if the oxygen level in the system reaches :math:`0.4\%`.
-- A standard Phoebus alarm will be triggered if the oxygen level in the system reaches :math:`0.04\%`.
+- A standard Phoebus alarm will be triggered if the oxygen level in the system reaches :math:`0.1\%`.
 
 [Add list of Alarms and instructions for setting values]
 [Add description of what happens when an alarim is triggered - red edge around displayed value in GHS; when is controlroom voice alarm enabled? procedure?]
@@ -866,7 +865,7 @@ When operating with hydrogen
 - Only trained personnel can operate the gas target while in hydrogen operation mode **INCLUDING ANY OPERATION WITH HELIUM**
 - Access to JENSA controls is limited to authorized personnel based on login. Authorized personnel for hydrogen operation cannot leave control screens unattended.
 - There is no access to the ReA3 vault while the target runs hydrogen gas and all operation, including filling, running, and removing gas, is performed remotely. Access card readers are locked. There is a search and evict procedure prior to starting up,  and a re-entry procedure for putting the system back into a safe, hydrogen free state and re-open access to the ReA3 vault. 
-- Operation is limited to at most 13 standard liters of hydrogen, as enforced by the 500 Torr limit and interlock on capacitance manometer G2 (:code:`SCR_BTS34:CMG_D1465B`)
+- Operation is limited to at most 13 standard liters of hydrogen, as enforced by the 430 Torr limit and interlock on capacitance manometer G2 (:code:`SCR_BTS34:CMG_D1465B`)
 
 There are three roles as described in the `SECAR Gas Target Procedure for Operation with Hydrogen <https://portal.frib.msu.edu/sites/dcc/pages/dcclink.aspx?WBS=M41600&Sub=PR&SN=001642>`_
 
@@ -1025,7 +1024,7 @@ The hydrogen lead operator(s) shall make sure that:
 
 During hydrogen operation:
 
-- While running with hydrogen, monitor the oxygen content in the system. Oxygen sensor is sensitive down to :math:`0.01\%`. A standard Phoebus alarm will be triggered if the oxygen level in the system reaches :math:`0.04\%`. The target should then be pumped out and restarted with fresh gas. If there is a rapid rise press E-stop to initiate a purge. 
+- While running with hydrogen, monitor the oxygen content in the system. Oxygen sensor is sensitive down to :math:`0.01\%`. A standard Phoebus alarm will be triggered if the oxygen level in the system reaches :math:`0.1\%`. The target should then be pumped out and restarted with fresh gas. If there is a rapid rise press E-stop to initiate a purge. 
 - If the oxygen level reaches :math:`0.4\%`, the system will be automatically switched to :code:`purge` mode.
 - In case of an emergency and if you are in :code:`run` mode, click on the emergency stop button found on the operating mode controls section of the control page (|emergencystop|) to initiate a purge of the system with dry nitrogen.
 
@@ -1036,7 +1035,7 @@ How to Test the Oxygen Sensor's Integrity
 
 To ensure the oxygen sensor is calibrated correctly:
 
-- Everytime the system is fully vented and the chamber is open to air, check the oxygen monitor on the control page (see :numref:`CSS_Screen`) . It should be reading around 19 - 20 percent. If the system was fully vented with dry nitrogen but not opened to air and then you open the air vent valve (labelled as :code:`AIR VENT` found on the JENSA scroll pump), the oxygen monitor shows something around 12 - 14 percent, depending on how much oxygen is in the system.
+- Everytime the system is fully vented and the chamber is open to air, check the oxygen monitor on the control page (see :numref:`CSS_Screen`) . It should be reading around 19 - 20 percent.
 - There is a vent valve and its associated needle valve (see :numref:`air_leak_valve`) for intentionally introducing air into the system when the system is fully ON and running and prior to hydrogen operation. These valves are used so that the hydrogen lead operator can check the interlocks that are set on the system regarding oxygen content of the gas target, while it is running hydrogen, to ensure those interlocks are working properly. To do this, prior to the hydrogen operation and as part of the prestart checklist, perform the following:
 
     - Notify the FRIB control room that they will hear a voice alarm related to oxygen content of the SECAR gas target.
@@ -1051,7 +1050,7 @@ To ensure the oxygen sensor is calibrated correctly:
         - The oxygen monitor.
     - Allow the oxygen content of the system to reach to :math:`0.4\%` if the loads on the turbo pumps are managable.
 
-        - When the oxygen content reaches :math:`0.04\%`, you should hear a standard Phoebus alarm. Verify that this happens.
+        - When the oxygen content reaches :math:`0.1\%`, you should see a standard Phoebus alarm. Verify that this happens.
         - When the oxygen content reaches :math:`0.4\%`, the operators in the FRIB control room should hear a voice alarm. Verify that this too takes place.
         - When the oxygen content reaches :math:`0.4\%`, the system should also go into :code:`purge` mode. Verify that this occurs as well.
         - Once the system goes into :code:`purge` mode:
