@@ -387,7 +387,7 @@ After the extended gas target is vented and fully closed up:
 - Make sure the scroll pump's power switch is in OFF state (only then it will be remotely controlled). The pump will be turned ON by the control software when you switch to the :code:`pump` mode of operation. It will be turned OFF again by the control software when you switch to the :code:`vent` mode of operation.
 - Make sure the manual :code:`AIR VENT` valve located on the scroll pump is fully closed.
 - Make sure the :code:`V21` vent valve is closed (this valve can only be controlled using :code:`MAN` mode or :code:`vent` mode).
-- Make sure the intentional air leak valve and its associated MFC are closed (:code:`SCR_BTS34:MFC_D1465G:MODE_CSET_MFC' set to  :code:`CLOSE', see :numref:`air_leak_valve`).
+- Make sure the intentional air leak valve and its associated MFC are closed (:code:`SCR_BTS34:MFC_D1465G:MODE_CSET_MFC` set to  :code:`CLOSE`, see :numref:`air_leak_valve`).
 - Close the manual valve on the roughing pump (:code:`VROUGH`).
 - Make sure the scroll pump's control cable, as well as all the control cables for all valves of the gas handling system are in place (see :numref:`solenoids`), properly connected (see :numref:`solenoid_table`), and secured.
 - Make sure mass flow meters :code:`MF2`, :code:`MF4`, :code:`MF6` and :code:`MF7` are properly connected and the needle valves for :code:`MF6` and :code:`MF7` are in the locations they should be: flow rates should be 1000 sccm.
@@ -406,7 +406,7 @@ After the extended gas target is vented and fully closed up:
 .. figure:: Figures/Air_leak_valve.PNG
    :width: 50 %
    
-   This valve should always be closed unless one wants to test the integrity of the oxygen sensor via creating an intentional air leak, which can be done by the MFC G. This MFC has a max flow of 10 sccm that can be read via probe command :code:`SCR_BTS34:MFC_D1465G:F_RD`, adjusted via :code:`SCR_BTS34:MFC_D1465G:F_CSET` and opened to setpoint via :code:`SCR_BTS34:MFC_D1465G:MODE_CSET_MFC' set to :code:`SETPOINT', (need to update photo since the valve and MFC are now on the target side, injecting the oxygen into the low pressure target chamber). The yellow metallic cone is an air filter.
+   This valve should always be closed unless one wants to test the integrity of the oxygen sensor via creating an intentional air leak, which can be done with MFC G. This MFC has a max flow of 10 sccm that can be read via probe command :code:`SCR_BTS34:MFC_D1465G:F_RD`, adjusted via :code:`SCR_BTS34:MFC_D1465G:F_CSET` and opened to setpoint via :code:`SCR_BTS34:MFC_D1465G:MODE_CSET_MFC` set to :code:`SETPOINT`, (need to update photo since the valve and MFC are now on the target side, injecting the oxygen into the low pressure target chamber). The yellow metallic cone is an air filter.
 
 .. _solenoids:
 .. figure:: Figures/IMG_3296.jpg
@@ -439,12 +439,11 @@ After the extended gas target is vented and fully closed up:
 - Turn ON main laboratory supply of water flow (see :numref:`main_water`) by first turning OFF the bypass valve, then turning ON the water return valve and finally turning ON the water supply valve. The supply line has a high pressure and should be closed first and opened last.
 - Open the CS-Studio control page of the gas target (see :numref:`CSS_Screen`).
 - Click on :code:`Pump` button under operating mode controls found on the control page.
-- Open the valve with black handle labelled as "To Leak Air In" but leave the needle valve labelled as "For Intentional Leak" fully closed (see :numref:`air_leak_valve`).
+- Close the valve with black handle labelled as "To Leak Air In" (see :numref:`air_leak_valve`).
 - Slowly open the manual valve on the scroll pump (:code:`VROUGH`) and listen carefully for large leaks and abnormal sounds. If the pump sounds normal, fully open the manual roughing valve.
 - Check the capacitance manometers to ensure the pressure is decreasing at a good speed.
 - Once the pressure inside the gas target reaches 0.5 - 1 Torr:
     
-    - Close the valve with black handle labelled as "To Leak Air In" (see :numref:`air_leak_valve`).
     - Turn ON the DV650 screw pumps. Pump P1 is currently offline and needs repairs but is not needed for the extended gas target. Wait till P2 & P3 reach full speed (120 Hz). Make sure the pumps' indicators are all green and are running at full speed. To turn these pumps ON, you need to go to the ReA3 high bay. Find their control panel (see :numref:`DV650_panel`).
         
         - Make sure water is flowing (one of the above-mentioned steps).
@@ -471,7 +470,7 @@ After the extended gas target is vented and fully closed up:
    - Upstream 2 and downstream 2.
    - Upstream 3 and downstream 3.
    - Upstream 4 and downstream 4.
-- Turn ON the 4 cold cathode gauges at upstream 3, downstream 3, upstream 4 and downstream 4. These gauges have protection circuits and will turn themselves OFF if the pressure is too high (:math:`>5\times10^{-4}` Torr). Because of this the gauges closer to the target were removed, since pressure can reach :math:`10^{-2}` Torr in sections 1 & 2. They may show :math:`10^{-11}` Torr or read "WAIT", both of which indicate the gauge is not ON. Wait for a while and they will turn ON. The better the vacuum, the more time it takes for them to come ON. These gauges can be read remotely via the :code:`JENSA` CS-Studio page, located under "SECAR Global Controls" (see :numref:`jensa_css`).
+- Turn ON the 4 cold cathode gauges at upstream 3, downstream 3, upstream 4 and downstream 4. These gauges have protection circuits and will turn themselves OFF if the pressure is too high (:math:`>5\times10^{-4}` Torr). For this reason the gauges closer to the target were removed, since pressure can reach :math:`10^{-2}` Torr in sections 1 & 2. Instead Baratron capacitance manometer gauges with 1000 mTorr range were installed at upstream 1 (:code:`SCR_BTS34:CMG_D1459`) and downstream 1 (:code:`SCR_BTS34:CMG_D1468`). The CCG may show :math:`10^{-11}` Torr or read "WAIT", both of which indicate the gauge is not ON. Wait for a while and they will turn ON. The better the vacuum, the more time it takes for them to come ON. These gauges can be read remotely via the :code:`JENSA` CS-Studio page, located under "SECAR Global Controls" (see :numref:`jensa_css`).
 - Wait till all turbos reach their full speed: their LED lights shown as load will sequentially go all the way up and come all the way down. Once at full speed, there should be no load on them and only 1 LED light should be ON. The Varian turbo pump (used as the upstream 4 pump and labelled as "Temp UP 4") does not have any load LEDs but can display power and temperature. It should be rotating at 42k RPM when at full speed. Downstream turbo pump 4 can dispay the power and temperature as well. 
 - The last ReA beamline gate valve has an interlock with the :code:`SCR_BTS34:CCG_D1456` gauge, which is set to :math:`1\times10^{-5}` Torr. If the pressure read by this gauge is above this limit, the gate valve cannot be opened. Once the pressure reaches below the aforementioned set point, one would need to reset this PV: :code:`SCR_BTS34:CCG_D1456:VAC_RST_CMD` and only then, the gate valve can be opened.
 - The first SECAR beamline gate valve (:code:`SCR_BTS35:BGV_D1483`) has an interlock with the :code:`SCR_BTS34:CCG_D1471` gauge, which is set to :math:`2\times10^{-5}` Torr. If the pressure read by this gauge is above this limit, the gate valve cannot be opened. Once the pressure reaches below the aforementioned set point, one would need to reset this PV: :code:`SCR_BTS34:CCG_D1471:VAC_RST_CMD` and only then, the gate valve can be opened.
