@@ -239,7 +239,7 @@ To vent the SECAR beamline sections:
 - Wait till they spin down to zero and their speed reduces to 0 Hz.
 - Once the turbo pumps are at 0 Hz, close the manual roughing valve(s) to the scroll pump(s) for the section to be vented.
 - The roughing pump(s) can be left ON.
-- [Fernando: shouldn't we specify which sections are vented with dry nitrogen and which not? Why not all?] If dry nitrogen is available for that section (this is the case for a large portion of the SECAR beamline):
+- Dry nitrogen should be available for all section (or at least for large portion of the SECAR beamline):
  
     - Hook up the regulator shown in :numref:`nitrogen_vent_line` to the laboratory dry nitrogen supply line. 
     - Remove the rubber cork attached to the vent valve of the beamline section that is going to be vented.
@@ -268,7 +268,8 @@ To vent the SECAR beamline sections:
 .. figure:: Figures/IMG_3398.jpg
    :width: 50 %
 
-   Use this tube and its regulator (attached to the beamline stand upstream of the upstream MCP) for venting the SECAR beamline with the laboratory supply of dry nitrogen.
+   Use this tube and its regulator (attached to the beamline stand upstream of the upstream MCP) for venting the SECAR beamline with the laboratory supply of dry nitrogen. 
+   Note: The section before Wien Filter 1 has a permanent nitrogen line installed to the vent valve. It should be already regulated by the regulator before the tee, since the other line after the tee goes to the cryo pump.
 
 .. _filter_for_vent:
 .. figure:: Figures/IMG_3399.jpg
