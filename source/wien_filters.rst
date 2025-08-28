@@ -3,13 +3,12 @@ Wien Filters
 ============ 
 
 .. warning::
-   Wien Filters can only be operated by specifically trained personnel following the `SECAR Wien Filter Conditioning and
-Operation Procedure <https://portal.frib.msu.edu/sites/dcc/pages/dcclink.aspx?WBS=M41600&Sub=PR&SN=001005>`_.
+   Wien Filters can only be operated by specifically trained personnel following the `SECAR Wien Filter Conditioning and Operation Procedure <https://portal.frib.msu.edu/sites/dcc/pages/dcclink.aspx?WBS=M41600&Sub=PR&SN=001005>`_.
 
 Wien Filter Users
 ~~~~~~~~~~~~~~~~~
 
-..warning::
+.. warning::
     Only trained Wien Filter users can use the Wien Filter controls. Controls are blocked based on your login and only available for trained users registered in the channel control document <https://portal.frib.msu.edu/sites/dcc/pages/dcclink.aspx?WBS=M41600&Sub=RC&SN=006340>. As a trained user make sure you login with your credentials when operating the Wien filter, do not leave the computer you are logged into unattended, and log out once you are done. 
 
 Some notes on operation: 
