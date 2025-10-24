@@ -379,7 +379,11 @@ This section describes how to turn ON/OFF the high vacuum pumps and the scroll p
 How to Turn Pumps ON
 ~~~~~~~~~~~~~~~~~~~~
 
-After the extended gas target is vented and fully closed up:
+.. important::
+
+   **Task instruction:** pump down
+
+Initial state is that the extended gas target is vented and fully closed up:
 
 - Ensure that all flanges are closed and all bolts are tightened.
 - Check to ensure the first beamline gate valve of SECAR (:code:`SCR_BTS35:BGV_D1483`) and the last ReA beamline gate valve (:code:`ReA_BTS34:BGV_D1450`) are closed.
@@ -401,6 +405,10 @@ After the extended gas target is vented and fully closed up:
    * - .. figure:: Figures/IMG_3295.jpg
 
           The JENSA scroll pump should be left at the OFF state and the interlock cable should be connnected to it. Only then, it can be remotely controlled.
+
+.. important::
+
+   **Task instruction:** intentional air leak
 
 .. _air_leak_valve:
 .. figure:: Figures/Air_leak_valve.PNG
@@ -570,6 +578,9 @@ When the gas target needs to be operated with a non-explosive gas such as helium
 
 Filling the pumped down system with target gas
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. important::
+
+   **Task instruction:** fill non-explosive gas
 
 - Make sure the gas target is under high vacuum (see :numref:`setting_up_high_vacuum`) and that the mode of operation is set to :code:`pump` mode.
 - Zero the :code:`SCR_BTS34:CMG_D1465K`, :code:`SCR_BTS34:CMG_D1465M` and :code:`SCR_BTS34:CMG_D1465E` capacitance manometer gauges (:numref:`zero_gauges`) if they show an offset.
@@ -734,6 +745,10 @@ see `Emergency Response Procedure for SECAR Extended and Jet Gas Targets During 
 
 How to Change the Non-Explosive Gas Bottle
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. important::
+
+   **Task instruction:** change non-explosive gas bottle
 
 If at any time, the non-explosive gas bottle runs out of the supply gas and needs to be changed, follow the procedure below:
 
