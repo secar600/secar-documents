@@ -32,7 +32,8 @@ The light can be turned ON/OFF using another process variable that has "LT" in i
 
 Images are viewed by using Viola. To start up Viola:
 
-- Start the viola shell script from the command line in the experiment account (the terminal must be running on a computer on the controls network, e.g. U5PC1, U5PC5, U5PC8, or U5PC9): :code:`start_viola.sh --setting ~/Documents/viola_settings/VD_D1783.json`. There should be a json file for each SECAR viewer that contains the specific viewer settings. 
+- Make sure the viewer camera is on (CS Studio page for diagnostics)
+- Start the viola shell script from the command line in the experiment account (the terminal must be running on a computer on the controls network, e.g. U5PC1, U5PC5, U5PC8, or U5PC9): :code:`./start_viola.sh. Click on File - Open Setting to select the json file that sets up a particular viewer for viewing. These are typically locted in a folder for the current experiment that is located in  ~/Documents/viola_settings`. For example a folder 'E3_Settings' for experiment E3. Inside this folder there should be a json file for each SECAR viewer that contains the specific viewer settings. 
 - The viewers and their standard file names are: 
     - Viewer 1457: VD_D1457.json
     - Viewer 1515: VD_D1515.json
@@ -42,7 +43,9 @@ Images are viewed by using Viola. To start up Viola:
     - Viewer 1783: VD_D1783.json
     - Viewer 1836: VD_D1836.json
     - Viewer 1879: VD_D1879.json
+    - Camera 1469: CAM_D1496.json (that is the camera that looks at target scintillation)
 - If Viola is already running you can select a new json file for a new viewer in File -> Open Settings.
+- If you wish the viola analysis data such as distribution X Y position etc to be available as EPICS channels, for example for later analysis or for monitoring as a function of time, open "Preferences" and select the checkbox for "Update external information" 
 
   - NOTE: you may have to enter viewer name ":image1:ArrayData" by hand into the "Source" field in the viola main window, for example :code:`SCRBTS35:VD_D15125:image1:ArrayData` - then just click "Live"
 
@@ -90,6 +93,7 @@ Viola can subtract background from the viewer image to have a clearer display of
 - Make sure camera settings are final, turn light off
 - In Viola menu select Option -> Preference
 - In the new window check the box “Subtract Background image” (see :numref:`Viewer_Viola3`)
+- Make sure camera is on and viola is set to "live"
 - Press the button with the “shutter” symbol on the far right 
 - A pop up window will come up (can be behind the window!) – select ok – saves background automatically in a predefined path
 - Check the box “Normalize Raw Data”
