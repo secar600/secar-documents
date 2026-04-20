@@ -71,7 +71,7 @@ To set the dipoles:
 
 - save
 
-- Always set magnets first by Hall probe. This is the only option for B3-B8. However, also for B1 and B2 you need to first set the magnets by Hall probe, albeit with a larger tolerance. To set magnets by Hall probe execute :code:`python run_parallel_dipole_hall.py`
+- Always set magnets first by Hall probe. This is the only option for B3-B8. However, also for B1 and B2 you need to first set the magnets by Hall probe, albeit with a larger tolerance. To set magnets by Hall probe execute :code:`python run_parallel_dipole_hallprobe.py`
 
 - For B1 and B2, then set magnets by NMR probe with the tighter final tolerance (NMR toleerance column). 
     - First check that both dipole NMRs are locked (use toggle switch and make sure display field is not orange for both, B1 and B2) 
@@ -81,7 +81,7 @@ To set the dipoles:
 .. figure:: Figures/rundipoleinput.png
    :scale: 60%
 
-   Input file for :code:`run_parallel_dipole_hall.py` and :code:`run_parallel_dipole_nmr.py`. Note that margins for nmr are ignored for B3-B8. 
+   Input file for :code:`run_parallel_dipole_hallprobe.py` and :code:`run_parallel_dipole_nmr.py`. Note that margins for nmr are ignored for B3-B8. 
 
 Hall Probes
 -----------
