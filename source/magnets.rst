@@ -61,7 +61,7 @@ Setting Dipoles by Field
 
 Dipoles need to be cycled, and after that only downward field changes are allowed to achive reproducible fields for the same Hall probe (or NMR) reading. This means that after cycling (if needed) dipoles have to be set by scaling the field carefully downward, hitting the nominal field value without overshooting. Overshooting requires cycling and repeating of the procedure. There can be cross talk between dipoles, therefore dipoles in a pair should be set roughly simultaneously, especially for large changes. Setting dipoles by hand can be very time consuming. Therefore magnet scaling scripts are availabe.
 
-The scripts are located in the E20008 experiment folder under :code:`Documents/tune_optimizer`. There are two different scripts: code:`run_parallel_dipole_hall.py` to set B1 - B8 by Hall probe and code:`run_parallel_dipole_nmr.py` to set B1 and B2 by NMR probe. Both read the same input file :code:`dipole_values.txt`that specifies which dipoles should be set (flag), set value, and margins for setting by Hall probe and NMR, respectively. 
+The scripts are located in the E20008 experiment folder under :code:`Documents/tune_optimizer`. There are two different scripts: :code:`run_parallel_dipole_hall.py` to set B1 - B8 by Hall probe and :code:`run_parallel_dipole_nmr.py` to set B1 and B2 by NMR probe. Both read the same input file :code:`dipole_values.txt`that specifies which dipoles should be set (flag), set value, and margins for setting by Hall probe and NMR, respectively. 
 
 To set the dipoles: 
 
