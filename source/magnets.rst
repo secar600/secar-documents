@@ -79,7 +79,7 @@ To set the dipoles:
 
 .. _Fig_rundipoleinput:
 .. figure:: Figures/rundipoleinput.png
-   :scale: 20%
+   :scale: 60%
 
    Input file for :code:`run_parallel_dipole_hall.py` and :code:`run_parallel_dipole_nmr.py`. Note that margins for nmr are ignored for B3-B8. 
 
