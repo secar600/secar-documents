@@ -61,11 +61,11 @@ Setting Dipoles by Field
 
 Dipoles need to be cycled, and after that only downward field changes are allowed to achive reproducible fields for the same Hall probe (or NMR) reading. This means that after cycling (if needed) dipoles have to be set by scaling the field carefully downward, hitting the nominal field value without overshooting. Overshooting requires cycling and repeating of the procedure. There can be cross talk between dipoles, therefore dipoles in a pair should be set roughly simultaneously, especially for large changes. Setting dipoles by hand can be very time consuming. Therefore magnet scaling scripts are availabe.
 
-The scripts are located in the E20008 experiment folder under :code:`Documents/tune_optimizer`. There are two different scripts: code:`run_parallel_dipole_hall.py` to set B1 - B8 by Hall probe and code:`run_parallel_dipole_nmr.py` to set B1 and B2 by NMR probe. Both read an input file :code:`dipole_values.txt`that specifies which dipoles should be set (flag), set value, and tolerance. 
+The scripts are located in the E20008 experiment folder under :code:`Documents/tune_optimizer`. There are two different scripts: code:`run_parallel_dipole_hall.py` to set B1 - B8 by Hall probe and code:`run_parallel_dipole_nmr.py` to set B1 and B2 by NMR probe. Both read the same input file :code:`dipole_values.txt`that specifies which dipoles should be set (flag), set value, and margins for setting by Hall probe and NMR, respectively. 
 
 To set the dipoles: 
 
-- Edit input file :code:`gedit dipole_values.txt` (see image :numref:`Fig_rundipoleinput` ). Enter desired magnetic fields, if you want to cycle (0 or 1), and whether the specific dipole is supposed to be set at this time or not (0 or 1). You can also specify the desired tolerance for both setting by Hall probe (important for all magnets) and setting by NMR (for B1 and B2, values for other magnets are ignored. For B1 and B2, the tolerance for setting by Hall probe should be larger than the final accuracy for setting by NMR, for example 0.0009
+- Edit input file :code:`gedit dipole_values.txt` (see image :numref:`Fig_rundipoleinput` ). Enter desired magnetic fields, if you want to cycle (0 or 1), and whether the specific dipole is supposed to be set at this time or not (0 or 1). You also need to specify the desired margin (tolerance) for both setting by Hall probe (important for all magnets) and setting by NMR (for B1 and B2, values for other magnets are ignored. For B1 and B2, the tolerance for setting by Hall probe should be larger than the final accuracy for setting by NMR, for example 0.00009 so as to ensure the script stops at a value above the set value. 
 
 - You need to cycle if the field increases from the current value (you can also do this via the control system separately)
 
@@ -81,7 +81,7 @@ To set the dipoles:
 .. figure:: Figures/rundipoleinput.png
    :scale: 20%
 
-   Input file for :code:`run_parallel_dipole.py`
+   Input file for :code:`run_parallel_dipole_hall.py` and :code:`run_parallel_dipole_nmr.py`. Note that margins for nmr are ignored for B3-B8. 
 
 Hall Probes
 -----------
